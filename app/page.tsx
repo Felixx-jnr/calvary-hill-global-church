@@ -1,5 +1,12 @@
+import Slider from "@/components/Slider";
+import React from "react";
+
 const Home = () => {
-  return <div className=" text-maroon">home</div>;
+  return (
+    <div>
+      <Slider />
+    </div>
+  );
 };
 
 export default Home;

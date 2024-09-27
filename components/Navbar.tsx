@@ -5,8 +5,6 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 
-import { Button } from "./ui/button";
-
 import {
   Tooltip,
   TooltipContent,
@@ -93,7 +91,7 @@ const Navbar = () => {
 
         {/* Hamburger Menu */}
         <div
-          className={`${isOpen ? "z-10 ml-auto mid:hidden absolute right-3" : " z-10 ml-auto mid:hidden max-md:absolute max-md:right-3"}`}
+          className={`${isOpen ? "z-10 ml-auto mid:hidden absolute right-6" : " z-10 ml-auto mid:hidden max-md:absolute max-md:right-3"}`}
           onClick={toggleMenu}
         >
           <motion.div
@@ -130,11 +128,11 @@ const Navbar = () => {
                   </Link>
                 </li>
               </TooltipTrigger>
-              <TooltipContent className="bg-maroon mt-12 pr-7">
+              <TooltipContent className="bg-maroon mt-12 mr-7">
                 <li>
                   <Link
                     href="/doctrine"
-                    className=" block font-thin p-2 pr-40 tracking-wide"
+                    className=" block font-thin py-2 mr-40 tracking-wide hover:border-b-2 pb-2 hover:text-white "
                   >
                     Doctrine
                   </Link>
@@ -143,7 +141,7 @@ const Navbar = () => {
                 <li>
                   <Link
                     href="/leadership"
-                    className=" block font-thin p-2 tracking-wide"
+                    className=" block font-thin mr-40 py-2  tracking-wide hover:border-b-2 pb-2 hover:text-white"
                   >
                     Leadership
                   </Link>
@@ -164,6 +162,7 @@ const Navbar = () => {
           ))}
         </ul>
 
+        {/* BUTTONS */}
         <div className=" flex items-center ">
           <div>
             <Image
@@ -180,9 +179,9 @@ const Navbar = () => {
               className="max-md:hidden"
               href="/giving"
             >
-              <Button className="bg-black rounded-none px-12 py-6 font-bold tracking-widest font-Sofia">
+              <button className="bg-black rounded-none px-12 py-4 font-bold tracking-widest font-Sofia">
                 GIVE NOW
-              </Button>
+              </button>
             </Link>
           </div>
         </div>
@@ -228,7 +227,7 @@ const Navbar = () => {
                     </Link>
                   </div>
 
-                  <li>
+                  <div>
                     <Link
                       href="/leadership"
                       className=" block font-thin p-2 tracking-wide text-center hover:text-[#fff]"
@@ -236,7 +235,7 @@ const Navbar = () => {
                     >
                       Leadership
                     </Link>
-                  </li>
+                  </div>
                 </li>
               )}
 

@@ -1,10 +1,61 @@
-@use "global";
-@use "componentsStyles";
+@use "./global";
+@use "./componentsStyles";
+@use "./utils/" as *;
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/css2?family=Sofia+Sans:ital,wght@0,1..1000;1,1..1000&display=swap");
+h1 {
+  font-size: rem(57);
+  font-weight: 700;
+  letter-spacing: rem(-1.1);
+  line-height: rem(60);
+  color: #230c00;
+}
 
-@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&family=Sofia+Sans+Condensed:ital,wght@0,1..1000;1,1..1000&display=swap");
+h2 {
+  font-size: rem(47);
+  font-weight: 700;
+  letter-spacing: rem(-0.9);
+  line-height: rem(47);
+  color: #230c00;
+}
+
+h3 {
+  font-size: rem(44);
+  font-weight: 700;
+  letter-spacing: rem(-1);
+  line-height: rem(48);
+  color: #fff;
+
+  @include breakpoint-down(small) {
+    font-size: rem(40);
+  }
+
+  @include breakpoint-down(smaller) {
+    font-size: rem(30);
+  }
+
+  @include breakpoint-down(smallest) {
+    font-size: rem(20);
+    line-height: rem(30);
+  }
+}
+
+p {
+  font-size: rem(13);
+  font-weight: 700;
+  letter-spacing: rem(2);
+  line-height: rem(20);
+  color: #fff;
+
+  @include breakpoint-down(small) {
+    font-size: rem(10);
+  }
+
+  @include breakpoint-down(smaller) {
+    font-size: rem(8);
+    line-height: rem(10);
+  }
+}
