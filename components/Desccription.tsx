@@ -17,7 +17,7 @@ const Description = ({ activeImage, clickNext, clickPrev }: Props) => {
       {images.map((item, idx) => (
         <div
           key={idx}
-          className={`${idx === activeImage ? "block w-full h-full md:h-[80vh] py-20 md:px-20 px-10 text-left" : "hidden"}`}
+          className={`${idx === activeImage ? "block w-full h-full md:px-20 px-10 text-left" : "hidden"}`}
         >
           <motion.div className="text-center text-white font-Kumbh">
             <div className=" absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 mid:w-[45%] lg:w-[60%] md:w-[70%] w-[90%] ">

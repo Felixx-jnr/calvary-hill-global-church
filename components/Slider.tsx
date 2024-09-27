@@ -24,28 +24,33 @@ const Slider = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       clickNext();
-    }, 1000);
+    }, 5000);
     return () => {
       clearTimeout(timer);
     };
   }, [activeImage]);
 
   return (
-    <main className="">
+    <main>
       <div className="relative">
         {images.map((item, idx) => (
-          <motion.div
+          <div
             key={idx}
-            className={`${idx === activeImage ? "w-full h-[656px]" : "hidden"}`}
+            className={`${idx === activeImage ? "w-full h-[656px]" : "hidden"} mb-8`}
           >
-            <Image
+            <motion.img
               src={item.src}
               alt=""
               width={400}
               height={400}
               className="w-full h-full object-cover"
-            />
-          </motion.div>
+              animate={{ scale: [1, 1.1] }}
+              transition={{
+                duration: 20,
+                repeat: Infinity,
+              }}
+            ></motion.img>
+          </div>
         ))}
       </div>
 
