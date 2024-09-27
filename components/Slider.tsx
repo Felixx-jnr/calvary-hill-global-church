@@ -38,21 +38,22 @@ const Slider = () => {
               opacity: idx === activeImage ? 1 : 0,
             }}
             transition={{
-              duration: 2, // Adjust for smoothness
+              duration: 1, // Adjust for smoothness
               ease: "easeInOut",
             }}
             style={{ position: "absolute", top: 0, left: 0 }}
           >
             <motion.img
+              key={activeImage}
               src={item.src}
               alt=""
               width={400}
               height={400}
               className="w-full h-full object-cover"
-              animate={{ scale: [1, 1.1] }}
+              initial={{ scale: 1 }} // Start at normal scale
+              animate={idx === activeImage ? { scale: 1.1 } : {}} // Only scale the active image
               transition={{
-                duration: 20,
-                repeat: Infinity,
+                duration: 10,
               }}
             ></motion.img>
           </motion.div>
