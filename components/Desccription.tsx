@@ -28,31 +28,31 @@ const Description = ({ activeImage, clickNext, clickPrev }: Props) => {
               <button className=" text-xs bg-orange rounded-none px-6 sm:px-12 sm:py-5 py-4 font-extrabold tracking-[2px]">
                 READ NOW
               </button>
+              {/* BUTTONS */}
+            </div>
+
+            <div className=" bg-bl">
+              <div
+                className=" absolute top-1/2 -translate-y-1/2 left-1 translate-x-1/2 cursor-pointer"
+                onClick={clickPrev}
+              >
+                <Image
+                  src={left}
+                  alt=""
+                />
+              </div>
+
+              <div
+                className=" absolute top-1/2 -translate-y-1/2 right-1 -translate-x-1/2 cursor-pointer"
+                onClick={clickNext}
+              >
+                <Image
+                  src={right}
+                  alt=""
+                />
+              </div>
             </div>
           </motion.div>
-
-          {/* BUTTONS */}
-          <div className="absolute md:bottom-1 bottom-10 right-10 md:right-0 w-full flex justify-center items-center">
-            <div
-              className="absolute bottom-2 right-10 cursor-pointer"
-              onClick={clickPrev}
-            >
-              <Image
-                src={left}
-                alt=""
-              />
-            </div>
-
-            <div
-              className="absolute bottom-2 right-2 cursor-pointer"
-              onClick={clickNext}
-            >
-              <Image
-                src={right}
-                alt=""
-              />
-            </div>
-          </div>
         </div>
       ))}
     </div>
