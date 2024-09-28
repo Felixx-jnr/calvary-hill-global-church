@@ -1,9 +1,8 @@
 "use client";
 
-import Image from "next/image";
 import { useEffect, useState } from "react";
 import { images } from "../components/constants";
-import Description from "./Desccription";
+import Description from "./Description";
 import { motion } from "framer-motion";
 
 const Slider = () => {
@@ -39,7 +38,7 @@ const Slider = () => {
             }}
             transition={{
               duration: 1, // Adjust for smoothness
-              ease: "easeInOut",
+              ease: "easeOut",
             }}
             style={{ position: "absolute", top: 0, left: 0 }}
           >
@@ -53,7 +52,7 @@ const Slider = () => {
               initial={{ scale: 1 }} // Start at normal scale
               animate={idx === activeImage ? { scale: 1.1 } : {}} // Only scale the active image
               transition={{
-                duration: 10,
+                duration: 30,
               }}
             ></motion.img>
           </motion.div>

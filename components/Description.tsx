@@ -5,13 +5,11 @@ import right from "../public/right.svg";
 import { easeInOut, motion } from "framer-motion";
 import Image from "next/image";
 
-type Props = {
-  activeImage: any;
-  clickNext: any;
-  clickPrev: any;
-};
-
-const Description = ({ activeImage, clickNext, clickPrev }: Props) => {
+const Description = ({
+  activeImage,
+  clickNext,
+  clickPrev,
+}: descriptionProps) => {
   const [showContent, setShowContent] = useState(true);
 
   const containerVariants = {
@@ -131,7 +129,7 @@ const Description = ({ activeImage, clickNext, clickPrev }: Props) => {
               variants={buttonVariants}
               initial="hidden"
               animate="visible"
-              className=" text-xs bg-orange rounded-none px-6 sm:px-12 sm:py-5 py-4 font-extrabold tracking-[2px]"
+              className=" text-xs bg-orange rounded-none px-6 sm:px-12 sm:py-5 py-4 font-extrabold tracking-[2px] hover:bg-lightGrey"
             >
               READ NOW
             </motion.button>

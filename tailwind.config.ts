@@ -13,7 +13,7 @@ const config: Config = {
         maroon: "#6D2324",
         orange: "#D1AA42",
         darkmaroon: "#240C00",
-        grey: "7C6D66",
+        lightGrey: "#7C6D66",
         smokeWhite: "#F8F2F1",
         darkBrown: "#1C110B",
       },

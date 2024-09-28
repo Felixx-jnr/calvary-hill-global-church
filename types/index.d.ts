@@ -1,6 +1,5 @@
-interface slidesProps {
-  title: string;
-  desc: string;
-  imgSrc: string;
-  className?: string;
-}
+type descriptionProps = {
+  activeImage: any;
+  clickNext: any;
+  clickPrev: any;
+};

@@ -74,7 +74,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className=" bg-maroon text-smokeWhite font-Sofia fixed shadow-md w-full top-0 z-10">
+    <nav className=" bg-transparent text-smokeWhite font-Sofia absolute w-full top-0 z-10">
       <div className=" py-4 flex justify-around max-mid:justify-between mx-5 max-mid:mx-5 items-center">
         {/* LOGO */}
         <Link
@@ -128,7 +128,7 @@ const Navbar = () => {
                   </Link>
                 </li>
               </TooltipTrigger>
-              <TooltipContent className="bg-maroon mt-12 mr-7">
+              <TooltipContent className="bg-darkBrown mt-8 mr-7 p-5">
                 <li>
                   <Link
                     href="/doctrine"
@@ -179,7 +179,7 @@ const Navbar = () => {
               className="max-md:hidden"
               href="/giving"
             >
-              <button className="bg-black rounded-none px-12 py-4 font-bold tracking-widest font-Sofia">
+              <button className="bg-maroon hover:bg-dar rounded-none px-9 py-4 font-bold tracking-widest font-Sofia text-xs">
                 GIVE NOW
               </button>
             </Link>

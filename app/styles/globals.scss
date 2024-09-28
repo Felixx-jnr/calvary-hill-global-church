@@ -9,9 +9,8 @@
 h1 {
   font-size: rem(57);
   font-weight: 700;
-  letter-spacing: rem(-1.1);
+  letter-spacing: rem(-2.1);
   line-height: rem(60);
-  color: #230c00;
 }
 
 h2 {
@@ -48,7 +47,6 @@ p {
   font-weight: 700;
   letter-spacing: rem(2);
   line-height: rem(20);
-  color: #fff;
 
   @include breakpoint-down(small) {
     font-size: rem(10);
