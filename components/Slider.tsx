@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { images } from "../components/constants";
+import { homeImages } from "../constants/homeCarousel";
 import Description from "./Description";
 import { motion } from "framer-motion";
 
@@ -9,11 +9,11 @@ const Slider = () => {
   const [activeImage, setActiveImage] = useState(0);
 
   const clickNext = () => {
-    setActiveImage((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+    setActiveImage((prev) => (prev === homeImages.length - 1 ? 0 : prev + 1));
   };
 
   const clickPrev = () => {
-    setActiveImage((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+    setActiveImage((prev) => (prev === 0 ? homeImages.length - 1 : prev - 1));
   };
 
   useEffect(() => {
@@ -26,9 +26,9 @@ const Slider = () => {
   }, [activeImage]);
 
   return (
-    <main className="">
-      <div className="relative w-full h-[656px]">
-        {images.map((item, idx) => (
+    <main className="relative overflow-hidden">
+      <div className=" w-full h-[656px] ">
+        {homeImages.map((item, idx) => (
           <motion.div
             key={idx}
             className="absolute inset-0 w-full h-full"
@@ -48,7 +48,7 @@ const Slider = () => {
               alt=""
               width={400}
               height={400}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover overflow-hidden"
               initial={{ scale: 1 }} // Start at normal scale
               animate={idx === activeImage ? { scale: 1.1 } : {}} // Only scale the active image
               transition={{
@@ -59,11 +59,13 @@ const Slider = () => {
         ))}
       </div>
 
-      <Description
-        activeImage={activeImage}
-        clickNext={clickNext}
-        clickPrev={clickPrev}
-      />
+      <div className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 w-full">
+        <Description
+          activeImage={activeImage}
+          clickNext={clickNext}
+          clickPrev={clickPrev}
+        />
+      </div>
     </main>
   );
 };

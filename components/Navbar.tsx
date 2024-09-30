@@ -179,7 +179,7 @@ const Navbar = () => {
               className="max-md:hidden"
               href="/giving"
             >
-              <button className="bg-maroon hover:bg-dar rounded-none px-9 py-4 font-bold tracking-widest font-Sofia text-xs">
+              <button className="bg-maroon hover:bg-darkmaroon rounded-none px-9 py-4 font-bold tracking-widest font-Sofia text-xs">
                 GIVE NOW
               </button>
             </Link>

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { images } from "./constants";
+import { homeImages } from "../constants/homeCarousel";
 import left from "../public/left.svg";
 import right from "../public/right.svg";
 import { easeInOut, motion } from "framer-motion";
@@ -96,10 +96,10 @@ const Description = ({
 
   return (
     <div>
-      {images.map((item, idx) => (
+      {homeImages.map((item, idx) => (
         <div
           key={idx}
-          className={`${idx === activeImage ? "block w-full h-full md:px-20 px-10 text-left" : "hidden"}`}
+          className={`${idx === activeImage ? "home block w-full h-full md:px-20 px-10 text-left" : "hidden"}`}
         >
           <motion.div
             key={activeImage}
@@ -112,6 +112,7 @@ const Description = ({
               variants={paragraphVariants}
               initial="hidden"
               animate="visible"
+              className=""
             >
               {item.title}
             </motion.p>
@@ -120,7 +121,7 @@ const Description = ({
               variants={headerVariants}
               initial="hidden"
               animate="visible"
-              className=" mx-auto mb-5 mt-3 md:mt-5  "
+              className=" mx-auto mb-5 mt-3 md:mt-5 font-bold "
             >
               {item.desc}
             </motion.h3>
@@ -136,7 +137,7 @@ const Description = ({
           </motion.div>
 
           {/* BUTTONS */}
-          <div>
+          <div className="max-sm:hidden">
             <div
               className=" absolute top-1/2 -translate-y-1/2 left-1 translate-x-1/2 cursor-pointer"
               onClick={clickPrev}

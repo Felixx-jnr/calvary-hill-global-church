@@ -1,11 +1,9 @@
 "use client";
-import { images } from "../components/constants";
+import { homeImages } from "../constants/homeCarousel";
 
 import * as React from "react";
-
 import Autoplay from "embla-carousel-autoplay";
 
-import { Card, CardContent } from "@/components/ui/card";
 import {
   Carousel,
   CarouselContent,
@@ -22,26 +20,30 @@ export function MiniCarousel() {
       }}
       plugins={[
         Autoplay({
-          delay: 5000,
+          delay: 6000,
+          stopOnInteraction: true,
         }),
       ]}
-      className="w-full"
+      className="w-[98%] mx-auto"
     >
       <CarouselContent>
-        {Array.from({ length: 4 }).map((_, index) => (
+        {homeImages.map((item) => (
           <CarouselItem
-            key={index}
-            className=" lg:basis-1/3"
+            key={item.id}
+            className="md:basis-1/2 lg:basis-1/3 min-h-96 h-96 overflow-hidden"
           >
-            <div className="p-1">
+            <div className=" w-full h-full ">
               <img
-                src="/photo_2024-06-18_10-51-12.jpg"
+                src={item.src}
                 alt=""
+                className="h-full w-full object-cover"
               />
             </div>
           </CarouselItem>
         ))}
       </CarouselContent>
+
+      {/* Navigation buttons */}
       <CarouselPrevious />
       <CarouselNext />
     </Carousel>

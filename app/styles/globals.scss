@@ -6,22 +6,7 @@
 @tailwind components;
 @tailwind utilities;
 
-h1 {
-  font-size: rem(57);
-  font-weight: 700;
-  letter-spacing: rem(-2.1);
-  line-height: rem(60);
-}
-
-h2 {
-  font-size: rem(47);
-  font-weight: 700;
-  letter-spacing: rem(-0.9);
-  line-height: rem(47);
-  color: #230c00;
-}
-
-h3 {
+.home h3 {
   font-size: rem(44);
   font-weight: 700;
   letter-spacing: rem(-1);
@@ -42,7 +27,7 @@ h3 {
   }
 }
 
-p {
+.home p {
   font-size: rem(13);
   font-weight: 700;
   letter-spacing: rem(2);
@@ -56,4 +41,10 @@ p {
     font-size: rem(8);
     line-height: rem(10);
   }
+}
+
+.home-sermons {
+  background-image: url("/testimonil-1.jpg");
+  background-size: cover;
+  background-position: center;
 }

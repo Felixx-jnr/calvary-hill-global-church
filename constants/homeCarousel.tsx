@@ -1,4 +1,4 @@
-export const images = [
+export const homeImages = [
   {
     id: 1,
     src: "/photo_2024-06-18_10-51-12.jpg",
