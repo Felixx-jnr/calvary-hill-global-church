@@ -48,3 +48,26 @@
   background-size: cover;
   background-position: center;
 }
+
+.home-giving {
+  position: relative;
+  background-image: url("/me.jpg");
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+}
+
+.home-giving::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Adjust opacity */
+  z-index: -1;
+}
+
+body {
+  overflow: hidden;
+}
