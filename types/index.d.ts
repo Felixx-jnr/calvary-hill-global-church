@@ -3,3 +3,16 @@ type descriptionProps = {
   clickNext: any;
   clickPrev: any;
 };
+
+type headerProps = {
+  header: string;
+  page?: string;
+};
+
+type doctrineProps = {
+  title: string;
+  paragraph: string;
+  secondParagraph?: string;
+  imgSrc: string;
+  className?: string;
+};

@@ -15,6 +15,7 @@ const config: Config = {
         darkmaroon: "#240C00",
         lightGrey: "#7C6D66",
         darkGrey: "#CAC2C0",
+        midGrey: "#988F8A",
         smokeWhite: "#F8F2F1",
         darkBrown: "#1C110B",
       },

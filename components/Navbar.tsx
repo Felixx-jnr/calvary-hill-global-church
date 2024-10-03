@@ -74,7 +74,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className=" bg-transparent text-smokeWhite font-Sofia absolute w-full top-0 z-10">
+    <nav className=" bg-darkGrey text-smokeWhite font-Sofia absolute w-full top-0 z-10">
       <div className=" py-4 flex justify-around max-mid:justify-between mx-5 max-mid:mx-5 items-center">
         {/* LOGO */}
         <Link
