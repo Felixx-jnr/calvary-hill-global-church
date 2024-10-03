@@ -1,5 +1,5 @@
 "use client";
-import { homeImages } from "../constants/homeCarousel";
+import { homeImages } from "../../constants/homeCarousel";
 
 import * as React from "react";
 import Autoplay from "embla-carousel-autoplay";

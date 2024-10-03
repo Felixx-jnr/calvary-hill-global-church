@@ -1,5 +1,5 @@
-import MiniCarousel from "@/components/MiniCarousel";
-import Slider from "@/components/Slider";
+import MiniCarousel from "../components/Home/MiniCarousel";
+import Slider from "../components/Home/Slider";
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -179,15 +179,15 @@ const Home = () => {
       </section>
 
       {/* SECTION SEVEN - FORM */}
-      <section className=" flex gap-10 items-center h-full w-[95%] md:w-[80%] mx-auto mt-24 ">
-        <div className=" w-[50%] text-3xl font-bold">
+      <section className=" block md:flex gap-4 items-center h-full w-[95%] md:w-[85%] mx-auto mt-24 ">
+        <div className=" md:w-[700px] mid:w-[600px] text-2xl md:text-xl mid:text-3xl font-bold">
           Please fill in this form if you would like to receive edifying
           contents.
         </div>
 
-        <div className="w-[30%] text-lightGrey">
+        <div className="md:w-[1000px] w-[85%] text-lightGrey">
           <input
-            className=" text-lightGrey border-b border-darkmaroon focus:outline-none bg-transparent w-full font-Sofia font-normal leading-7 py-2 text-xl my-2 placeholder-lightGrey placeholder:font-semibold placeholder:font-Sofia placeholder:text-base "
+            className="  text-lightGrey border-b border-darkmaroon focus:outline-none bg-transparent w-full font-Sofia font-normal leading-7 py-2 text-xl my-2 placeholder-lightGrey placeholder:font-semibold placeholder:font-Sofia placeholder:text-base "
             placeholder="Enter Your Email Address"
             type="email"
           />
@@ -206,39 +206,70 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="w-[20%] text-right">
+        <div className="w-[20%] max-md:mt-8">
           <span>d</span>
           SUBSCRIBE
         </div>
       </section>
 
       {/* SECTION EIGHT - ACCORDION */}
-      <Accordion
-        type="single"
-        collapsible
-        className="w-full"
-      >
-        <AccordionItem value="item-1">
-          <AccordionTrigger>Is it accessible?</AccordionTrigger>
-          <AccordionContent>
-            Yes. It adheres to the WAI-ARIA design pattern.
-          </AccordionContent>
-        </AccordionItem>
-        <AccordionItem value="item-2">
-          <AccordionTrigger>Is it styled?</AccordionTrigger>
-          <AccordionContent>
-            Yes. It comes with default styles that matches the other
-            components&apos; aesthetic.
-          </AccordionContent>
-        </AccordionItem>
-        <AccordionItem value="item-3">
-          <AccordionTrigger>Is it animated?</AccordionTrigger>
-          <AccordionContent>
-            Yes. It&apos;s animated by default, but you can disable it if you
-            prefer.
-          </AccordionContent>
-        </AccordionItem>
-      </Accordion>
+      <section className="w-[95%] md:w-[80%] mx-auto mt-36">
+        <h1 className="text-center text-3xl sm:text-4xl md:text-5xl font-Sofia font-bold tracking-normal text-darkmaroon mb-3">
+          FAQ's
+        </h1>
+
+        <Accordion
+          type="multiple"
+          className="w-full"
+        >
+          <AccordionItem
+            className="mb-5"
+            value="item-1"
+          >
+            <AccordionTrigger className="text-left text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-darkmaroon hover:no-underline font-Sofia mb-2 ">
+              <div className="">
+                What Are the Basic Doctrines of the Church?
+              </div>
+            </AccordionTrigger>
+            <AccordionContent className=" text-base text-lightGrey font-semibold mt-1 md:mt-4 mb-2 ">
+              The Basic Doctrines of Calvary Hill Church are…{" "}
+              <Link
+                className=" font-bold hover:underline"
+                href="/doctrine"
+              >
+                Read More
+              </Link>
+            </AccordionContent>
+          </AccordionItem>
+
+          <AccordionItem
+            className="mb-5"
+            value="item-2"
+          >
+            <AccordionTrigger className="text-left text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-darkmaroon hover:no-underline font-Sofia mb-2 ">
+              How to Become a Church Member?
+            </AccordionTrigger>
+            <AccordionContent className=" text-base text-lightGrey font-semibold mt-1 md:mt-4 mb-2 ">
+              Insert Google Form Link
+            </AccordionContent>
+          </AccordionItem>
+
+          <AccordionItem
+            className="mb-5"
+            value="item-3"
+          >
+            <AccordionTrigger className="text-left text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-darkmaroon hover:no-underline font-Sofia mb-2 ">
+              Do You Conduct Worship Online?
+            </AccordionTrigger>
+            <AccordionContent className=" text-base text-lightGrey font-semibold mt-1 md:mt-4 mb-2 ">
+              Yes we do, but It’s s not the primary way we would love you to
+              join our services, but if you can’t join us physically because of
+              distance, you can join our services (Wednesday and Sunday) through
+              our mixlr or youtube Stream
+            </AccordionContent>
+          </AccordionItem>
+        </Accordion>
+      </section>
     </main>
   );
 };

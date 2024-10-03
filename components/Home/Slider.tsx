@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { homeImages } from "../constants/homeCarousel";
+import { homeImages } from "../../constants/homeCarousel";
 import Description from "./Description";
 import { motion } from "framer-motion";
 

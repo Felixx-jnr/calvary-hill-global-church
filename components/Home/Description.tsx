@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { homeImages } from "../constants/homeCarousel";
-import left from "../public/left.svg";
-import right from "../public/right.svg";
+import { homeImages } from "../../constants/homeCarousel";
+import left from "../../public/left.svg";
+import right from "../../public/right.svg";
 import { easeInOut, motion } from "framer-motion";
 import Image from "next/image";
 
