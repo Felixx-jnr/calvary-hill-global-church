@@ -40,7 +40,8 @@ const Leadership = () => {
             Pastor Collins Throne is the visionary, of Collins Throne
             Ministries. He is a sound teacher of the word of God, passionate
             about discipling men with the gospel of Christ, raising them to be
-            strong believers who would advance God’s kingdom all over the earth.
+            strong believers who would advance God&apos;s kingdom all over the
+            earth.
             <br />
             <br />
             His ministry has transformed many lives and is touching and
@@ -66,9 +67,10 @@ const Leadership = () => {
             received from the apostles.
             <br />
             <br />
-            He believes strongly in the Local Church as God’s wisdom and plan
-            for every believer and also in global evangelism, that is reaching
-            out to the unsaved and unchurched with the Gospel of Christ.
+            He believes strongly in the Local Church as God&apos;s wisdom and
+            plan for every believer and also in global evangelism, that is
+            reaching out to the unsaved and unchurched with the Gospel of
+            Christ.
             <br />
             <br />
             He ministers with a strong teaching anointing which flows with the

@@ -144,7 +144,7 @@ const Home = () => {
             ARTICLES
           </p>
           <h1 className=" font-sofia-bold mb-5 text-3xl sm:text-5xl text-darkmaroon lg:w-[800px] md:w-[75%]  mx-auto tracking-tight">
-            Grow in Grace – Dive Into Our Enriching Materials
+            Grow in Grace &lsquo; Dive Into Our Enriching Materials
           </h1>
 
           <button className="text-smokeWhite bg-maroon hover:bg-darkmaroon lg:px-14 lg:py-5 px-3 py-3 font-extrabold tracking-widest font-sofia-bold sm:text-xs text-[8px] mt-4">
@@ -170,7 +170,7 @@ const Home = () => {
           </p>
 
           <p className="mb-5 text-base font-medium font-Sofia tracking-tight text-darkGrey">
-            – 2nd Cor 9:7 NIV
+            &lsquo; 2nd Cor 9:7 NIV
           </p>
 
           <button className=" max-w-[190px] sm:max-w-[250px] text-smokeWhite bg-orange hover:bg-white hover:text-darkmaroon py-4 sm:py-5 sm:tracking-widest tracking-normal text-xs font-sofia-bold">
@@ -261,10 +261,10 @@ const Home = () => {
               Do You Conduct Worship Online?
             </AccordionTrigger>
             <AccordionContent className=" text-base text-lightGrey font-semibold mt-1 md:mt-4 mb-2 ">
-              Yes we do, but It’s s not the primary way we would love you to
-              join our services, but if you can’t join us physically because of
-              distance, you can join our services (Wednesday and Sunday) through
-              our mixlr or youtube Stream
+              Yes we do, but It&apos;s s not the primary way we would love you
+              to join our services, but if you can&apos;t join us physically
+              because of distance, you can join our services (Wednesday and
+              Sunday) through our mixlr or youtube Stream
             </AccordionContent>
           </AccordionItem>
         </Accordion>
