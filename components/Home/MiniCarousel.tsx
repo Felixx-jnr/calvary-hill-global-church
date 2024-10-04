@@ -11,6 +11,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { Image } from "lucide-react";
 
 export function MiniCarousel() {
   return (
@@ -33,7 +34,7 @@ export function MiniCarousel() {
             className="md:basis-1/2 lg:basis-1/3 min-h-96 h-96 overflow-hidden"
           >
             <div className=" w-full h-full ">
-              <img
+              <Image
                 src={item.src}
                 alt=""
                 className="h-full w-full object-cover"
