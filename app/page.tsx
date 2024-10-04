@@ -216,7 +216,7 @@ const Home = () => {
       {/* SECTION EIGHT - ACCORDION */}
       <section className="w-[95%] md:w-[80%] mx-auto mt-36">
         <h1 className="text-center text-3xl sm:text-4xl md:text-5xl font-sofia-bold tracking-tight text-darkmaroon mb-3">
-          FAQ's
+          FAQ&apos;s
         </h1>
 
         <Accordion

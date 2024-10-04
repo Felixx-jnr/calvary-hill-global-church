@@ -24,7 +24,7 @@ const Leadership = () => {
             <div className="">
               <h3>Father.</h3>
               <h3>Shepherd.</h3>
-              <h3>God's Gift.</h3>
+              <h3>God&apos;s Gift.</h3>
             </div>
           </div>
         </div>
