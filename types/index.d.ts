@@ -16,3 +16,7 @@ type doctrineProps = {
   imgSrc: string;
   className?: string;
 };
+
+type GalleryLayoutProps = {
+  images?: string[];
+};
