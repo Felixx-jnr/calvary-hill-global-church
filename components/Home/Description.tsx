@@ -106,13 +106,13 @@ const Description = ({
             variants={containerVariants}
             initial="hidden"
             animate={showContent ? "visible" : "fadeOut"}
-            className=" text-center text-white font-Kumbh absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 mid:w-[45%] lg:w-[60%] md:w-[70%] w-[90%] "
+            className=" text-center text-white absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 mid:w-[45%] lg:w-[60%] md:w-[70%] w-[90%] "
           >
             <motion.p
               variants={paragraphVariants}
               initial="hidden"
               animate="visible"
-              className=""
+              className=" font-sofia-bold "
             >
               {item.title}
             </motion.p>
@@ -121,7 +121,7 @@ const Description = ({
               variants={headerVariants}
               initial="hidden"
               animate="visible"
-              className=" mx-auto mb-5 mt-3 md:mt-5 font-bold "
+              className=" mx-auto mb-5 mt-3 md:mt-5 font-sofia-bold "
             >
               {item.desc}
             </motion.h3>
@@ -130,7 +130,7 @@ const Description = ({
               variants={buttonVariants}
               initial="hidden"
               animate="visible"
-              className=" text-xs bg-orange rounded-none px-6 sm:px-12 sm:py-5 py-4 font-extrabold tracking-[2px] hover:bg-lightGrey"
+              className=" text-xs bg-orange rounded-none px-6 sm:px-12 sm:py-5 py-4 font-sofia-bold tracking-[2px] hover:bg-lightGrey"
             >
               READ NOW
             </motion.button>

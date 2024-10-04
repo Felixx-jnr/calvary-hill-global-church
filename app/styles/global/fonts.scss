@@ -1,3 +1,37 @@
-@import url("https://fonts.googleapis.com/css2?family=Sofia+Sans:ital,wght@0,1..1000;1,1..1000&display=swap");
+@font-face {
+  font-family: "Sofia Pro Regular";
+  font-style: normal;
+  font-weight: 400;
+  src:
+    local("Sofia Pro Regular"),
+    url("/fonts/sofia-pro/Sofia Pro Regular Az.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Sofia Pro Medium";
+  font-style: normal;
+  font-weight: 500;
+  src:
+    local("Sofia Pro Medium"),
+    url("/fonts/sofia-pro/Sofia Pro Medium Az.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Sofia Pro SemiBold";
+  font-style: normal;
+  font-weight: 600;
+  src:
+    local("Sofia Pro SemiBold"),
+    url("/fonts/sofia-pro/Sofia Pro SemiBold Az.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Sofia Pro Bold";
+  font-style: normal;
+  font-weight: 700;
+  src:
+    local("Sofia Pro Bold"),
+    url("/fonts/sofia-pro/Sofia Pro Bold Az.woff") format("woff");
+}
 
 @import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&family=Sofia+Sans+Condensed:ital,wght@0,1..1000;1,1..1000&display=swap");

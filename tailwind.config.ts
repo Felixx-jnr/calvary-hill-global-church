@@ -20,8 +20,11 @@ const config: Config = {
         darkBrown: "#1C110B",
       },
       fontFamily: {
-        Sofia: ["Sofia", "sans-serif"],
-        Kumbh: ["Kumbh", "sans-serif"],
+        "sofia-regular": ["Sofia Pro Regular", "sans-serif"],
+        "sofia-medium": ["Sofia Pro Medium", "sans-serif"],
+        "sofia-semibold": ["Sofia Pro SemiBold", "sans-serif"],
+        "sofia-bold": ["Sofia Pro Bold", "sans-serif"],
+        "kumbh-sans": ["Kumbh Sans", "sans-serif"],
       },
       keyframes: {
         "accordion-down": {

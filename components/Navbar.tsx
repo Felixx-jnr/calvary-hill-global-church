@@ -74,7 +74,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className=" bg-darkGrey text-smokeWhite font-Sofia absolute w-full top-0 z-10">
+    <nav className=" bg-darkGrey text-smokeWhite font-sofia-regular absolute w-full top-0 z-10">
       <div className=" py-4 flex justify-around max-mid:justify-between mx-5 max-mid:mx-5 items-center">
         {/* LOGO */}
         <Link
@@ -179,7 +179,7 @@ const Navbar = () => {
               className="max-md:hidden"
               href="/giving"
             >
-              <button className="bg-maroon hover:bg-darkmaroon rounded-none px-9 py-4 font-bold tracking-widest font-Sofia text-xs">
+              <button className="bg-maroon hover:bg-darkmaroon rounded-none px-9 py-4 font-bold tracking-widest text-xs">
                 GIVE NOW
               </button>
             </Link>
