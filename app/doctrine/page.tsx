@@ -19,7 +19,7 @@ const doctrine = () => {
       <div>
         <RightDoctrine
           title="Sola Gratia: Grace Alone"
-          paragraph="We believe that a man is saved by grace alone as the Bible teaches (Ephesians 2:8). Salvation from sin, hell and Satan is as a result of God’s undeserving grace, not something we deserve. We are not saved by church attendance, though church attendance is very important. We are not saved by working in church, though that is also important. Nothing we did saved or saves us, but God by His grace through Christ’s finished work is what gives us salvation. We cannot pray enough to have our sins forgiven or give enough or confess enough, etc. We can only rely on God's grace through Christ’s death, burial and resurrection to do the job."
+          paragraph="We believe that a man is saved by grace alone as the Bible teaches (Ephesians 2:8). Salvation from sin, hell and Satan is as a result of God's undeserving grace, not something we deserve. We are not saved by church attendance, though church attendance is very important. We are not saved by working in church, though that is also important. Nothing we did saved or saves us, but God by His grace through Christ's finished work is what gives us salvation. We cannot pray enough to have our sins forgiven or give enough or confess enough, etc. We can only rely on God's grace through Christ's death, burial and resurrection to do the job."
           imgSrc="/gratia.avif"
         />
       </div>
@@ -28,7 +28,7 @@ const doctrine = () => {
         <LeftDoctrine
           title="Sola Fide: Justification by faith alone"
           paragraph="We believe that righteousness is by faith alone. The scripture says that righteousness or justification before God is simply by faith in what Jesus Christ did for us (Galatians 2:16). The scriptures expressly say that we cannot earn right standing with God by our good works, but through the resurrection of Jesus Christ (Romans 4:25)."
-          secondParagraph="Faith in Jesus clears our account of sins, and puts in our account the righteousness of Christ. This means that Christ’s righteousness became ours which gives us power over sin, Satan and death and gave us the ability to stand before God without any feeling of fear, guilt or condemnation."
+          secondParagraph="Faith in Jesus clears our account of sins, and puts in our account the righteousness of Christ. This means that Christ's righteousness became ours which gives us power over sin, Satan and death and gave us the ability to stand before God without any feeling of fear, guilt or condemnation."
           imgSrc="/fide.avif"
         />
       </div>
