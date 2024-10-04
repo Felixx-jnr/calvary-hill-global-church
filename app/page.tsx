@@ -43,10 +43,12 @@ const Home = () => {
       {/* SECTION THREE - OUR VISION */}
       <section className=" mt-20 max-sm:mt-16 w-[95%] sm:w-[90%] mx-auto ">
         <div className=" mb-6 lg:w-[230px] md:w-[200px] w-[150px]">
-          <img
+          <Image
             src="/cropped-CHC-logo-black-1.png"
             alt=""
             className="w-full h-full"
+            width={500}
+            height={500}
           />
         </div>
         <p className="mb-5 sm:text-sm text-xs font-sofia-bold text-darkmaroon tracking-widest">

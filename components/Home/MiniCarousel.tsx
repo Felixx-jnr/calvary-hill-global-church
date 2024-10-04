@@ -3,7 +3,7 @@ import { homeImages } from "../../constants/homeCarousel";
 
 import * as React from "react";
 import Autoplay from "embla-carousel-autoplay";
-
+import Image from "next/image";
 import {
   Carousel,
   CarouselContent,
@@ -11,7 +11,6 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { Image } from "lucide-react";
 
 export function MiniCarousel() {
   return (
@@ -38,6 +37,8 @@ export function MiniCarousel() {
                 src={item.src}
                 alt=""
                 className="h-full w-full object-cover"
+                width={1800}
+                height={1200}
               />
             </div>
           </CarouselItem>
