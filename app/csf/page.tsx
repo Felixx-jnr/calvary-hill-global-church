@@ -20,10 +20,10 @@ const CSF = () => {
             Calvary Student Fellowship
           </h2>
           <p className=" font-sofia-medium text-lg tracking-tight leading-snug ">
-            Calvary Student Fellowship (CSF) is a student fellowship expression
-            under Collins Throne Ministries. It is the Campus fellowship of the
-            Mother Church - Calvary Hill Church. Its general overseer and
-            founder is Pastor Collins Throne.
+            Calvary Student Fellowship - CSF - is a student fellowship
+            expression under Collins Throne Ministries. It is the Campus
+            fellowship of the Mother Church - Calvary Hill Church. Its general
+            overseer and founder is Pastor Collins Throne.
           </p>
         </div>
 
@@ -61,7 +61,7 @@ const CSF = () => {
 
               <li>
                 <p className="mt-7 mb-2">
-                  Through CSF Formerly known as The Gospel Mission (TGM),
+                  Through CSF Formerly known as The Gospel Mission -TGM-,
                   Collins Throne Ministries has been able to disciple hundreds
                   of students with the Gospel of Christ and the supernatural.
                 </p>
