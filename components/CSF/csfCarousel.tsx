@@ -1,6 +1,6 @@
 "use client";
 
-import { csfCarouselImages, csfImages } from "@/constants/csfConstants";
+import { csfCarouselImages } from "@/constants/csfConstants";
 
 import * as React from "react";
 import Autoplay from "embla-carousel-autoplay";
