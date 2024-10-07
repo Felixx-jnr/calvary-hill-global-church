@@ -29,9 +29,9 @@ const Home = () => {
             We Are The Triumphant Church
           </h1>
 
-          <p className=" font-Kumbh font-medium text-lightGrey">
+          <p className="text-lightGrey font-medium">
             Bringing men to the place of triumph through the revelation of
-            Christ and positioning them for kingdom advancement
+            Christ and positioning them for kingdom advancement.
           </p>
         </div>
 
@@ -57,10 +57,10 @@ const Home = () => {
         <h1 className=" font-sofia-bold mb-5 text-4xl lg:text-[57px] font-bold tracking-tight text-darkmaroon">
           Making Christ Known
         </h1>
-        <p className=" max-sm:text-sm text-base mb-5 font-Sofia font-semibold tracking-tight text-lightGrey">
+        <p className=" max-sm:text-sm text-base mb-5 tracking-tight text-lightGrey">
           Our Vision as a Church is to make Christ known through global
           evangelism to build a strong local church bonded by love and
-          Supernatural manifestation through discipleship
+          Supernatural manifestation through discipleship.
         </p>
         <div className="relative w-full max-h-[800px] overflow-hidden mb-12">
           <Image
@@ -144,7 +144,7 @@ const Home = () => {
             ARTICLES
           </p>
           <h1 className=" font-sofia-bold mb-5 text-3xl sm:text-5xl text-darkmaroon lg:w-[800px] md:w-[75%]  mx-auto tracking-tight">
-            Grow in Grace &lsquo; Dive Into Our Enriching Materials
+            Grow in Grace - Dive Into Our Enriching Materials
           </h1>
 
           <button className="text-smokeWhite bg-maroon hover:bg-darkmaroon lg:px-14 lg:py-5 px-3 py-3 font-extrabold tracking-widest font-sofia-bold sm:text-xs text-[8px] mt-4">
@@ -170,7 +170,7 @@ const Home = () => {
           </p>
 
           <p className="mb-5 text-base font-medium font-Sofia tracking-tight text-darkGrey">
-            &lsquo; 2nd Cor 9:7 NIV
+            - 2nd Cor 9:7 NIV
           </p>
 
           <button className=" max-w-[190px] sm:max-w-[250px] text-smokeWhite bg-orange hover:bg-white hover:text-darkmaroon py-4 sm:py-5 sm:tracking-widest tracking-normal text-xs font-sofia-bold">

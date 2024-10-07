@@ -34,4 +34,13 @@
     url("/fonts/sofia-pro/Sofia Pro Bold Az.woff") format("woff");
 }
 
+@font-face {
+  font-family: "Europa";
+  src: url("/fonts/europatitlebold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 @import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&family=Sofia+Sans+Condensed:ital,wght@0,1..1000;1,1..1000&display=swap");
+
+@import url("https://fonts.cdnfonts.com/css/europa-title");

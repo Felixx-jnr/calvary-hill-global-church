@@ -15,11 +15,11 @@ const LeftDoctrine = ({
         </h1>
 
         <div className="mb-2">
-          <p className=" max-sm:text-[14px] text-lightGrey font-semibold tracking-tight leading-none">
+          <p className=" max-sm:text-[14px] text-lightGrey tracking-tight leading-tight font-sans">
             {paragraph}
           </p>
           <br />
-          <p className=" max-sm:text-[14px] text-lightGrey font-semibold tracking-tight leading-none">
+          <p className=" max-sm:text-[14px] text-lightGrey tracking-tight leading-tight font-sans">
             {secondParagraph}
           </p>
         </div>
