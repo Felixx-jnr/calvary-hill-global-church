@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { homeImages } from "../../constants/homeCarousel";
 
-import right from "../../public/circle-arrow.svg";
 import { easeInOut, motion } from "framer-motion";
-import Image from "next/image";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
