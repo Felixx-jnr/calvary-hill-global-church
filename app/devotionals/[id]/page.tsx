@@ -6,7 +6,7 @@ import { useParams } from "next/navigation"; // Use useParams instead of useRout
 import Image from "next/image";
 import Link from "next/link";
 
-const devotionalDetails = () => {
+const DevotionalDetails = () => {
   const { id } = useParams(); // Get the dynamic devotionalId from the URL
 
   // Handle the case where `id` can be a string or string[]
@@ -62,4 +62,4 @@ const devotionalDetails = () => {
   );
 };
 
-export default devotionalDetails;
+export default DevotionalDetails;

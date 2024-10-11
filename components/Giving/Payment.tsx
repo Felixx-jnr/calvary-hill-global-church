@@ -49,6 +49,41 @@ const Payment = () => {
   return (
     <div className="px-4 mt-28">
       <h1 className="text-center ">Make your payment here</h1>
+
+      <div className="max-w-md mx-auto my-4">
+        <input
+          type="email"
+          placeholder="Email"
+          className={style.input}
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <input
+          type="number"
+          placeholder="Amount"
+          className={style.input}
+          value={amount}
+          onChange={(e) => setAmount(e.target.value)}
+        />
+        <input
+          type="text"
+          placeholder="Name"
+          className={style.input}
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+        <input
+          type="number"
+          placeholder="Phone number"
+          className={style.input}
+          value={phone}
+          onChange={(e) => setPhone(e.target.value)}
+        />
+        <PaystackButton
+          className={style.button}
+          {...componentProps}
+        />
+      </div>
     </div>
   );
 };
