@@ -7,6 +7,7 @@ type descriptionProps = {
 type headerProps = {
   header: string;
   page?: string;
+  className?: string;
 };
 
 type doctrineProps = {

@@ -29,7 +29,7 @@ const Home = () => {
             We Are The Triumphant Church
           </h1>
 
-          <p className="text-lightGrey font-medium">
+          <p className="text-lightGrey">
             Bringing men to the place of triumph through the revelation of
             Christ and positioning them for kingdom advancement.
           </p>
@@ -64,7 +64,7 @@ const Home = () => {
         </p>
         <div className="relative w-full max-h-[800px] overflow-hidden mb-12">
           <Image
-            src={"/me.jpg"}
+            src={"/home/red.jpg"}
             alt={""}
             width={1800}
             height={1240}
@@ -143,7 +143,7 @@ const Home = () => {
           <p className="mb-5 sm:text-sm text-xs font-sofia-bold text-darkmaroon tracking-widest">
             ARTICLES
           </p>
-          <h1 className=" font-sofia-bold mb-5 text-3xl sm:text-5xl text-darkmaroon lg:w-[800px] md:w-[75%]  mx-auto tracking-tight">
+          <h1 className=" font-sofia-bold mb-5 text-xl xs:text-3xl sm:text-5xl text-darkmaroon lg:w-[800px] md:w-[80%] sm:w-[85%] xs:w-[90%] w-[98%] mx-auto tracking-tight">
             Grow in Grace - Dive Into Our Enriching Materials
           </h1>
 
@@ -230,10 +230,10 @@ const Home = () => {
             <AccordionTrigger className="text-left text-lg sm:text-xl md:text-2xl lg:text-3xl text-darkmaroon hover:no-underline font-sofia-bold mb-2 ">
               What Are the Basic Doctrines of the Church?
             </AccordionTrigger>
-            <AccordionContent className=" text-base text-lightGrey font-semibold mt-1 md:mt-4 mb-2 ">
+            <AccordionContent className=" text-base text-lightGrey mt-1 md:mt-4 mb-2 ">
               The Basic Doctrines of Calvary Hill Church are…{" "}
               <Link
-                className=" font-bold hover:underline"
+                className=" font-semibold hover:underline"
                 href="/doctrine"
               >
                 Read More
@@ -248,7 +248,7 @@ const Home = () => {
             <AccordionTrigger className="text-left text-lg sm:text-xl md:text-2xl lg:text-3xl font-sofia-bold text-darkmaroon hover:no-underline mb-2 ">
               How to Become a Church Member?
             </AccordionTrigger>
-            <AccordionContent className=" text-base text-lightGrey font-semibold mt-1 md:mt-4 mb-2 ">
+            <AccordionContent className=" text-base text-lightGrey mt-1 md:mt-4 mb-2 ">
               Insert Google Form Link
             </AccordionContent>
           </AccordionItem>
@@ -260,9 +260,9 @@ const Home = () => {
             <AccordionTrigger className="text-left text-lg sm:text-xl md:text-2xl lg:text-3xl text-darkmaroon hover:no-underline font-sofia-bold mb-2 ">
               Do You Conduct Worship Online?
             </AccordionTrigger>
-            <AccordionContent className=" text-base text-lightGrey font-semibold mt-1 md:mt-4 mb-2 ">
-              Yes we do, but It&apos;s s not the primary way we would love you
-              to join our services, but if you can&apos;t join us physically
+            <AccordionContent className=" text-base text-lightGrey mt-1 md:mt-4 mb-2 ">
+              Yes we do, but It&apos;s not the primary way we would love you to
+              join our services, but if you can&apos;t join us physically
               because of distance, you can join our services (Wednesday and
               Sunday) through our mixlr or youtube Stream
             </AccordionContent>

@@ -21,7 +21,7 @@ export function CsfCarousel() {
       }}
       plugins={[
         Autoplay({
-          delay: 6000,
+          delay: 600,
           stopOnInteraction: true,
         }),
       ]}
@@ -31,15 +31,14 @@ export function CsfCarousel() {
         {csfCarouselImages.map((item) => (
           <CarouselItem
             key={item}
-            className=" basis-1/2 h-[400px] "
+            className="  sm:basis-1/2 h-[400px] "
           >
-            <div className=" h-[400px]  ">
+            <div className=" ">
               <Image
                 src={item}
                 alt=""
-                className=" h-full w-full object-cover"
-                width={1800}
-                height={1200}
+                className=" px-2 object-cover"
+                fill
               />
             </div>
           </CarouselItem>

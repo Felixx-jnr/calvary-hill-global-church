@@ -46,8 +46,9 @@ const GalleryLayout: React.FC<GalleryLayoutProps> = ({ images = [] }) => {
   };
 
   const breakpointColumnsObj = {
-    default: 3, // 3 columns by default
-    900: 2, // 2 columns at screen sizes below 1100px
+    default: 4,
+    900: 3,
+    650: 2,
   };
   return (
     <div>
@@ -62,7 +63,7 @@ const GalleryLayout: React.FC<GalleryLayoutProps> = ({ images = [] }) => {
               images.map((image, index) => (
                 <motion.div
                   key={index}
-                  className=" p-2 cursor-pointer overflow-hidden"
+                  className=" p-1 cursor-pointer overflow-hidden"
                   onClick={() => openImage(index)}
                   whileHover={{ scale: 1.05 }}
                 >

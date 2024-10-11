@@ -30,13 +30,13 @@ const Leadership = () => {
         </div>
 
         <div>
-          <p className="font-sofia-bold text-darkmaroon tracking-widest text-sm mb-5">
+          <p className="font-sofia-bold text-darkmaroon tracking-widest text-sm mb-5 max-md:mb-2">
             LEAD PASTOR
           </p>
-          <h2 className=" text-3xl xs:text-4xl md:text-5xl  font-sofia-bold text-darkmaroon tracking-wide mb-5">
+          <h2 className=" text-3xl xs:text-4xl md:text-5xl  font-sofia-bold text-darkmaroon tracking-wide mb-5 max-md:mb-2">
             Pastor Collins Throne
           </h2>
-          <p className=" font-sofia-regular text-lightGrey">
+          <p className=" text-lightGrey">
             Pastor Collins Throne is the visionary, of Collins Throne
             Ministries. He is a sound teacher of the word of God, passionate
             about discipling men with the gospel of Christ, raising them to be
@@ -57,10 +57,10 @@ const Leadership = () => {
 
       <section className=" grid md:grid-cols-[0.9fr_1.1fr] items-center mx-auto gap-10 max-w-[1100px] w-[98%] mt-28">
         <div className="max-md:order-2">
-          <h2 className=" text-3xl xs:text-4xl md:text-5xl  font-sofia-bold text-darkmaroon tracking-wide mb-5">
+          <h2 className=" text-3xl xs:text-4xl md:text-5xl  font-sofia-bold text-darkmaroon tracking-wide mb-5 max-md:mb-2">
             Our Ministry Gift
           </h2>
-          <p className=" font-sofia-regular text-lightGrey">
+          <p className=" text-lightGrey">
             The blueprint of His Ministry as given by the lord is to Teach men
             to fight the good fight, to finish their course(their assignment)
             after helping them discover it and to teach them to keep the faith

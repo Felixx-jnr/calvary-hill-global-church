@@ -1,5 +1,4 @@
 "use client";
-import { miniCarouselImages } from "../../constants/homeCarousel";
 
 import * as React from "react";
 import Autoplay from "embla-carousel-autoplay";
@@ -11,8 +10,9 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { aboutOneImages } from "@/constants/aboutConstant";
 
-export function MiniCarousel() {
+export function AboutCarousel() {
   return (
     <Carousel
       opts={{
@@ -24,19 +24,19 @@ export function MiniCarousel() {
           stopOnInteraction: true,
         }),
       ]}
-      className=" w-[98%] mx-auto"
+      className=" mx-auto"
     >
       <CarouselContent>
-        {miniCarouselImages.map((item) => (
+        {aboutOneImages.map((item) => (
           <CarouselItem
-            key={item.id}
-            className="xs:basis-1/2 md:basis-1/3 w-full max-h-[400px] overflow-hidden"
+            key={item}
+            className=" h-full  "
           >
-            <div className=" h-full">
+            <div className="  overflow-hidden w-full">
               <Image
-                src={item.src}
+                src={item}
                 alt=""
-                className=" h-full object-cover"
+                className=" w-full object-cover"
                 width={1800}
                 height={1200}
               />
@@ -45,13 +45,12 @@ export function MiniCarousel() {
         ))}
       </CarouselContent>
 
-      {/* Navigation buttons */}
-      <div>
-        <CarouselPrevious className="absolute top-1/2 -translate-y-1/2 left-2 text-white" />
-        <CarouselNext className="absolute top-1/2 -translate-y-1/2 right-2 text-white" />
+      <div className=" ">
+        <CarouselPrevious className=" absolute left-2 w-10 h-10 hover:bg-darkGrey/20 outline-transparent text-white" />
+        <CarouselNext className=" absolute text-white right-2 w-10 h-10 hover:bg-darkGrey/20" />
       </div>
     </Carousel>
   );
 }
 
-export default MiniCarousel;
+export default AboutCarousel;

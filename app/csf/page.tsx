@@ -11,7 +11,7 @@ const CSF = () => {
         <Header header="CSF" />
       </header>
 
-      <div className="max-w-[884px] px-4 mx-auto">
+      <div className="max-w-[1000px] px-4 mx-auto">
         <div className="my-10">
           <p className="font-sofia-bold text-darkmaroon tracking-widest text-sm mb-5">
             ABOUT CSF
@@ -19,7 +19,7 @@ const CSF = () => {
           <h2 className=" text-3xl xs:text-4xl md:text-5xl font-sofia-bold text-darkmaroon tracking-tight mb-5">
             Calvary Student Fellowship
           </h2>
-          <p className=" font-sofia-medium text-lg tracking-tight leading-snug ">
+          <p className=" text-lg tracking-tight leading-snug ">
             Calvary Student Fellowship (CSF) is a student fellowship expression
             under Collins Throne Ministries. It is the Campus fellowship of the
             Mother Church - Calvary Hill Church. Its general overseer and
@@ -31,17 +31,17 @@ const CSF = () => {
 
         <div>
           <div className="my-10">
-            <p className="font-sofia-bold text-darkmaroon tracking-widest text-sm mb-5">
+            <p className="font-sofia-bold text-darkmaroon tracking-widest text-sm mb-2 md:mb-5 ">
               IT&apos;S VISION
             </p>
-            <h2 className=" text-3xl xs:text-4xl md:text-5xl font-sofia-bold text-darkmaroon tracking-wide mb-5">
+            <h2 className=" text-3xl xs:text-4xl md:text-5xl font-sofia-bold text-darkmaroon tracking-wide md:mb-5 mb-2 ">
               Making Disciples
             </h2>
             <p className=" font-sofia-regular text-lg tracking-tight text-lightGrey mb-5">
               The Vision of Calvary Student Fellowship is to:
             </p>
 
-            <ul className=" font-sofia-regular text-lg tracking-tight ">
+            <ul className=" text-lg tracking-tight ">
               <li className="my-2">
                 1. Ignite the souls of fellow students in radically following
                 Jesus by the preaching of the gospel.

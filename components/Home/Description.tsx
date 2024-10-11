@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { homeImages } from "../../constants/homeCarousel";
-import left from "../../public/left.svg";
-import right from "../../public/right.svg";
+
+import right from "../../public/circle-arrow.svg";
 import { easeInOut, motion } from "framer-motion";
 import Image from "next/image";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 const Description = ({
   activeImage,
@@ -137,24 +139,24 @@ const Description = ({
           </motion.div>
 
           {/* BUTTONS */}
-          <div className="max-sm:hidden">
+          <div className="max-md:hidden">
             <div
-              className=" absolute top-1/2 -translate-y-1/2 left-1 translate-x-1/2 cursor-pointer"
+              className=" absolute top-1/2 -translate-y-1/2 left-10 translate-x-1/2 cursor-pointer"
               onClick={clickPrev}
             >
-              <Image
-                src={left}
-                alt=""
+              <FontAwesomeIcon
+                icon={faArrowLeft}
+                className="text-xl text-orange-500 rounded-full p-2 text-smokeWhite transition-all duration-300 bg-black/40 hover:bg-black"
               />
             </div>
 
             <div
-              className=" absolute top-1/2 -translate-y-1/2 right-1 -translate-x-1/2 cursor-pointer"
+              className=" absolute top-1/2 -translate-y-1/2 right-10 -translate-x-1/2 cursor-pointer"
               onClick={clickNext}
             >
-              <Image
-                src={right}
-                alt=""
+              <FontAwesomeIcon
+                icon={faArrowRight}
+                className="text-xl text-orange-500 rounded-full p-2 text-smokeWhite transition-all duration-300 bg-black/40 hover:bg-black"
               />
             </div>
           </div>

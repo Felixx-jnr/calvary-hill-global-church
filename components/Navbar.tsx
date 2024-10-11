@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 import {
   Tooltip,
@@ -48,8 +49,9 @@ const navigationLinks = [
 ];
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
 
+  const [isOpen, setIsOpen] = useState(false);
   const [show, setShow] = useState(false);
 
   // Toggle menu open/close
@@ -73,8 +75,25 @@ const Navbar = () => {
     closed: { rotate: 0, y: 0 },
   };
 
+  const isHome = pathname === "/"; // Check if it's the home route
+
+  const staticPaths = ["/donate"];
+  const noNavigationMenu =
+    staticPaths.includes(pathname) ||
+    /^\/articles\/.*/.test(pathname) ||
+    /^\/devotionals\/.*/.test(pathname);
+
+  if (noNavigationMenu) {
+    return null;
+  }
   return (
-    <nav className=" bg-darkGrey text-smokeWhite font-sofia-regular absolute w-full top-0 z-10">
+    <nav
+      className={
+        isHome
+          ? " text-smokeWhite font-sofia-regular absolute w-full top-0 z-10"
+          : " text-black font-sofia-regular absolute w-full top-0 z-10"
+      }
+    >
       <div className=" py-4 flex justify-around max-mid:justify-between mx-5 max-mid:mx-5 items-center">
         {/* LOGO */}
         <Link
@@ -82,7 +101,9 @@ const Navbar = () => {
           href="/"
         >
           <Image
-            src="/CHC-logo-white.png"
+            src={
+              isHome ? "/CHC-logo-white.png" : "/cropped-CHC-logo-black-1.png"
+            }
             alt="Logo"
             width={170}
             height={1}
@@ -179,7 +200,7 @@ const Navbar = () => {
               className="max-md:hidden"
               href="/giving"
             >
-              <button className="bg-maroon hover:bg-darkmaroon rounded-none px-9 py-4 font-bold tracking-widest text-xs">
+              <button className=" text-white bg-maroon hover:bg-darkmaroon rounded-none px-9 py-4 font-bold tracking-widest text-xs">
                 GIVE NOW
               </button>
             </Link>
