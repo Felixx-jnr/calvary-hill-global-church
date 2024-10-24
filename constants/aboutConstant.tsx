@@ -1,13 +1,13 @@
 export const aboutOneImages = [
-  "/gratia.avif",
-  "/fide.avif",
-  "/gratia.avif",
-  "/fide.avif",
+  "/about/fide.avif",
+  "/about/christus.avif",
+  "/about/gloria.avif",
+  "/about/gratia.avif",
 ];
 
 export const aboutTwoImages = [
-  "/gratia.avif",
-  "/fide.avif",
-  "/gift.jpg",
-  "/gratia.avif",
+  "/about/fide.avif",
+  "/about/christus.avif",
+  "/about/gloria.avif",
+  "/about/gratia.avif",
 ];

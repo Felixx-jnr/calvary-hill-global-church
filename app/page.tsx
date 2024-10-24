@@ -10,6 +10,8 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import TestimonySlider from "@/components/TestimonySlider";
+import AudioPlayer from "@/components/AudioPlayer";
 
 const Home = () => {
   return (
@@ -268,6 +270,10 @@ const Home = () => {
             </AccordionContent>
           </AccordionItem>
         </Accordion>
+      </section>
+
+      <section>
+        <TestimonySlider />
       </section>
     </main>
   );

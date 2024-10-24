@@ -18,6 +18,7 @@ const DevotionalsList = () => {
           <Link
             href={`/devotionals/${devotional.id}`}
             key={devotional.id}
+            className=" hover:bg-white p-1"
           >
             <div className="max-xs:flex justify-center ">
               <Image
@@ -29,11 +30,11 @@ const DevotionalsList = () => {
               />
             </div>
 
-            <h3 className="sm:text-4xl text-3xl font-sofia-bold my-1 px-2 ">
+            <h3 className="sm:text-4xl text-3xl font-sofia-bold my-1 px-1 ">
               {devotional.title}
             </h3>
-            <p className=" text-sm text-midGrey my-1 px-2">{devotional.date}</p>
-            <h4 className=" text-sm md:text-base text-lightGrey font-medium px-2">
+            <p className=" text-sm text-midGrey my-1 px-1">{devotional.date}</p>
+            <h4 className=" text-sm md:text-base text-lightGrey font-medium px-1">
               {devotional.desc}
             </h4>
           </Link>

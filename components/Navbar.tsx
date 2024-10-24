@@ -22,14 +22,7 @@ const navigationLinks = [
     route: "/sermons",
     label: "Sermons",
   },
-  {
-    route: "/articles",
-    label: "Articles",
-  },
-  {
-    route: "/devotionals",
-    label: "Devotionals",
-  },
+
   {
     route: "/csf",
     label: "CSF",
@@ -45,6 +38,10 @@ const navigationLinks = [
   {
     route: "/gallery",
     label: "Gallery",
+  },
+  {
+    route: "/testimonies",
+    label: "Testimonies",
   },
 ];
 
@@ -81,6 +78,7 @@ const Navbar = () => {
   const noNavigationMenu =
     staticPaths.includes(pathname) ||
     /^\/articles\/.*/.test(pathname) ||
+    /^\/testimonies\/.*/.test(pathname) ||
     /^\/devotionals\/.*/.test(pathname);
 
   if (noNavigationMenu) {
@@ -91,7 +89,7 @@ const Navbar = () => {
       className={
         isHome
           ? " text-smokeWhite font-sofia-regular absolute w-full top-0 z-10"
-          : " text-black font-sofia-regular absolute w-full top-0 z-10"
+          : " text-darkmaroon font-sofia-regular absolute w-full top-0 z-10"
       }
     >
       <div className=" py-4 flex justify-around max-mid:justify-between mx-5 max-mid:mx-5 items-center">
@@ -143,7 +141,11 @@ const Navbar = () => {
                 <li>
                   <Link
                     href="/about"
-                    className=" font-thin hover:border-b-2 pb-2 hover:text-white"
+                    className={
+                      isHome
+                        ? " font-thin hover:border-b-2 hover:border-white pb-2"
+                        : " font-thin hover:border-b-2 hover:border-darkmaroon pb-2"
+                    }
                   >
                     About
                   </Link>
@@ -153,7 +155,7 @@ const Navbar = () => {
                 <li>
                   <Link
                     href="/doctrine"
-                    className=" block font-thin py-2 mr-40 tracking-wide hover:border-b-2 pb-2 hover:text-white "
+                    className=" block font-thin py-2 mr-40 tracking-wide hover:border-b-2 pb-2 text-white "
                   >
                     Doctrine
                   </Link>
@@ -162,9 +164,47 @@ const Navbar = () => {
                 <li>
                   <Link
                     href="/leadership"
-                    className=" block font-thin mr-40 py-2  tracking-wide hover:border-b-2 pb-2 hover:text-white"
+                    className=" block font-thin mr-40 py-2  tracking-wide hover:border-b-2 pb-2 text-white"
                   >
                     Leadership
+                  </Link>
+                </li>
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
+
+          <TooltipProvider>
+            <Tooltip delayDuration={0}>
+              <TooltipTrigger>
+                <li>
+                  <Link
+                    href="/about"
+                    className={
+                      isHome
+                        ? " font-thin hover:border-b-2 hover:border-white pb-2"
+                        : " font-thin hover:border-b-2 hover:border-darkmaroon pb-2"
+                    }
+                  >
+                    Resources
+                  </Link>
+                </li>
+              </TooltipTrigger>
+              <TooltipContent className="bg-darkBrown mt-8 mr-7 p-5">
+                <li>
+                  <Link
+                    href="/articles"
+                    className=" block font-thin py-2 mr-40 tracking-wide hover:border-b-2 pb-2 text-white "
+                  >
+                    Articles
+                  </Link>
+                </li>
+
+                <li>
+                  <Link
+                    href="/devotionals"
+                    className=" block font-thin mr-40 py-2  tracking-wide hover:border-b-2 pb-2 text-white"
+                  >
+                    Devotionals
                   </Link>
                 </li>
               </TooltipContent>
@@ -175,7 +215,11 @@ const Navbar = () => {
             <li key={link.label}>
               <Link
                 href={link.route}
-                className=" font-thin hover:border-b-2 pb-2 hover:text-white"
+                className={
+                  isHome
+                    ? " font-thin hover:border-b-2 hover:border-white pb-2"
+                    : " font-thin hover:border-b-2 hover:border-darkmaroon pb-2"
+                }
               >
                 {link.label}
               </Link>

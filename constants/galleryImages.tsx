@@ -1,11 +1,11 @@
 export const galleryImages = [
-  "/gratia.avif",
-  "/fide.avif",
+  "/about/gratia.avif",
+  "/about/fide.avif",
   "/gift.jpg",
-  "/gratia.avif",
+  "/about/gratia.avif",
   "/gift.jpg",
-  "/fide.avif",
+  "/about/fide.avif",
   "/me.jpg",
-  "/christus.avif",
+  "/about/christus.avif",
   "/testimonial-1.jpg",
 ];
