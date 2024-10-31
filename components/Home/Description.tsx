@@ -3,8 +3,8 @@ import { homeImages } from "../../constants/homeCarousel";
 
 import { easeInOut, motion } from "framer-motion";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { FaArrowLeftLong } from "react-icons/fa6";
+import { FaArrowRightLong } from "react-icons/fa6";
 
 const Description = ({
   activeImage,
@@ -143,20 +143,14 @@ const Description = ({
               className=" absolute top-1/2 -translate-y-1/2 left-10 translate-x-1/2 cursor-pointer"
               onClick={clickPrev}
             >
-              <FontAwesomeIcon
-                icon={faArrowLeft}
-                className="text-xl text-orange-500 rounded-full p-2 text-smokeWhite transition-all duration-300 bg-black/40 hover:bg-black"
-              />
+              <FaArrowLeftLong className="text-4xl text-orange-500 rounded-full p-2 text-smokeWhite transition-all duration-300 bg-black/40 hover:bg-black" />
             </div>
 
             <div
               className=" absolute top-1/2 -translate-y-1/2 right-10 -translate-x-1/2 cursor-pointer"
               onClick={clickNext}
             >
-              <FontAwesomeIcon
-                icon={faArrowRight}
-                className="text-xl text-orange-500 rounded-full p-2 text-smokeWhite transition-all duration-300 bg-black/40 hover:bg-black"
-              />
+              <FaArrowRightLong className="text-4xl text-orange-500 rounded-full p-2 text-smokeWhite transition-all duration-300 bg-black/40 hover:bg-black" />
             </div>
           </div>
         </div>

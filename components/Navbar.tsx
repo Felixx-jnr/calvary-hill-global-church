@@ -13,8 +13,8 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { FaArrowRight } from "react-icons/fa6";
+import { IoIosSearch } from "react-icons/io";
 
 // Links object
 const navigationLinks = [
@@ -110,7 +110,7 @@ const Navbar = () => {
 
         {/* Hamburger Menu */}
         <div
-          className={`${isOpen ? "z-10 ml-auto mid:hidden absolute right-6" : " z-10 ml-auto mid:hidden max-md:absolute max-md:right-3"}`}
+          className={` ${isOpen ? "z-10 ml-auto mid:hidden absolute right-6" : " z-10 ml-auto mid:hidden max-md:absolute max-md:right-3"}`}
           onClick={toggleMenu}
         >
           <motion.div
@@ -229,15 +229,7 @@ const Navbar = () => {
 
         {/* BUTTONS */}
         <div className=" flex items-center ">
-          <div>
-            <Image
-              src="/magnifying_glass.svg"
-              alt={""}
-              width={35}
-              height={10}
-              className=" mx-3 max-md:absolute max-md:right-10 top-7"
-            />
-          </div>
+          <IoIosSearch className="text-3xl mid:mr-2 md:mx-3 mr-8 " />
 
           <div>
             <Link
@@ -276,7 +268,7 @@ const Navbar = () => {
                   onClick={triggerShow}
                   className=" "
                 >
-                  <FontAwesomeIcon icon={faArrowRight} />{" "}
+                  <FaArrowRight />
                 </button>
               </li>
 

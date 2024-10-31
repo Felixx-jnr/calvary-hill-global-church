@@ -1,133 +1,142 @@
-// "use client";
-// import React, { useRef, useState, useEffect } from "react";
+"use client";
+import React, { useEffect, useRef, useState } from "react";
+import { IoIosPause, IoIosPlay } from "react-icons/io";
+import { HiVolumeUp } from "react-icons/hi";
+import { ImVolumeMute } from "react-icons/im";
 
-// const AudioPlayer = ({ audioSrc, metadataUrl }) => {
-//   const audioRef = useRef(null);
-//   const [isPlaying, setIsPlaying] = useState(false);
-//   const [currentTime, setCurrentTime] = useState(0);
-//   const [duration, setDuration] = useState(0);
-//   const [volume, setVolume] = useState(1);
-//   const [isMuted, setIsMuted] = useState(false);
-//   const [audioMetadata, setAudioMetadata] = useState({
-//     title: "Unknown Title",
-//     artist: "Unknown Artist",
-//     album: "Unknown Album",
-//     coverImage: "",
-//   });
+const AudioPlayer = ({ audioSrc }) => {
+  const audioRef = useRef(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [currentTime, setCurrentTime] = useState(0);
+  const [duration, setDuration] = useState(0);
+  const [volume, setVolume] = useState(1);
+  const [isMuted, setIsMuted] = useState(false);
 
-//   // Fetch metadata from the provided URL
-//   useEffect(() => {
-//     if (metadataUrl) {
-//       fetch(metadataUrl)
-//         .then((res) => res.json())
-//         .then((data) => setAudioMetadata(data))
-//         .catch((err) => console.error("Error fetching metadata:", err));
-//     }
-//   }, [metadataUrl]);
+  // useEffect to update the slider background for the range sliders
+  useEffect(() => {
+    const updateSliderBackground = (slider) => {
+      const value =
+        ((slider.value - slider.min) / (slider.max - slider.min)) * 100;
+      slider.style.background = `linear-gradient(to right, #240C00 ${value}%, #ccc ${value}%)`;
+    };
 
-//   const togglePlayPause = () => {
-//     if (isPlaying) {
-//       audioRef.current.pause();
-//     } else {
-//       audioRef.current.play();
-//     }
-//     setIsPlaying(!isPlaying);
-//   };
+    const rangeSliders = document.querySelectorAll(".range-slider");
 
-//   const handleTimeUpdate = () => {
-//     setCurrentTime(audioRef.current.currentTime);
-//   };
+    rangeSliders.forEach((slider) => {
+      updateSliderBackground(slider); // Update on initial render
+      slider.addEventListener("input", () => updateSliderBackground(slider));
+    });
 
-//   const handleLoadedMetadata = () => {
-//     setDuration(audioRef.current.duration);
-//   };
+    return () => {
+      rangeSliders.forEach((slider) =>
+        slider.removeEventListener("input", () =>
+          updateSliderBackground(slider)
+        )
+      );
+    };
+  }, [currentTime, volume]);
 
-//   const handleSeek = (event) => {
-//     const seekTime = (event.target.value / 100) * duration;
-//     audioRef.current.currentTime = seekTime;
-//   };
+  const togglePlayPause = () => {
+    if (isPlaying) {
+      audioRef.current.pause();
+    } else {
+      audioRef.current.play();
+    }
+    setIsPlaying(!isPlaying);
+  };
 
-//   const handleVolumeChange = (event) => {
-//     const volumeLevel = event.target.value / 100;
-//     setVolume(volumeLevel);
-//     audioRef.current.volume = volumeLevel;
-//   };
+  const handleTimeUpdate = () => {
+    setCurrentTime(audioRef.current.currentTime);
+  };
 
-//   const formatTime = (time) => {
-//     const hours = Math.floor(time / 3600);
-//     const minutes = Math.floor((time % 3600) / 60);
-//     const seconds = Math.floor(time % 60);
-//     return [
-//       hours > 0 ? `${hours}` : null,
-//       minutes > 0 ? `${minutes < 10 && hours ? "0" + minutes : minutes}` : "0",
-//       seconds < 10 ? `0${seconds}` : seconds,
-//     ]
-//       .filter(Boolean)
-//       .join(":");
-//   };
+  const handleLoadedMetadata = () => {
+    setDuration(audioRef.current.duration);
+  };
 
-//   return (
-//     <div className="audio-player bg-gray-900 text-white p-4 rounded-lg max-w-md mx-auto">
-//       <audio
-//         ref={audioRef}
-//         src="/Baptizo Track 1.mp3"
-//         onTimeUpdate={handleTimeUpdate}
-//         onLoadedMetadata={handleLoadedMetadata}
-//       ></audio>
+  const handleSeek = (event) => {
+    const seekTime = (event.target.value / 100) * duration;
+    audioRef.current.currentTime = seekTime;
+  };
 
-//       {/* Display audio metadata */}
-//       <div className="audio-metadata mb-4">
-//         <img
-//           src={audioMetadata.coverImage}
-//           alt="Cover Art"
-//           className="mb-2"
-//         />
-//         <h3 className="text-lg font-bold">{audioMetadata.title}</h3>
-//         <p className="text-sm">{audioMetadata.artist}</p>
-//         <p className="text-xs">{audioMetadata.album}</p>
-//       </div>
+  const handleVolumeChange = (event) => {
+    const volumeLevel = event.target.value / 100;
+    setVolume(volumeLevel);
+    audioRef.current.volume = volumeLevel;
+    setIsMuted(volumeLevel === 0);
+  };
 
-//       <div className="controls flex justify-between items-center mt-4">
-//         <button
-//           onClick={togglePlayPause}
-//           className="bg-blue-600 p-2 rounded-md"
-//         >
-//           {isPlaying ? "Pause" : "Play"}
-//         </button>
+  const toggleMute = () => {
+    setIsMuted(!isMuted);
+    audioRef.current.muted = !isMuted;
+  };
 
-//         <span className="text-sm">{formatTime(currentTime)}</span>
+  const formatTime = (time) => {
+    const hours = Math.floor(time / 3600);
+    const minutes = Math.floor((time % 3600) / 60);
+    const seconds = Math.floor(time % 60);
 
-//         <input
-//           type="range"
-//           min="0"
-//           max="100"
-//           value={(currentTime / duration) * 100 || 0}
-//           onChange={handleSeek}
-//           className="w-full mx-4 audio-range"
-//         />
+    const formattedMinutes = `${minutes < 10 ? `0${minutes}` : minutes}`;
+    const formattedSeconds = `${seconds < 10 ? `0${seconds}` : seconds}`;
 
-//         <span className="text-sm">{formatTime(duration)}</span>
-//       </div>
+    return hours > 0
+      ? `${hours < 10 ? `0${hours}` : hours}:${formattedMinutes}:${formattedSeconds}`
+      : `${formattedMinutes}:${formattedSeconds}`;
+  };
 
-//       <div className="volume-control mt-4 flex items-center justify-between">
-//         <button
-//           onClick={() => setIsMuted(!isMuted)}
-//           className="bg-gray-600 p-2 rounded-md"
-//         >
-//           {isMuted ? "Unmute" : "Mute"}
-//         </button>
+  return (
+    <div className="audio-player w-full">
+      <audio
+        ref={audioRef}
+        src={audioSrc}
+        onTimeUpdate={handleTimeUpdate}
+        onLoadedMetadata={handleLoadedMetadata}
+      ></audio>
 
-//         <input
-//           type="range"
-//           min="0"
-//           max="100"
-//           value={volume * 100}
-//           onChange={handleVolumeChange}
-//           className="w-full mx-4"
-//         />
-//       </div>
-//     </div>
-//   );
-// };
+      <div className="controls flex justify-between items-center gap-2 sm:gap-4">
+        <button
+          onClick={togglePlayPause}
+          className=" border-2 border-darkmaroon hover:border-maroon p-1 md:p-3 rounded-full text-darkmaroon hover:text-maroon text-lg"
+        >
+          {isPlaying ? <IoIosPause /> : <IoIosPlay />}
+        </button>
 
-// export default AudioPlayer;
+        <span className=" text-sm sm:text-lg font-sofia-regular text-darkmaroon">
+          {formatTime(currentTime)}
+        </span>
+
+        <input
+          type="range"
+          min="0"
+          max="100"
+          value={(currentTime / duration) * 100 || 0}
+          onChange={handleSeek}
+          className="w-full range-slider"
+        />
+
+        <span className=" text-sm sm:text-lg font-sofia-regular text-darkmaroon">
+          {formatTime(duration)}
+        </span>
+
+        <div className="volume-control">
+          <button
+            onClick={toggleMute}
+            className=" hover:border-maroon p-1 md:p-3  rounded-full text-darkmaroon hover:text-maroon text-lg"
+          >
+            {isMuted ? <ImVolumeMute /> : <HiVolumeUp />}
+          </button>
+        </div>
+
+        <input
+          type="range"
+          min="0"
+          max="100"
+          value={isMuted ? 0 : volume * 100}
+          onChange={handleVolumeChange}
+          className=" w-[30%] md:w-[25%] lg:w-[18%] range-slider max-xxs:hidden"
+        />
+      </div>
+    </div>
+  );
+};
+
+export default AudioPlayer;

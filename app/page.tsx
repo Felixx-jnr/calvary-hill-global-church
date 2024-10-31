@@ -98,16 +98,16 @@ const Home = () => {
 
       {/* SECTION FIVE - SERMON OF THE WEEK */}
       <section className=" py-32 max-sm:py-16  bg-smokeWhite">
-        <div className="relative w-[95%] sm:w-[85%] mx-auto">
-          <p className="mb-5 sm:text-sm text-xs text-darkmaroon tracking-widest font-sofia-bold">
+        <div className="relative w-[95%] md:w-[90%] lg:w-[85%] mx-auto">
+          <p className="mb-3 sm:mb-5 sm:text-sm text-xs text-darkmaroon tracking-widest font-sofia-bold">
             SERMON OF THE WEEK
           </p>
-          <h1 className=" font-sofia-bold mb-10 text-4xl lg:text-[57px] tracking-tighter text-darkmaroon">
+          <h1 className=" font-sofia-bold mb-5 sm:mb-10 text-4xl lg:text-[57px] tracking-tighter text-darkmaroon">
             Listen On The Go!
           </h1>
 
-          <div className=" h-72 flex bg-white">
-            <div className="w-[400px]">
+          <div className=" flex max-sm:block bg-white">
+            <div className=" sm:w-[40%] max-sm:h-[200px] max-sm:my-5">
               <Image
                 src="/testimonial-1.jpg"
                 alt=""
@@ -117,9 +117,9 @@ const Home = () => {
               ></Image>
             </div>
 
-            <div className=" ml-10 relative w-full">
-              <div className="absolute top-1/2 -translate-y-1/2 w-full font-sofia-bold">
-                <p className=" inline-block p-4 text-xs font-bold  py-1 bg-darkmaroon text-white text-center">
+            <div className=" md:ml-8 lg:ml-10 relative w-full">
+              <div className="sm:absolute sm:top-1/2 sm:-translate-y-1/2 w-full font-sofia-bold p-4">
+                <p className=" inline-block p-4 text-xs font-bold py-1 bg-darkmaroon text-white text-center">
                   NOW PLAYING
                 </p>
                 <h4 className="text-xl mt-4 leading-tight text-darkmaroon">
@@ -128,13 +128,9 @@ const Home = () => {
                 <h3 className="text-[28px] leading-none tracking-wide text-darkmaroon">
                   The Art Of Listening 1
                 </h3>
-                <div className="flex gap-4 mt-6 justify-start">
-                  <div>PLAY</div>
-                  <div>TIME</div>
-                  <div>TIME BAR</div>
-                  <div>TIME</div>
-                  <div>VOLUME</div>
-                  <div>VOL BAR</div>
+
+                <div className=" flex w- gap-4 mt-6 justify-start">
+                  <AudioPlayer audioSrc="/Baptizo Track 1.mp3" />
                 </div>
               </div>
             </div>
