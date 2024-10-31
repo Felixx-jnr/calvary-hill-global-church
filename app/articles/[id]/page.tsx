@@ -7,7 +7,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const ArticleDetails = () => {
-  const { id } = useParams(); // Get the dynamic articleId from the URL
+  const { id } = useParams() as { id: string }; // Get the dynamic articleId from the URL
 
   // Handle the case where `id` can be a string or string[]
   const articleId = parseInt(id as string, 10);
