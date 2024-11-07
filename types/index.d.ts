@@ -21,3 +21,7 @@ type doctrineProps = {
 type GalleryLayoutProps = {
   images?: string[];
 };
+
+type audioProps = {
+  audioSrc: string;
+};

@@ -4,7 +4,7 @@ import { IoIosPause, IoIosPlay } from "react-icons/io";
 import { HiVolumeUp } from "react-icons/hi";
 import { ImVolumeMute } from "react-icons/im";
 
-const AudioPlayer = ({ audioSrc }) => {
+const AudioPlayer = ({ audioSrc }: audioProps) => {
   const audioRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
@@ -120,7 +120,7 @@ const AudioPlayer = ({ audioSrc }) => {
         <div className="volume-control">
           <button
             onClick={toggleMute}
-            className=" hover:border-maroon p-1 md:p-3  rounded-full text-darkmaroon hover:text-maroon text-lg"
+            className=" hover:border-maroon p-1 md:p-3 border rounded-full text-darkmaroon hover:text-maroon text-lg"
           >
             {isMuted ? <ImVolumeMute /> : <HiVolumeUp />}
           </button>
@@ -132,7 +132,7 @@ const AudioPlayer = ({ audioSrc }) => {
           max="100"
           value={isMuted ? 0 : volume * 100}
           onChange={handleVolumeChange}
-          className=" w-[30%] md:w-[25%] lg:w-[18%] range-slider max-xxs:hidden"
+          className=" w-[30%] md:w-[25%] lg:w-[13%] range-slider max-xxs:hidden"
         />
       </div>
     </div>

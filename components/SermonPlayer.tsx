@@ -48,13 +48,13 @@ const SermonPlayer = () => {
       {audioFiles.length === 0 ? (
         <p>No audio files available.</p>
       ) : (
-        <ul className="w-[98%] lg:w-[90%] mx-auto my-10">
+        <ul className="w-[96%] lg:w-[90%] mx-auto ">
           {audioFiles.map((file, index) => (
             <li
               key={index}
-              className="flex max-sm:block bg-white my-10"
+              className="flex max-sm:flex-col bg-white my-10 "
             >
-              <div className=" sm:w-[60%] sm:h-[400px] max-sm:h-auto max-sm:my-5">
+              <div className="  max-sm:w-[60%] sm:w-[30%]">
                 <Image
                   src={file.metadata.art}
                   alt=""
@@ -64,26 +64,28 @@ const SermonPlayer = () => {
                 ></Image>
               </div>
 
-              <div className=" md:ml-8 lg:ml-10 relative w-full px-5">
+              <div className="  relative w-full px-6 self-center ">
                 <p className=" text-maroon text-sm font-medium ">
                   Few Important Things To Know About Healing
                 </p>
-                <p className=" font-sofia-bold text-4xl my-3 text-darkmaroon">
+                <p className=" font-sofia-bold text-3xl md:text-4xl my-3 text-darkmaroon">
                   {file.metadata.title}
                 </p>
 
-                <p className=" text-lightGrey text-sm font-medium">
+                <p className=" my-3 text-lightGrey text-sm font-medium">
                   {file.metadata.date}
                 </p>
-                <div className="formatted-desc my-3 text-lightGrey text-base font-medium tracking-wide leading-snug font-serif">
+                <div className="formatted-desc my-1 text-lightGrey text-sm md:text-base font-medium tracking-wide leading-snug font-serif">
                   {file.metadata.desc
                     ? formatDescription(file.metadata.desc)
                     : "No description available."}
                 </div>
 
-                <AudioPlayer audioSrc={file.url} />
+                <div className="mt-5 mb-5">
+                  <AudioPlayer audioSrc={file.url} />
+                </div>
 
-                <span className=" block border-t my-3 text-sm font-medium text-maroon">
+                <span className=" block py-5 border-t text-sm font-medium text-maroon">
                   {" "}
                   <span className="text-lightGrey">Preacher :</span> Pastor
                   Collins Throne
