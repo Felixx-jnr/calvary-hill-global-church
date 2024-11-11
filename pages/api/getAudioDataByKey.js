@@ -14,9 +14,9 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: "Key parameter is required" });
   }
 
-  // Decode the key in case it was double-encoded
+  // Decode key to ensure correct format for S3 lookup
   key = decodeURIComponent(key);
-  console.log("Using key:", key);
+  console.log("Decoded key used for S3 lookup:", key); // Log for debugging
 
   const params = {
     Bucket: process.env.NEXT_PUBLIC_AWS_BUCKET_NAME,

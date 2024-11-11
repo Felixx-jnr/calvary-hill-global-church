@@ -24,7 +24,6 @@ const config: Config = {
         "sofia-medium": ["Sofia Pro Medium", "sans-serif"],
         "sofia-semibold": ["Sofia Pro SemiBold", "sans-serif"],
         "sofia-bold": ["Sofia Pro Bold", "sans-serif"],
-        europa: ["Europa Title", "sans-serif"],
         "kumbh-sans": ["Kumbh Sans", "sans-serif"],
       },
       keyframes: {
