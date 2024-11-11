@@ -2,20 +2,24 @@
 import React, { useState, useEffect } from "react";
 import AudioPlayer from "./AudioPlayer";
 import Image from "next/image";
+import Link from "next/link";
 
 const SermonPlayer = () => {
   const [audioFiles, setAudioFiles] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     const fetchAudioFiles = async () => {
       try {
         const response = await fetch("/api/getAudioData");
+        if (!response.ok) throw new Error("Network response was not ok");
         const data = await response.json();
         setAudioFiles(data);
         setLoading(false);
       } catch (error) {
         console.error("Error fetching audio files:", error);
+        setError(true);
         setLoading(false);
       }
     };
@@ -31,7 +35,7 @@ const SermonPlayer = () => {
     const truncatedDescription = words.slice(0, 29).join(" ");
 
     return (
-      <p className="mb-4">
+      <p className="mb-">
         {truncatedDescription}
         {words.length > 29 && "..."}
       </p>
@@ -42,29 +46,33 @@ const SermonPlayer = () => {
     return <p>Loading audio files...</p>;
   }
 
+  if (error) {
+    return <p>Error loading audio files. Please check your connection.</p>;
+  }
+
   return (
-    <div className="sermon-player">
-      <h2 className="text-lg font-bold mb-4">Available Sermons</h2>
+    <div className="sermon-player pb-10">
       {audioFiles.length === 0 ? (
         <p>No audio files available.</p>
       ) : (
-        <ul className="w-[96%] lg:w-[90%] mx-auto ">
+        <ul className="w-[96%] max-w-[1200px] mx-auto">
           {audioFiles.map((file, index) => (
-            <li
+            <Link
               key={index}
-              className="flex max-sm:flex-col bg-white my-10 "
+              className="flex max-sm:flex-col mt-10 bg-white"
+              href={"/"}
             >
-              <div className="  max-sm:w-[60%] sm:w-[30%]">
+              <div className=" max-sm:h-[300px] max-sm:w-[100%] max-sm:self-center sm:w-[500px] sm:h-[350px] max-sm:">
                 <Image
                   src={file.metadata.art}
                   alt=""
                   width={1000}
                   height={1280}
-                  className="h-full w-full object-cover"
+                  className="h-full w-full object-cover max-sm:object-contain"
                 ></Image>
               </div>
 
-              <div className="  relative w-full px-6 self-center ">
+              <div className="  relative w-full px-6 self-center py-3">
                 <p className=" text-maroon text-sm font-medium ">
                   Few Important Things To Know About Healing
                 </p>
@@ -81,17 +89,23 @@ const SermonPlayer = () => {
                     : "No description available."}
                 </div>
 
-                <div className="mt-5 mb-5">
+                <div
+                  onClick={(event) => {
+                    event.preventDefault();
+                    event.stopPropagation();
+                  }}
+                  className="mt-5 mb-5"
+                >
                   <AudioPlayer audioSrc={file.url} />
                 </div>
 
-                <span className=" block py-5 border-t text-sm font-medium text-maroon">
+                <span className=" block border-t text-sm font-medium text-maroon max-sm:pb-3 pt-5">
                   {" "}
                   <span className="text-lightGrey">Preacher :</span> Pastor
                   Collins Throne
                 </span>
               </div>
-            </li>
+            </Link>
           ))}
         </ul>
       )}

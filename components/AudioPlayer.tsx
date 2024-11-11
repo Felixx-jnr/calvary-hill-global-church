@@ -92,7 +92,7 @@ const AudioPlayer = ({ audioSrc }: audioProps) => {
         onLoadedMetadata={handleLoadedMetadata}
       ></audio>
 
-      <div className="controls flex justify-between items-center gap-2 sm:gap-4">
+      <div className="controls flex justify-between items-center gap-2 sm:gap-4 cursor-default">
         <button
           onClick={togglePlayPause}
           className=" border-2 border-darkmaroon hover:border-maroon p-1 md:p-3 rounded-full text-darkmaroon hover:text-maroon text-lg"
@@ -113,14 +113,14 @@ const AudioPlayer = ({ audioSrc }: audioProps) => {
           className="w-full range-slider"
         />
 
-        <span className=" text-sm sm:text-lg font-sofia-regular text-darkmaroon">
+        <span className=" text-sm sm:text-lg font-sofia-regular text-darkmaroon  ">
           {formatTime(duration)}
         </span>
 
-        <div className="volume-control">
+        <div className="volume-control max-xs:hidden ">
           <button
             onClick={toggleMute}
-            className=" hover:border-maroon p-1 md:p-3 border rounded-full text-darkmaroon hover:text-maroon text-lg"
+            className=" hover:border-maroon p-2 md:p-3 border rounded-full text-darkmaroon hover:text-maroon text-lg"
           >
             {isMuted ? <ImVolumeMute /> : <HiVolumeUp />}
           </button>
