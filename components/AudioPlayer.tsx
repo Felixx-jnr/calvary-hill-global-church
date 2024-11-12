@@ -4,73 +4,92 @@ import { IoIosPause, IoIosPlay } from "react-icons/io";
 import { HiVolumeUp } from "react-icons/hi";
 import { ImVolumeMute } from "react-icons/im";
 
-const AudioPlayer = ({ audioSrc }: audioProps) => {
-  const audioRef = useRef(null);
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [currentTime, setCurrentTime] = useState(0);
-  const [duration, setDuration] = useState(0);
-  const [volume, setVolume] = useState(1);
-  const [isMuted, setIsMuted] = useState(false);
+// Define the type for the component props
+
+const AudioPlayer: React.FC<audioProps> = ({ audioSrc }) => {
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+  const [isPlaying, setIsPlaying] = useState<boolean>(false);
+  const [currentTime, setCurrentTime] = useState<number>(0);
+  const [duration, setDuration] = useState<number>(0);
+  const [volume, setVolume] = useState<number>(1);
+  const [isMuted, setIsMuted] = useState<boolean>(false);
 
   // useEffect to update the slider background for the range sliders
   useEffect(() => {
-    const updateSliderBackground = (slider) => {
+    const updateSliderBackground = (slider: HTMLInputElement) => {
+      // Ensure slider.value is treated as a number
       const value =
-        ((slider.value - slider.min) / (slider.max - slider.min)) * 100;
+        ((parseFloat(slider.value) - parseFloat(slider.min)) /
+          (parseFloat(slider.max) - parseFloat(slider.min))) *
+        100;
       slider.style.background = `linear-gradient(to right, #240C00 ${value}%, #ccc ${value}%)`;
     };
 
     const rangeSliders = document.querySelectorAll(".range-slider");
 
     rangeSliders.forEach((slider) => {
-      updateSliderBackground(slider); // Update on initial render
-      slider.addEventListener("input", () => updateSliderBackground(slider));
+      updateSliderBackground(slider as HTMLInputElement); // Update on initial render
+      slider.addEventListener("input", () =>
+        updateSliderBackground(slider as HTMLInputElement)
+      );
     });
 
     return () => {
       rangeSliders.forEach((slider) =>
         slider.removeEventListener("input", () =>
-          updateSliderBackground(slider)
+          updateSliderBackground(slider as HTMLInputElement)
         )
       );
     };
   }, [currentTime, volume]);
 
   const togglePlayPause = () => {
-    if (isPlaying) {
-      audioRef.current.pause();
-    } else {
-      audioRef.current.play();
+    if (audioRef.current) {
+      if (isPlaying) {
+        audioRef.current.pause();
+      } else {
+        audioRef.current.play();
+      }
+      setIsPlaying(!isPlaying);
     }
-    setIsPlaying(!isPlaying);
   };
 
   const handleTimeUpdate = () => {
-    setCurrentTime(audioRef.current.currentTime);
+    if (audioRef.current) {
+      setCurrentTime(audioRef.current.currentTime);
+    }
   };
 
   const handleLoadedMetadata = () => {
-    setDuration(audioRef.current.duration);
+    if (audioRef.current) {
+      setDuration(audioRef.current.duration);
+    }
   };
 
-  const handleSeek = (event) => {
-    const seekTime = (event.target.value / 100) * duration;
-    audioRef.current.currentTime = seekTime;
+  const handleSeek = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const seekTime = (parseFloat(event.target.value) / 100) * duration;
+    if (audioRef.current) {
+      audioRef.current.currentTime = seekTime;
+    }
   };
 
-  const handleVolumeChange = (event) => {
-    const volumeLevel = event.target.value / 100;
+  const handleVolumeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const volumeLevel = parseFloat(event.target.value) / 100;
     setVolume(volumeLevel);
-    audioRef.current.volume = volumeLevel;
+    if (audioRef.current) {
+      audioRef.current.volume = volumeLevel;
+    }
     setIsMuted(volumeLevel === 0);
   };
 
   const toggleMute = () => {
     setIsMuted(!isMuted);
-    audioRef.current.muted = !isMuted;
+    if (audioRef.current) {
+      audioRef.current.muted = !isMuted;
+    }
   };
 
-  const formatTime = (time) => {
+  const formatTime = (time: number) => {
     const hours = Math.floor(time / 3600);
     const minutes = Math.floor((time % 3600) / 60);
     const seconds = Math.floor(time % 60);
@@ -95,12 +114,12 @@ const AudioPlayer = ({ audioSrc }: audioProps) => {
       <div className="controls flex justify-between items-center gap-2 sm:gap-4 cursor-default">
         <button
           onClick={togglePlayPause}
-          className=" border-2 border-darkmaroon hover:border-maroon p-1 md:p-3 rounded-full text-darkmaroon hover:text-maroon text-lg"
+          className="border-2 border-darkmaroon hover:border-maroon p-1 md:p-3 rounded-full text-darkmaroon hover:text-maroon text-lg"
         >
           {isPlaying ? <IoIosPause /> : <IoIosPlay />}
         </button>
 
-        <span className=" text-sm sm:text-lg font-sofia-regular text-darkmaroon">
+        <span className="text-sm sm:text-lg font-sofia-regular text-darkmaroon">
           {formatTime(currentTime)}
         </span>
 
@@ -113,14 +132,14 @@ const AudioPlayer = ({ audioSrc }: audioProps) => {
           className="w-full range-slider"
         />
 
-        <span className=" max-xxs:hidden text-sm sm:text-lg font-sofia-regular text-darkmaroon  ">
+        <span className="max-xxs:hidden text-sm sm:text-lg font-sofia-regular text-darkmaroon">
           {formatTime(duration)}
         </span>
 
-        <div className="volume-control max-xs:hidden ">
+        <div className="volume-control max-xs:hidden">
           <button
             onClick={toggleMute}
-            className=" hover:border-maroon p-2 md:p-3 border rounded-full text-darkmaroon hover:text-maroon text-lg"
+            className="hover:border-maroon p-2 md:p-3 border rounded-full text-darkmaroon hover:text-maroon text-lg"
           >
             {isMuted ? <ImVolumeMute /> : <HiVolumeUp />}
           </button>
@@ -132,7 +151,7 @@ const AudioPlayer = ({ audioSrc }: audioProps) => {
           max="100"
           value={isMuted ? 0 : volume * 100}
           onChange={handleVolumeChange}
-          className=" w-[30%] md:w-[25%] lg:w-[13%] range-slider max-xxs:hidden"
+          className="w-[30%] md:w-[25%] lg:w-[13%] range-slider max-xxs:hidden"
         />
       </div>
     </div>

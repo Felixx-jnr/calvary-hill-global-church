@@ -51,12 +51,12 @@ const SermonDetails = () => {
 
         // Return each sentence wrapped in a paragraph with proper spacing
         return (
-          <p
+          <div
             key={index}
             className="paragraph"
           >
             {formattedSentences}
-          </p>
+          </div>
         );
       });
 
@@ -152,11 +152,11 @@ const SermonDetails = () => {
           </button>
         </div>
 
-        <p className=" max-w-[1000px] w-[90%] text-justify my-2 text-lightGrey text-sm md:text-base font-medium tracking-wide leading-snug font-serif">
+        <div className=" max-w-[1000px] w-[90%] text-justify my-2 text-lightGrey text-sm md:text-base font-medium tracking-wide leading-snug font-serif">
           {sermon.metadata.desc
             ? formatDescription(sermon.metadata.desc)
             : "No description available."}
-        </p>
+        </div>
       </div>
     </main>
   );

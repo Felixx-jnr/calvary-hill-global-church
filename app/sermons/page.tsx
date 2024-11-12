@@ -6,17 +6,31 @@ import Image from "next/image";
 import Link from "next/link";
 import Header from "@/components/Header";
 
-const SermonList = () => {
-  const [audioFiles, setAudioFiles] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(false);
+// Define types for the structure of the audio file data
+interface AudioFileMetadata {
+  art: string;
+  title: string;
+  date: string;
+  desc: string | null;
+}
+
+interface AudioFile {
+  fileName: string;
+  url: string;
+  metadata: AudioFileMetadata;
+}
+
+const SermonList: React.FC = () => {
+  const [audioFiles, setAudioFiles] = useState<AudioFile[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<boolean>(false);
 
   useEffect(() => {
     const fetchAudioFiles = async () => {
       try {
         const response = await fetch("/api/getAudioData");
         if (!response.ok) throw new Error("Network response was not ok");
-        const data = await response.json();
+        const data: AudioFile[] = await response.json();
         setAudioFiles(data);
         setLoading(false);
       } catch (error) {
@@ -30,17 +44,19 @@ const SermonList = () => {
   }, []);
 
   // Enhanced function to format description text
-  const formatDescription = (description) => {
+  const formatDescription = (
+    description: string | null
+  ): JSX.Element | null => {
     if (!description) return null;
 
     const words = description.split(/\s+/);
     const truncatedDescription = words.slice(0, 29).join(" ");
 
     return (
-      <p className="mb-">
+      <span className="mb-">
         {truncatedDescription}
         {words.length > 29 && "..."}
-      </p>
+      </span>
     );
   };
 
@@ -51,6 +67,7 @@ const SermonList = () => {
   if (error) {
     return <p>Error loading audio files. Please check your connection.</p>;
   }
+
   return (
     <main className="bg-smokeWhite">
       <Header
@@ -79,7 +96,7 @@ const SermonList = () => {
                   ></Image>
                 </div>
 
-                <div className="  relative w-full px-6 self-center py-3">
+                <div className=" relative w-full px-6 self-center py-3">
                   <p className=" text-maroon text-sm font-medium ">
                     Few Important Things To Know About Healing
                   </p>
