@@ -25,3 +25,15 @@ type GalleryLayoutProps = {
 type audioProps = {
   audioSrc: string;
 };
+
+interface SermonMetadata {
+  title: string;
+  date: string;
+  art: string;
+  desc: string;
+}
+
+interface Sermon {
+  metadata: SermonMetadata;
+  url: string;
+}

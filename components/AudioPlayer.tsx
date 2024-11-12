@@ -113,7 +113,7 @@ const AudioPlayer = ({ audioSrc }: audioProps) => {
           className="w-full range-slider"
         />
 
-        <span className=" text-sm sm:text-lg font-sofia-regular text-darkmaroon  ">
+        <span className=" max-xxs:hidden text-sm sm:text-lg font-sofia-regular text-darkmaroon  ">
           {formatTime(duration)}
         </span>
 

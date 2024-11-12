@@ -14,7 +14,7 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: "Key parameter is required" });
   }
 
-  // Decode key to ensure correct format for S3 lookup
+  // Decode key for S3 lookup
   key = decodeURIComponent(key);
   console.log("Decoded key used for S3 lookup:", key); // Log for debugging
 
@@ -25,6 +25,8 @@ export default async function handler(req, res) {
 
   try {
     const metadata = await s3.headObject(params).promise();
+
+    // Generate presigned URL with 1-hour expiration
     const url = s3.getSignedUrl("getObject", {
       Bucket: process.env.NEXT_PUBLIC_AWS_BUCKET_NAME,
       Key: key,
@@ -32,7 +34,7 @@ export default async function handler(req, res) {
     });
 
     res.status(200).json({
-      url,
+      url, // Pass presigned URL for direct download
       metadata: {
         title: metadata.Metadata.title || "Unknown Title",
         date: metadata.Metadata.date || "Unknown Date",
