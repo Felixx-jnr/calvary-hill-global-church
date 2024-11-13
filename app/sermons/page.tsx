@@ -61,11 +61,27 @@ const SermonList: React.FC = () => {
   };
 
   if (loading) {
-    return <p>Loading audio files...</p>;
+    return (
+      <div className="bg-smokeWhite">
+        <Header
+          header="Sermons"
+          page="All Sermons"
+        ></Header>
+        <p>Loading audio files...</p>
+      </div>
+    );
   }
 
   if (error) {
-    return <p>Error loading audio files. Please check your connection.</p>;
+    return (
+      <div className="bg-smokeWhite">
+        <Header
+          header="Sermons"
+          page="All Sermons"
+        ></Header>
+        <p>Error loading audio files. Please check your connection.</p>
+      </div>
+    );
   }
 
   return (

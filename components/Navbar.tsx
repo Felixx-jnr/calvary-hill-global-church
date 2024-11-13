@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
-import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
@@ -15,6 +15,9 @@ import {
 
 import { FaArrowRight } from "react-icons/fa6";
 import { IoIosSearch } from "react-icons/io";
+import { IoLogoInstagram } from "react-icons/io";
+import { FaTelegramPlane } from "react-icons/fa";
+import { FaYoutube } from "react-icons/fa";
 
 // Links object
 const navigationLinks = [
@@ -50,12 +53,65 @@ const Navbar = () => {
 
   const [isOpen, setIsOpen] = useState(false);
   const [show, setShow] = useState(false);
+  const [showRes, setShowRes] = useState(false);
+
+  const staggerVariants = {
+    open: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1, // Delay between items on open
+        staggerDirection: 1, // Normal forward direction for opening
+      },
+    },
+    closed: {
+      opacity: 0,
+      transition: {
+        staggerChildren: 0.1,
+        staggerDirection: -1, // Reverse order for closing
+      },
+    },
+  };
+
+  const childVariants = {
+    open: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.3,
+      },
+    },
+    closed: {
+      y: -100,
+      opacity: 0,
+      transition: {
+        duration: 0.5,
+      },
+    },
+  };
 
   // Toggle menu open/close
   const toggleMenu = () => setIsOpen(!isOpen);
 
+  useEffect(() => {
+    if (isOpen) {
+      document.documentElement.style.overflow = "hidden"; // Prevent scrolling on root element
+      document.body.style.overflow = "hidden"; // Prevent scrolling on body
+    } else {
+      document.documentElement.style.overflow = ""; // Restore scrolling
+      document.body.style.overflow = ""; // Restore scrolling
+    }
+    return () => {
+      document.documentElement.style.overflow = ""; // Clean up overflow
+      document.body.style.overflow = ""; // Clean up overflow
+    };
+  }, [isOpen]);
+
   const triggerShow = () => {
     setShow(!show);
+  };
+
+  const triggerShowRes = () => {
+    setShowRes(!showRes);
   };
 
   // Animations for the hamburger menu
@@ -68,7 +124,7 @@ const Navbar = () => {
     closed: { opacity: 1 },
   };
   const hamburgerLine3 = {
-    open: { rotate: -45, y: -6 },
+    open: { rotate: -45, y: -7 },
     closed: { rotate: 0, y: 0 },
   };
 
@@ -76,20 +132,21 @@ const Navbar = () => {
 
   const staticPaths = ["/donate"];
   const noNavigationMenu =
-    staticPaths.includes(pathname) ||
-    /^\/articles\/.*/.test(pathname) ||
-    /^\/testimonies\/.*/.test(pathname) ||
-    /^\/devotionals\/.*/.test(pathname);
+    staticPaths.includes(pathname || "") ||
+    /^\/articles\/.*/.test(pathname || "") ||
+    /^\/testimonies\/.*/.test(pathname || "") ||
+    /^\/devotionals\/.*/.test(pathname || "");
 
   if (noNavigationMenu) {
     return null;
   }
+
   return (
     <nav
       className={
         isHome
           ? " text-smokeWhite font-sofia-regular absolute w-full top-0 z-10"
-          : " text-darkmaroon font-sofia-regular absolute w-full top-0 z-10"
+          : " text-darkmaroon bg-white font-sofia-regular absolute w-full top-0 z-10"
       }
     >
       <div className=" py-4 flex justify-around max-mid:justify-between mx-5 max-mid:mx-5 items-center">
@@ -100,7 +157,9 @@ const Navbar = () => {
         >
           <Image
             src={
-              isHome ? "/CHC-logo-white.png" : "/cropped-CHC-logo-black-1.png"
+              isHome || isOpen
+                ? "/CHC-logo-white.png"
+                : "/cropped-CHC-logo-black-1.png"
             }
             alt="Logo"
             width={170}
@@ -110,23 +169,23 @@ const Navbar = () => {
 
         {/* Hamburger Menu */}
         <div
-          className={` ${isOpen ? "z-10 ml-auto mid:hidden absolute right-6" : " z-10 ml-auto mid:hidden max-md:absolute max-md:right-3"}`}
+          className={` cursor-pointer z-10 ml-auto mid:hidden  ${isOpen ? " absolute right-6 hover:rotate-180 transition" : "  max-md:right-3"}`}
           onClick={toggleMenu}
         >
           <motion.div
-            className="w-8 h-0.5 bg-white my-1 "
+            className={` w-7 h-[3px] my-1 rounded-full  ${isHome || isOpen ? "bg-smokeWhite " : " bg-darkmaroon"}`}
             animate={isOpen ? "open" : "closed"}
             variants={hamburgerLine1}
             transition={{ duration: 0.3 }}
           />
           <motion.div
-            className="w-8 h-0.5 bg-white my-1 "
+            className={` w-7 h-[3px] my-1 rounded-full  ${isHome || isOpen ? "bg-smokeWhite " : " bg-darkmaroon"}`}
             animate={isOpen ? "open" : "closed"}
             variants={hamburgerLine2}
             transition={{ duration: 0.3 }}
           />
           <motion.div
-            className="w-8 h-0.5 bg-white my-1 "
+            className={` w-7 h-[3px] my-1 rounded-full  ${isHome || isOpen ? "bg-smokeWhite " : " bg-darkmaroon"}`}
             animate={isOpen ? "open" : "closed"}
             variants={hamburgerLine3}
             transition={{ duration: 0.3 }}
@@ -177,8 +236,7 @@ const Navbar = () => {
             <Tooltip delayDuration={0}>
               <TooltipTrigger>
                 <li>
-                  <Link
-                    href="/about"
+                  <span
                     className={
                       isHome
                         ? " font-thin hover:border-b-2 hover:border-white pb-2"
@@ -186,7 +244,7 @@ const Navbar = () => {
                     }
                   >
                     Resources
-                  </Link>
+                  </span>
                 </li>
               </TooltipTrigger>
               <TooltipContent className="bg-darkBrown mt-8 mr-7 p-5">
@@ -228,8 +286,8 @@ const Navbar = () => {
         </ul>
 
         {/* BUTTONS */}
-        <div className=" flex items-center ">
-          <IoIosSearch className="text-3xl mid:mr-2 md:mx-3 mr-8 " />
+        <div className=" flex items-center justify-end">
+          <IoIosSearch className="text-3xl mid:mr-2 md:mx-3 mx-2" />
 
           <div>
             <Link
@@ -244,74 +302,145 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Dropdown Menu */}
-        {isOpen && (
-          <motion.ul
-            initial={{ y: "-100%", opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            exit={{ y: "-100%", opacity: 0 }}
-            transition={{ duration: 0.5 }}
-            className="absolute top-0 left-0 w-full h-screen bg-darkBrown shadow-md mid:hidden overflow-y-auto"
-          >
-            <ul className="flex flex-col items-center justify-center mt-28 text-[#CAC2C0] ">
-              <li className="flex items-center ">
-                <div className=" font-bold text-2xl my-3">
-                  <Link
-                    className="text-3xl my-3 font-bold hover:text-[#fff] mr-3"
-                    href="/about"
-                    onClick={toggleMenu}
-                  >
-                    About
-                  </Link>
-                </div>
-
-                <button
-                  onClick={triggerShow}
-                  className=" "
+        <AnimatePresence>
+          {isOpen && (
+            <div className="">
+              <motion.ul
+                initial="closed"
+                animate="open"
+                exit="closed"
+                variants={childVariants}
+                className="absolute top-0 left-0 w-full bg-darkBrown shadow-md mid:hidden h-screen"
+              >
+                <motion.ul
+                  initial="closed"
+                  animate="open"
+                  exit="closed"
+                  variants={staggerVariants}
+                  className="flex flex-col h-screen items-center justify-center pt-4 text-[#CAC2C0] "
                 >
-                  <FaArrowRight />
-                </button>
-              </li>
-
-              {show && (
-                <li className="">
-                  <div>
-                    <Link
-                      href="/doctrine"
-                      className=" block font-thin p-2 tracking-wide text-center hover:text-[#fff]"
-                      onClick={toggleMenu}
-                    >
-                      Doctrines
-                    </Link>
-                  </div>
-
-                  <div>
-                    <Link
-                      href="/leadership"
-                      className=" block font-thin p-2 tracking-wide text-center hover:text-[#fff]"
-                      onClick={toggleMenu}
-                    >
-                      Leadership
-                    </Link>
-                  </div>
-                </li>
-              )}
-
-              {navigationLinks.map((link) => (
-                <li
-                  key={link.label}
-                  className=" text-3xl my-3 font-bold hover:text-[#fff]"
-                >
-                  <Link
-                    href={link.route}
-                    onClick={toggleMenu}
+                  <motion.li
+                    className="flex items-center "
+                    variants={childVariants}
                   >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </motion.ul>
-        )}
+                    <div className=" font-bold text-2xl my-2">
+                      <Link
+                        className="text-2xl my-3 font-bold hover:text-[#fff] mr-3"
+                        href="/about"
+                        onClick={toggleMenu}
+                      >
+                        About
+                      </Link>
+                    </div>
+
+                    <button onClick={triggerShow}>
+                      <FaArrowRight />
+                    </button>
+                  </motion.li>
+
+                  {show && (
+                    <li className="">
+                      <div>
+                        <Link
+                          href="/doctrine"
+                          className=" block font-thin p-2 tracking-wide text-center hover:text-[#fff] "
+                          onClick={toggleMenu}
+                        >
+                          Doctrines
+                        </Link>
+                      </div>
+
+                      <div>
+                        <Link
+                          href="/leadership"
+                          className=" block font-thin p-2 tracking-wide text-center hover:text-[#fff]"
+                          onClick={toggleMenu}
+                        >
+                          Leadership
+                        </Link>
+                      </div>
+                    </li>
+                  )}
+
+                  <motion.li
+                    className="flex items-center "
+                    variants={childVariants}
+                  >
+                    <div className=" font-bold text-2xl my-3">
+                      <Link
+                        className="text-2xl my-2 font-bold hover:text-[#fff] mr-3"
+                        href="/about"
+                        onClick={toggleMenu}
+                      >
+                        Resources
+                      </Link>
+                    </div>
+
+                    <button
+                      onClick={triggerShowRes}
+                      className=" "
+                    >
+                      <FaArrowRight />
+                    </button>
+                  </motion.li>
+
+                  {showRes && (
+                    <li className="">
+                      <div>
+                        <Link
+                          href="/articles"
+                          className=" block font-thin p-2 tracking-wide text-center hover:text-[#fff]"
+                          onClick={toggleMenu}
+                        >
+                          Articles
+                        </Link>
+                      </div>
+
+                      <div>
+                        <Link
+                          href="/devotionals"
+                          className=" block font-thin p-2 tracking-wide text-center hover:text-[#fff]"
+                          onClick={toggleMenu}
+                        >
+                          Devotionals
+                        </Link>
+                      </div>
+                    </li>
+                  )}
+
+                  {navigationLinks.map((link) => (
+                    <motion.li
+                      key={link.label}
+                      className=" text-2xl my-2 font-bold hover:text-[#fff]"
+                      variants={childVariants}
+                    >
+                      <Link
+                        href={link.route}
+                        onClick={toggleMenu}
+                      >
+                        {link.label}
+                      </Link>
+                    </motion.li>
+                  ))}
+                  <motion.div
+                    className=" text-2xl flex gap-4 mt-8 pt-4 border-t-[0.1px] border-lightGrey w-[90%] justify-center"
+                    variants={staggerVariants}
+                  >
+                    <Link href={""}>
+                      <IoLogoInstagram />
+                    </Link>
+                    <Link href={""}>
+                      <FaYoutube />
+                    </Link>
+                    <Link href={""}>
+                      <FaTelegramPlane />{" "}
+                    </Link>{" "}
+                  </motion.div>
+                </motion.ul>
+              </motion.ul>
+            </div>
+          )}
+        </AnimatePresence>
       </div>
     </nav>
   );

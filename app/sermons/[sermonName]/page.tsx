@@ -30,7 +30,7 @@ const SermonDetails = () => {
           .map((sentence: string, i: Key | null | undefined) => {
             if (sentence.includes("*")) {
               // Split sentences wrapped in asterisks to be handled as separate paragraphs
-              return sentence.split("*").map((subSentence: string, j: any) => (
+              return sentence.split("*").map((subSentence: string, j) => (
                 <p
                   key={`starred-${index}-${i}-${j}`}
                   className="paragraph mb-6"

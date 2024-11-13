@@ -5,7 +5,7 @@ import React from "react";
 
 const Live = () => {
   return (
-    <main>
+    <main className="bg-smokeWhite">
       <header>
         <Header header="Live" />
       </header>

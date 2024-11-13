@@ -5,7 +5,7 @@ import React from "react";
 
 const Gallery = () => {
   return (
-    <main>
+    <main className="bg-smokeWhite">
       <header>
         <Header header="Gallery" />
       </header>

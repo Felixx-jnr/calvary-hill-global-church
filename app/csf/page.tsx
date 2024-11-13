@@ -6,7 +6,7 @@ import React from "react";
 
 const CSF = () => {
   return (
-    <main>
+    <main className="bg-smokeWhite">
       <header>
         <Header header="CSF" />
       </header>
