@@ -3,6 +3,7 @@ import Slider from "../components/Home/Slider";
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { LiaTelegram } from "react-icons/lia";
 
 import {
   Accordion,
@@ -178,13 +179,13 @@ const Home = () => {
       </section>
 
       {/* SECTION SEVEN - FORM */}
-      <section className=" block md:flex gap-4 items-center h-full w-[95%] md:w-[85%] mx-auto mt-24 ">
+      <section className=" block md:flex gap-4 items-center h-full w-[95%] md:w-[90%] mx-auto mt-24 ">
         <div className=" md:w-[700px] mid:w-[600px] text-2xl md:text-xl mid:text-3xl font-sofia-bold text-darkmaroon">
           Please fill in this form if you would like to receive edifying
           contents.
         </div>
 
-        <div className="md:w-[1000px] w-[85%] text-lightGrey">
+        <div className="w-[95%] text-lightGrey">
           <input
             className="  text-lightGrey border-b border-darkmaroon focus:outline-none bg-transparent w-full font-Sofia font-normal leading-7 py-2 text-xl my-2 placeholder-lightGrey placeholder:font-semibold placeholder:font-Sofia placeholder:text-base "
             placeholder="Enter Your Email Address"
@@ -195,20 +196,17 @@ const Home = () => {
             <input type="checkbox" />
             <div className="ml-2 text-sm font-medium">
               I agree to the
-              <Link
-                className=" underline ml-1"
-                href="/"
-              >
-                Privacy Policy.
-              </Link>
+              <span className=" underline ml-1">Privacy Policy.</span>
             </div>
           </div>
         </div>
 
-        <div className="w-[20%] max-md:mt-8 font-sofia-bold text-sm tracking-widest">
-          <span>d</span>
+        <p className="flex items-center w-[20%] max-md:mt-4 font-sofia-bold text-sm tracking-widest">
+          <span>
+            <LiaTelegram className="text-xl" />
+          </span>
           SUBSCRIBE
-        </div>
+        </p>
       </section>
 
       <section>

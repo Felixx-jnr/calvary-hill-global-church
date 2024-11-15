@@ -37,7 +37,7 @@ const Footer = () => {
             </button>
           </div>
 
-          <div className="mt-20 sm:flex block px-2 xs:px-2 md:w-[90%] mid:w-[75%] mx-auto justify-between ">
+          <div className="mt-10 sm:flex block px-2 xs:px-2 md:w-[90%] mid:w-[75%] mx-auto justify-between ">
             <div className="">
               <div>
                 <Image
