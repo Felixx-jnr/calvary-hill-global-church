@@ -27,7 +27,7 @@ const TestimonyDetails = () => {
       <div className="relative">
         <div className=" w-full h-[544px] overflow-hidden ">
           <Image
-            src={testimony.imgSrc}
+            src="/footer-bg-judaism.jpg"
             alt={testimony.title}
             fill
             className=" w-full object-cover"

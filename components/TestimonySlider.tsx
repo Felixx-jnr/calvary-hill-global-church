@@ -49,10 +49,9 @@ const TestimonySlider = () => {
             <Link
               href={`testimonies/${index}`}
               key={slide.id}
-              className=" card bg-darkmaroon hover:bg-maroon mx-2 px-2 py-4 w-60 flex flex-col items-center justify-center"
+              className=" card bg-darkmaroon hover:bg-maroon mx-2 px-2 py-4 w-64 flex flex-col items-center justify-center"
             >
-              <p className=" text-white">{slide.id}</p>
-              <p className="mb-1 italic text-smokeWhite font-semibold">
+              <p className="mb-1 italic text-smokeWhite font-semibold text-xl">
                 {formatTitle(slide.title)}
               </p>
               <p className=" text-smokeWhite font-sofia-normal ">
@@ -66,10 +65,9 @@ const TestimonySlider = () => {
             <Link
               href={`testimonies/${index}`}
               key={slide.id}
-              className=" card bg-darkmaroon hover:bg-maroon mx-2 px-2 py-4 w-60 flex flex-col items-center justify-center"
+              className=" card bg-darkmaroon hover:bg-maroon mx-2 px-2 py-4 w-64 flex flex-col items-center justify-center"
             >
-              <p className=" text-white">{slide.id}</p>
-              <p className="mb-1 italic text-smokeWhite font-semibold">
+              <p className="mb-1 italic text-smokeWhite font-semibold text-xl">
                 {formatTitle(slide.title)}
               </p>
               <p className=" text-smokeWhite font-sofia-normal ">
