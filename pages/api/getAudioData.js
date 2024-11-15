@@ -1,14 +1,14 @@
 import AWS from "aws-sdk";
 
 const s3 = new AWS.S3({
-  accessKeyId: process.env.NEXT_PUBLIC_AWS_ACCESS_KEY_ID, // Updated to match your env variable
-  secretAccessKey: process.env.NEXT_PUBLIC_AWS_SECRET_ACCESS_KEY, // Updated to match your env variable
-  region: process.env.NEXT_PUBLIC_AWS_REGION, // Updated to match your env variable
+  accessKeyId: process.env.AWS_ACCESS_KEY_ID, // Updated to match your env variable
+  secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY, // Updated to match your env variable
+  region: process.env.AWS_REGION, // Updated to match your env variable
 });
 
 export default async function handler(req, res) {
   const params = {
-    Bucket: process.env.NEXT_PUBLIC_AWS_BUCKET_NAME, // Updated to match your env variable
+    Bucket: process.env.AWS_BUCKET_NAME, // Updated to match your env variable
     Prefix: "sermons", // Set if your audio files are in a subdirectory
   };
 
@@ -22,7 +22,7 @@ export default async function handler(req, res) {
         .map(async (file) => {
           const metadata = await s3
             .headObject({
-              Bucket: process.env.NEXT_PUBLIC_AWS_BUCKET_NAME,
+              Bucket: process.env.AWS_BUCKET_NAME,
               Key: file.Key,
             })
             .promise();
@@ -30,7 +30,7 @@ export default async function handler(req, res) {
           return {
             fileName: file.Key,
             url: s3.getSignedUrl("getObject", {
-              Bucket: process.env.NEXT_PUBLIC_AWS_BUCKET_NAME, // Updated to match your env variable
+              Bucket: process.env.AWS_BUCKET_NAME, // Updated to match your env variable
               Key: file.Key,
               Expires: 60 * 60, // URL expiration time in seconds
             }),

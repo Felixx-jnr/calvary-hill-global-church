@@ -1,7 +1,7 @@
 import React from "react";
 
 const YouTubeLive = () => {
-  const channelId = process.env.NEXT_PUBLIC_YOUTUBE_CHANNEL_ID;
+  const channelId = process.env.YOUTUBE_CHANNEL_ID;
   const liveUrl = `https://www.youtube.com/channel/${channelId}/live`;
   return (
     <div>
