@@ -154,6 +154,7 @@ const Navbar = () => {
         <Link
           className="text-2xl z-10"
           href="/"
+          onClick={() => setIsOpen(false)}
         >
           <Image
             src={

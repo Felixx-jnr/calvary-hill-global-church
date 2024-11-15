@@ -1,11 +1,26 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { IoLogoInstagram } from "react-icons/io";
+import { FaYoutube } from "react-icons/fa6";
+import { FaTelegramPlane } from "react-icons/fa";
+import { FaFacebookSquare } from "react-icons/fa";
+
+const footerLinks = [
+  { link: "Home", src: "/" },
+  { link: "About", src: "/about" },
+  { link: "Sermons", src: "/sermons" },
+  { link: "Devotionals", src: "/devotionals" },
+  { link: "Articles", src: "/articles" },
+  { link: "CSF", src: "/csf" },
+  { link: "Giving", src: "/giving" },
+  { link: "Contact", src: "/contact" },
+];
 
 const Footer = () => {
   return (
     <footer className=" relative ">
-      <div className=" footer-cover pb-8">
+      <div className=" footer-cover pb-2">
         <div className="   text-white ">
           <div className=" w-[85%] mx-auto text-center">
             <p className=" font-sofia-bold text-xs sm:text-sm pt-20">
@@ -22,8 +37,8 @@ const Footer = () => {
             </button>
           </div>
 
-          <div className="mt-20 flex justify-around gap-4 w-[90%] mx-auto items-start">
-            <div>
+          <div className="mt-20 sm:flex block px-2 xs:px-2 md:w-[90%] mid:w-[75%] mx-auto justify-between ">
+            <div className="">
               <div>
                 <Image
                   className=" w-44 "
@@ -34,73 +49,84 @@ const Footer = () => {
                 />
               </div>
               <br />
-              <p className="text-lg font-medium">
+              <p className="text-lg font-extralight">
                 No. 152, Awolowo Way, Allen Junction, Ikeja, Lagos, Nigeria
               </p>
-              <br />
-              <p className="text-lg font-medium break-words">
+
+              <p className="text-lg break-words my-2 font-extralight">
                 contact@collinsthroneministries.org
               </p>
-              <br />
-              <p className="text-lg font-medium"> +234 805 101 8171</p>
-              <p className="text-lg font-medium">+234 814 817 1728</p>
-              <br />
-              <p className="text-lg font-medium">Pastor Collins Throne</p>
+
+              <p className="text-lg my-2 font-extralight">
+                +234 805 101 8171 , +234 814 817 1728
+              </p>
+
+              <p className="text-lg font-extralight">Pastor Collins Throne</p>
             </div>
 
-            <div className=" ">
+            <div className=" max-sm:mt-4 sm:mx-10">
               <h4 className="text-lg font-sofia-bold">Links</h4>
-              <Link
-                href="/"
-                className="relative text-lg font-medium my-2 block hover:underline hover:ml-2"
-              >
-                Home
-              </Link>
-              <Link
-                href="/about"
-                className="text-lg font-medium my-2 block"
-              >
-                About
-              </Link>
-              <Link
-                href="/sermons"
-                className="text-lg font-medium my-2 block"
-              >
-                Sermons
-              </Link>
-              <Link
-                href="/devotional"
-                className="text-lg font-medium my-2 block"
-              >
-                Devotionals
-              </Link>
-              <Link
-                href="/csf"
-                className="text-lg font-medium my-2 block"
-              >
-                CSF
-              </Link>
-              <Link
-                href="/giving"
-                className="text-lg font-medium my-2 block"
-              >
-                Giving
-              </Link>
-              <Link
-                href="/contact"
-                className="text-lg font-medium my-2 block"
-              >
-                Contact
-              </Link>
+              <div className=" flex sm:flex-col max-sm:gap-2 max-sm:flex-wrap ">
+                {footerLinks.map((footerLink) => (
+                  <Link
+                    key={footerLink.link}
+                    href={footerLink.src}
+                    className=" self-start relative text-lg font-extralight hover:border-b-2"
+                  >
+                    {footerLink.link}
+                  </Link>
+                ))}
+              </div>
             </div>
+            <div className="max-sm:mt-4 ">
+              <h4 className="text-lg font-sofia-bold">Socials</h4>
+              <div className="max-sm:flex max-sm:justify-left max-sm:gap-2 max-sm:flex-wrap ">
+                <Link
+                  href={""}
+                  className="flex items-center gap-1 p-1 max-sm:p-2 rounded-[50%] xs:rounded-full hover:bg-darkmaroon  "
+                >
+                  <IoLogoInstagram className=" text-xl" />
+                  <span className=" text-sm max-xs:hidden font-extralight">
+                    Instagram
+                  </span>
+                </Link>
 
-            <div>
-              <h4 className="text-lg font-sofia-bold">Get In Touch</h4>
+                <Link
+                  href={""}
+                  className="flex items-center gap-1 max-sm:p-2 sm:my-2 p-1 rounded-[50%] xs:rounded-full hover:bg-darkmaroon"
+                >
+                  <FaYoutube className="text-xl" />
+                  <span className="  text-sm max-xs:hidden font-extralight">
+                    Youtube
+                  </span>
+                </Link>
+
+                <Link
+                  href={""}
+                  className="flex items-center gap-1 max-sm:p-2 sm:my-2 p-1 rounded-[50%] xs:rounded-full hover:bg-darkmaroon"
+                >
+                  <FaTelegramPlane className=" text-xl" />
+                  <span className=" text-sm font-extralight max-xs:hidden">
+                    Telegram
+                  </span>
+                </Link>
+
+                <Link
+                  href={""}
+                  className="flex items-center gap-1 sm:my-2 p-1 max-sm:p-2 rounded-[50%] xs:rounded-full hover:bg-darkmaroon"
+                >
+                  <FaFacebookSquare className="text-xl" />{" "}
+                  <span className="  text-sm max-xs:hidden font-extralight">
+                    {" "}
+                    Facebook{" "}
+                  </span>
+                </Link>
+              </div>
             </div>
           </div>
         </div>
 
-        <p className=" mt-16 mx-auto w-[80%] border-t-[1px] border-[#4C4C4C] pt-6 text-smokeWhite font-semibold">
+        <p className=" mt-3 mx-auto w-[98%] border-t-[1px] border-[#4C4C4C] pt-2 text-smokeWhite font-extralight text-xs">
           The Calvary Hill Global Church © 2024. All Rights Reserved.
         </p>
       </div>

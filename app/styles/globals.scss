@@ -27,22 +27,6 @@
   }
 }
 
-.home p {
-  font-size: rem(13);
-  font-weight: 700;
-  letter-spacing: rem(2);
-  line-height: rem(20);
-
-  @include breakpoint-down(small) {
-    font-size: rem(10);
-  }
-
-  @include breakpoint-down(smaller) {
-    font-size: rem(8);
-    line-height: rem(10);
-  }
-}
-
 .home-sermons {
   background-image: url("/home/PST-COLLINS-001-scaled.webp");
   background-size: cover;

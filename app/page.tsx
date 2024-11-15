@@ -31,15 +31,13 @@ const Home = () => {
             We Are The Triumphant Church
           </h1>
 
-          <p className="text-lightGrey">
+          <p className="  text-lightGrey">
             Bringing men to the place of triumph through the revelation of
             Christ and positioning them for kingdom advancement.
           </p>
         </div>
 
-        <div className=" w-[95%] mx-auto">
-          <MiniCarousel />
-        </div>
+        <div className=" w-[95%] mx-auto">{/* <MiniCarousel /> */}</div>
       </section>
 
       {/* SECTION THREE - OUR VISION */}
@@ -59,7 +57,7 @@ const Home = () => {
         <h1 className=" font-sofia-bold mb-5 text-4xl lg:text-[57px] font-bold tracking-tight text-darkmaroon">
           Making Christ Known
         </h1>
-        <p className=" max-sm:text-sm text-base mb-5 tracking-tight text-lightGrey">
+        <p className="  text-lightGrey  mb-5">
           Our Vision as a Church is to make Christ known through global
           evangelism to build a strong local church bonded by love and
           Supernatural manifestation through discipleship.
@@ -211,8 +209,12 @@ const Home = () => {
         </div>
       </section>
 
+      <section>
+        <TestimonySlider />
+      </section>
+
       {/* SECTION EIGHT - ACCORDION */}
-      <section className="w-[95%] md:w-[80%] mx-auto mt-36">
+      <section className="w-[95%] md:w-[80%] mx-auto mt-10 mb-20">
         <h1 className="text-center text-3xl sm:text-4xl md:text-5xl font-sofia-bold tracking-tight text-darkmaroon mb-3">
           FAQ&apos;s
         </h1>
@@ -266,10 +268,6 @@ const Home = () => {
             </AccordionContent>
           </AccordionItem>
         </Accordion>
-      </section>
-
-      <section>
-        <TestimonySlider />
       </section>
     </main>
   );
