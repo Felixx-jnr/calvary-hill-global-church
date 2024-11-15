@@ -47,8 +47,6 @@ const TestimonyDetails = () => {
           <h1 className=" font-sofia-bold text-5xl sm:text-[57px] font-bold tracking-tight text-white my-10">
             {testimony.title}
           </h1>
-
-          <p className=" text-sm text-darkGrey">{testimony.date}</p>
         </div>
       </div>
 

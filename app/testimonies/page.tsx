@@ -22,7 +22,7 @@ const TestimoniesList = () => {
           >
             <div className="max-xs:flex justify-center ">
               <Image
-                src={testimony.imgSrc}
+                src={"/footer-bg-judaism.jpg"}
                 alt={""}
                 width={2000}
                 height={2000}
@@ -33,9 +33,9 @@ const TestimoniesList = () => {
             <h3 className="sm:text-4xl text-3xl font-sofia-bold my-1 px-1 ">
               {testimony.title}
             </h3>
-            <p className=" text-sm text-midGrey my-1 px-1">{testimony.date}</p>
+
             <h4 className=" text-sm md:text-base text-lightGrey font-medium px-1">
-              {testimony.desc}
+              {testimony.content}
             </h4>
           </Link>
         ))}
