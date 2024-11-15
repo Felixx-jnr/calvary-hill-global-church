@@ -49,19 +49,19 @@ const Footer = () => {
                 />
               </div>
               <br />
-              <p className="text-lg font-extralight">
+              <p className="tex-t-base font-extralight">
                 No. 152, Awolowo Way, Allen Junction, Ikeja, Lagos, Nigeria
               </p>
 
-              <p className="text-lg break-words my-2 font-extralight">
+              <p className="text-base break-words my-2 font-extralight">
                 contact@collinsthroneministries.org
               </p>
 
-              <p className="text-lg my-2 font-extralight">
+              <p className="text-base my-2 font-extralight">
                 +234 805 101 8171 , +234 814 817 1728
               </p>
 
-              <p className="text-lg font-extralight">Pastor Collins Throne</p>
+              <p className="text-base font-extralight">Pastor Collins Throne</p>
             </div>
 
             <div className=" max-sm:mt-4 sm:mx-10">
@@ -71,7 +71,7 @@ const Footer = () => {
                   <Link
                     key={footerLink.link}
                     href={footerLink.src}
-                    className=" self-start relative text-lg font-extralight hover:border-b-2"
+                    className=" self-start relative text-base font-extralight hover:border-b-2 my-1"
                   >
                     {footerLink.link}
                   </Link>

@@ -105,7 +105,7 @@ const Home = () => {
           </h1>
 
           <div className=" flex max-sm:block bg-white">
-            <div className=" sm:w-[40%] max-sm:h-[200px] max-sm:my-5">
+            <div className=" sm:w-[30%] max-sm:h-[200px] max-sm:my-5">
               <Image
                 src="/testimonial-1.jpg"
                 alt=""

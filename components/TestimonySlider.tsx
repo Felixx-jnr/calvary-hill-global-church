@@ -6,7 +6,7 @@ const slides = [
   {
     testimony:
       "Luxe Houses lives up to its name in every way. From the peaceful surroundings to the thoughtful design, every moment spent here feels like a retreat. Choosing Luxe Houses was the best decision I've made",
-    date: "2nd Nov. 2023",
+    date: "ejfceudn Nov. 2023",
   },
   {
     testimony:
@@ -53,7 +53,7 @@ const TestimonySlider = () => {
         <h2 className="lg:text-5xl text-4xl font-sofia-bold text-darkmaroon">
           Testimonies
         </h2>
-        <p className="my-3 text-lightGrey font-semibold text-sm md:text-xl leading-tight">
+        <p className="my-3 text-lightGrey font-normal text-sm md:text-xl leading-tight">
           Let the redeemed of the LORD say so, whom he hath redeemed from the
           hand of the enemy - Psalms 107 v 2
         </p>
