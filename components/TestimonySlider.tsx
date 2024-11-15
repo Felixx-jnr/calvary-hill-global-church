@@ -1,4 +1,3 @@
-import { testimonies } from "@/constants/testimonyConstants";
 import Link from "next/link";
 import React from "react";
 
