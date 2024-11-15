@@ -37,7 +37,9 @@ const Home = () => {
           </p>
         </div>
 
-        <div className=" w-[95%] mx-auto">{/* <MiniCarousel /> */}</div>
+        <div className=" w-[95%] mx-auto">
+          <MiniCarousel />
+        </div>
       </section>
 
       {/* SECTION THREE - OUR VISION */}
