@@ -1,6 +1,5 @@
 "use client";
-
-import { csfCarouselImages } from "@/constants/csfConstants";
+import { miniCarouselImages } from "../../constants/homeCarousel";
 
 import * as React from "react";
 import Autoplay from "embla-carousel-autoplay";
@@ -13,7 +12,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 
-export function CsfCarousel() {
+export function csfCarousel() {
   return (
     <Carousel
       opts={{
@@ -21,24 +20,25 @@ export function CsfCarousel() {
       }}
       plugins={[
         Autoplay({
-          delay: 600,
+          delay: 5000,
           stopOnInteraction: true,
         }),
       ]}
-      className=" mx-auto"
+      className=" w-[98%] mx-auto"
     >
       <CarouselContent>
-        {csfCarouselImages.map((item) => (
+        {miniCarouselImages.map((item) => (
           <CarouselItem
-            key={item}
-            className="  sm:basis-1/2 h-[400px] "
+            key={item.id}
+            className="xs:basis-1/2 w-full max-h-[400px] overflow-hidden"
           >
-            <div className=" ">
+            <div className=" h-full">
               <Image
-                src={item}
+                src={item.src}
                 alt=""
-                className=" px-2 object-cover"
-                fill
+                className=" h-full object-cover"
+                width={1800}
+                height={1200}
               />
             </div>
           </CarouselItem>
@@ -46,10 +46,12 @@ export function CsfCarousel() {
       </CarouselContent>
 
       {/* Navigation buttons */}
-      <CarouselPrevious />
-      <CarouselNext />
+      <div>
+        <CarouselPrevious className="absolute top-1/2 -translate-y-1/2 left-2 text-white" />
+        <CarouselNext className="absolute top-1/2 -translate-y-1/2 right-2 text-white" />
+      </div>
     </Carousel>
   );
 }
 
-export default CsfCarousel;
+export default csfCarousel;

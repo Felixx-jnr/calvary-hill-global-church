@@ -2,10 +2,13 @@ import Header from "@/components/Header";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { FaFacebookF } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa6";
+import { LiaTelegram } from "react-icons/lia";
 
 const Leadership = () => {
   return (
-    <main className="px-2">
+    <main className="px-2 bg-smokeWhite">
       <header>
         <Header header="Leadership" />
       </header>
@@ -14,7 +17,7 @@ const Leadership = () => {
         <div className="relative mx-auto h-[500px] md:h-[654px] ">
           <Image
             alt="Lead Pastor Calvary Hill Church"
-            src="/leader.jpg"
+            src="/about/leader.jpg"
             width={12000}
             height={12000}
             className=" w-full h-full object-cover "
@@ -49,8 +52,22 @@ const Leadership = () => {
             General overseer of Calvary Hill Church with headquarters in Lagos,
             Nigeria.
           </p>
-          <div>
-            <span>Logos</span>
+          <div className="flex gap-3 mt-4">
+            <Link
+              href=""
+              className="border p-2 rounded-full hover:text-pink-500 hover:border-pink-500"
+            >
+              {" "}
+              <FaInstagram className=" text-2xl " />
+            </Link>
+
+            <Link
+              href=""
+              className=" border p-2 rounded-full  hover:text-blue-500 hover:border-blue-500 "
+            >
+              {" "}
+              <FaFacebookF className=" text-2xl" />{" "}
+            </Link>
           </div>
         </div>
       </section>
@@ -81,7 +98,7 @@ const Leadership = () => {
         <div className="relative mx-auto w-full max-md:order-1 overflow-hidden ">
           <Image
             alt="Lead Pastor Calvary Hill Church"
-            src="/gift.jpg"
+            src="/about/gift.jpg"
             width={12000}
             height={12000}
             className=" w-full"
@@ -90,7 +107,7 @@ const Leadership = () => {
           <div className="absolute h-[500px] w-[300px] -bottom-10 right-0 max-md:hidden">
             <Image
               alt="Lead Pastor Calvary Hill Church"
-              src="/ministry.jpg"
+              src="/about/ministry.jpg"
               width={12000}
               height={12000}
               className=" w-full h-full object-cover "
@@ -118,13 +135,13 @@ const Leadership = () => {
       </section>
 
       {/* FORM */}
-      <section className=" block md:flex gap-4 items-center h-full w-[95%] md:w-[85%] mx-auto mt-24 ">
+      <section className=" block md:flex gap-4 items-center h-full w-[95%] md:w-[85%] mx-auto my-16 ">
         <div className=" md:w-[700px] mid:w-[600px] text-2xl md:text-xl mid:text-3xl font-sofia-bold text-darkmaroon">
           Please fill in this form if you would like to receive edifying
           contents.
         </div>
 
-        <div className="md:w-[1000px] w-[85%] text-lightGrey">
+        <div className="md:w-[1000px] w-[100%] text-lightGrey">
           <input
             className="  text-lightGrey border-b border-darkmaroon focus:outline-none bg-transparent w-full font-Sofia font-normal leading-7 py-2 text-xl my-2 placeholder-lightGrey placeholder:font-semibold placeholder:font-Sofia placeholder:text-base "
             placeholder="Enter Your Email Address"
@@ -145,10 +162,12 @@ const Leadership = () => {
           </div>
         </div>
 
-        <div className="w-[20%] max-md:mt-8 font-sofia-bold text-sm tracking-widest">
-          <span>d</span>
+        <p className="flex items-center w-[20%] max-md:mt-4 font-sofia-bold text-sm tracking-widest ">
+          <span>
+            <LiaTelegram className="text-xl" />
+          </span>
           SUBSCRIBE
-        </div>
+        </p>
       </section>
     </main>
   );

@@ -11,11 +11,11 @@ const Live = () => {
       </header>
 
       <section className=" w-[95%] sm:w-[80%] mx-auto ">
-        <h2 className=" font-sofia-bold text-darkmaroon text-4xl md:text-5xl  ">
+        <h2 className=" font-sofia-bold text-darkmaroon text-3xl xs:text-4xl md:text-5xl  ">
           Mixlr Stream
         </h2>
 
-        <p className="my-6 text-lightGrey text-sm md:text-xl leading-tight">
+        <p className="my-3 text-lightGrey text-xs sm:text-sm md:text-lg leading-tight">
           Calvary Hill Church is Live on Mixlr. Join In the stream and be
           blessed.
         </p>
@@ -23,12 +23,12 @@ const Live = () => {
         <MixlrPlayer />
       </section>
 
-      <section className=" w-[95%] sm:w-[80%] mx-auto">
-        <h2 className=" font-sofia-bold text-darkmaroon text-4xl md:text-5xl  ">
+      <section className=" w-[95%] sm:w-[80%] mx-auto py-5">
+        <h2 className=" font-sofia-bold text-darkmaroon text-3xl xs:text-4xl md:text-5xl  ">
           YouTube Stream
         </h2>
 
-        <p className="my-6 text-lightGrey text-sm md:text-xl leading-tight">
+        <p className="my-3 text-lightGrey text-xs sm:text-sm md:text-lg leading-tight">
           Calvary Hill Church is Live on YouTube. Join In the stream and be
           blessed.
         </p>

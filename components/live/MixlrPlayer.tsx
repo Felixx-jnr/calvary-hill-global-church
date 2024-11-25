@@ -36,13 +36,13 @@ const MixlrPlayer = () => {
         ></iframe>
       </div>
 
-      <div className=" my-4">
+      <div className=" my-2">
         {isLive ? (
           <div>We are live</div>
         ) : (
-          <div>
-            We are currently not live but you can listen to other
-            <a href="/sermon"> Sermons</a>
+          <div className=" text-xs sm:text-sm ">
+            We are not currently live but you can listen to other{" "}
+            <a href="/sermon">sermons</a>
           </div>
         )}
       </div>

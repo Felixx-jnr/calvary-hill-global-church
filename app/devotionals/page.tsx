@@ -34,7 +34,7 @@ const DevotionalsList = () => {
               {devotional.title}
             </h3>
             <p className=" text-sm text-midGrey my-1 px-1">{devotional.date}</p>
-            <h4 className=" text-sm md:text-base text-lightGrey font-medium px-1">
+            <h4 className=" text-sm md:text-base text-lightGrey px-1">
               {devotional.desc}
             </h4>
           </Link>

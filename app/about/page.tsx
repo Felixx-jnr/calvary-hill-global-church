@@ -30,7 +30,7 @@ const About = () => {
         </div>
       </section>
 
-      <div className=" my-8 pt-20 bg-smokeWhite">
+      <div className="  py-20 bg-smokeWhite">
         <h1 className=" text-4xl sm:text-5xl md:text-6xl font-sofia-bold text-darkmaroon tracking-tighter mb-16 text-center">
           Events & Meetings
         </h1>
@@ -41,7 +41,7 @@ const About = () => {
             <h2 className=" text-3xl xs:text-4xl md:text-[47px] font-sofia-bold text-darkmaroon tracking-[-0.7px] mb-12 max-md:mb-2">
               Dunamis CampMeeting
             </h2>
-            <p className=" text-lightGrey mb-2 font-medium">
+            <p className=" text-lightGrey mb-2 ">
               Dunamis Camp meeting is our yearly annual Prayer Camp meeting
               organized by Calvary Hill Church held in December.
               <br /> <br />
@@ -67,9 +67,9 @@ const About = () => {
         </section>
 
         {/* EASTER BIBLE EXPERIENCE SECTION */}
-        <section className=" grid grid-cols-[0.8fr_1fr] max-md:grid-cols-1 gap-16 w-[94%] mx-auto items-center max-md:mt-20 ">
+        <section className=" grid grid-cols-[0.8fr_1fr] max-md:grid-cols-1 gap-16 w-[94%] mx-auto items-center md:mt-10 mt-5 ">
           <Image
-            src="/fide.avif"
+            src="/photo_2024-06-18_10-51-12.jpg"
             alt=""
             width={2000}
             height={2000}
@@ -80,7 +80,7 @@ const About = () => {
             <h2 className=" text-3xl xs:text-4xl md:text-[47px] font-sofia-bold text-darkmaroon tracking-[-0.7px] mb-10 max-md:mb-8">
               Easter Bible Experience
             </h2>
-            <p className=" text-lightGrey mb-2 font-medium">
+            <p className=" text-lightGrey mb-2">
               Easter Bible Experience is a two-day annual bible expository/
               teaching meeting of Calvary Hill Church held during Easter season.
               In this meeting, Amazing gospel truth is taught for elongated

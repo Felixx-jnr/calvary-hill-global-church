@@ -5,7 +5,7 @@ import React from "react";
 
 const doctrine = () => {
   return (
-    <main>
+    <main className="bg-smokeWhite pb-10">
       <Header header="Doctrines" />
       <div>
         <LeftDoctrine

@@ -6,8 +6,8 @@ export const csfImages = [
 ];
 
 export const csfCarouselImages = [
-  "/about/fide.avif",
-  "/about/christus.avif",
+  "/about/gift.jpg",
+  "/about/ministry.jpg",
   "/about/gloria.avif",
-  "/about/gratia.avif",
+  "/about/fide.avif",
 ];

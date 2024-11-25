@@ -19,7 +19,7 @@ const CSF = () => {
           <h2 className=" text-3xl xs:text-4xl md:text-5xl font-sofia-bold text-darkmaroon tracking-tight mb-5">
             Calvary Student Fellowship
           </h2>
-          <p className=" text-lg tracking-tight leading-snug ">
+          <p className=" font-light text-lg tracking-tight leading-snug ">
             Calvary Student Fellowship (CSF) is a student fellowship expression
             under Collins Throne Ministries. It is the Campus fellowship of the
             Mother Church - Calvary Hill Church. Its general overseer and
@@ -42,30 +42,30 @@ const CSF = () => {
             </p>
 
             <ul className=" text-lg tracking-tight ">
-              <li className="my-2">
+              <li className="my-2 font-light">
                 1. Ignite the souls of fellow students in radically following
                 Jesus by the preaching of the gospel.
               </li>
 
-              <li className="my-2">
+              <li className="my-2 font-light">
                 2. Make disciples of campus students and make campus student
                 disciplers.
               </li>
-              <li className="my-2">
+              <li className="my-2 font-light">
                 3. Helping students to discover their true purpose in Christ
                 before leaving the four walls of the University and pursuing
                 same after School.
               </li>
 
-              <li className="my-2">4. Radically transforming</li>
+              <li className="my-2 font-light">4. Radically transforming</li>
 
               <li>
-                <p className="mt-7 mb-2">
+                <p className="mt-7 mb-2 font-light">
                   Through CSF Formerly known as The Gospel Mission (TGM),
                   Collins Throne Ministries has been able to disciple hundreds
                   of students with the Gospel of Christ and the supernatural.
                 </p>
-                <p className="my-4">
+                <p className="my-4 font-light">
                   Currently, there are just two chapters of CSF. However, the
                   mission is to have CSF in numerous Campus or University around
                   Nigeria, Africa and beyond.

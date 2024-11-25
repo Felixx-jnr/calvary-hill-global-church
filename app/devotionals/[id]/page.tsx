@@ -52,7 +52,7 @@ const DevotionalDetails = () => {
         </div>
       </div>
 
-      <div className=" text-lightGrey w-[95%] xs:w-[90%]  lg:w-[75%]  mx-auto mt-10 ">
+      <div className=" text-lightGrey w-[95%] xs:w-[90%]  lg:w-[75%]  mx-auto my-10 ">
         <h1 className="text-3xl font-sofia-bold mb-5">{devotional.title}</h1>
         <article className="font-medium text-justify">
           {devotional.content}
