@@ -10,7 +10,7 @@ const PaystackButton = dynamic(
 );
 
 const Payment = () => {
-  const publicKey = process.env._PAYSTACK_PUBLIC_KEY as string;
+  const publicKey = process.env.NEXT_PUBLIC_PAYSTACK_PUBLIC_KEY as string;
   const [email, setEmail] = useState("");
   const [amount, setAmount] = useState("");
   const [name, setName] = useState("");
@@ -47,7 +47,7 @@ const Payment = () => {
   };
 
   return (
-    <div className="px-4 mt-28">
+    <div className="">
       <h1 className="text-center ">Make your payment here</h1>
 
       <div className="max-w-md mx-auto my-4">

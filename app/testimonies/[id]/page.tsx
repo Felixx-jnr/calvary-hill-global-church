@@ -3,8 +3,6 @@
 import React from "react";
 import { testimonies } from "@/constants/testimonyConstants"; // Import your testimonies
 import { useParams } from "next/navigation"; // Use useParams instead of useRouter
-import Image from "next/image";
-import Link from "next/link";
 
 const TestimonyDetails = () => {
   const { id } = useParams() as { id: string }; // Get the dynamic testimonyId from the URL
