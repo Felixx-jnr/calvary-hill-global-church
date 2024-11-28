@@ -3,7 +3,7 @@ import Slider from "../components/Home/Slider";
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { LiaTelegram } from "react-icons/lia";
+import { LiaArrowLeftSolid, LiaTelegram } from "react-icons/lia";
 
 import {
   Accordion,
@@ -13,6 +13,8 @@ import {
 } from "@/components/ui/accordion";
 import TestimonySlider from "@/components/TestimonySlider";
 import AudioPlayer from "@/components/AudioPlayer";
+import RandomAudio from "@/components/RandomAudio";
+import RandomAudioPlayer from "@/components/RandomAudio";
 
 const Home = () => {
   return (
@@ -92,7 +94,7 @@ const Home = () => {
           </p>
 
           <button className="text-smokeWhite bg-maroon hover:bg-darkmaroon lg:px-14 lg:py-5 md:px-10 md:py-4 px-6 py-3 font-sofia-bold tracking-widest font-Sofia text-xs">
-            <Link href="/sermon">SERMONS arrow</Link>
+            <Link href="/sermon">SERMONS</Link>
           </button>
         </div>
       </section>
@@ -107,35 +109,7 @@ const Home = () => {
             Listen On The Go!
           </h1>
 
-          <div className=" flex max-sm:block bg-white">
-            <div className=" sm:w-[30%] max-sm:h-[200px] max-sm:my-5">
-              <Image
-                src="/testimonial-1.jpg"
-                alt=""
-                width={1000}
-                height={1280}
-                className="h-full w-full object-cover"
-              ></Image>
-            </div>
-
-            <div className=" md:ml-8 lg:ml-10 relative w-full">
-              <div className="sm:absolute sm:top-1/2 sm:-translate-y-1/2 w-full font-sofia-bold p-4">
-                <p className=" inline-block p-4 text-xs font-bold py-1 bg-darkmaroon text-white text-center">
-                  NOW PLAYING
-                </p>
-                <h4 className="text-xl mt-4 leading-tight text-darkmaroon">
-                  Pastor Collins Throne
-                </h4>
-                <h3 className="text-[28px] leading-none tracking-wide text-darkmaroon">
-                  The Art Of Listening 1
-                </h3>
-
-                <div className=" flex w- gap-4 mt-6 justify-start">
-                  <AudioPlayer audioSrc="/Baptizo Track 1.mp3" />
-                </div>
-              </div>
-            </div>
-          </div>
+          <RandomAudioPlayer />
         </div>
 
         <div className="w-full text-center mt-24">
