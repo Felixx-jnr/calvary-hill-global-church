@@ -3,7 +3,7 @@ import Slider from "../components/Home/Slider";
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { LiaArrowLeftSolid, LiaTelegram } from "react-icons/lia";
+import { LiaTelegram } from "react-icons/lia";
 
 import {
   Accordion,
@@ -12,8 +12,6 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import TestimonySlider from "@/components/TestimonySlider";
-import AudioPlayer from "@/components/AudioPlayer";
-import RandomAudio from "@/components/RandomAudio";
 import RandomAudioPlayer from "@/components/RandomAudio";
 
 const Home = () => {

@@ -25,15 +25,19 @@ const RandomAudioPlayer: React.FC = () => {
     setLoading(true);
     setError(null);
     try {
-      const response = await fetch("/api/getRandomAudio"); // Adjust API endpoint if necessary
+      const response = await fetch("/api/getRandomAudio");
       if (!response.ok) {
-        throw new Error("Failed to fetch audio file.");
+        throw new Error(`Failed to fetch audio file: ${response.statusText}`);
       }
-      const data: AudioData = await response.json();
+      const data = (await response.json()) as AudioData; // Explicitly cast response as AudioData
       setAudioData(data);
-    } catch (err: any) {
-      setError(err.message || "An unknown error occurred.");
-      console.error("Error fetching audio:", err);
+    } catch (err) {
+      // Use a type guard to handle errors safely
+      if (err instanceof Error) {
+        setError(err.message);
+      } else {
+        setError("An unknown error occurred.");
+      }
     } finally {
       setLoading(false);
     }
