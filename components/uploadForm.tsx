@@ -1,6 +1,31 @@
 "use client";
 import { useState, ChangeEvent, MouseEvent } from "react";
 import axios from "axios";
+import { format } from "date-fns";
+
+// Helper function to get the day suffix (st, nd, rd, th)
+const getDaySuffix = (day: number): string => {
+  if (day >= 11 && day <= 13) return "th";
+  switch (day % 10) {
+    case 1:
+      return "st";
+    case 2:
+      return "nd";
+    case 3:
+      return "rd";
+    default:
+      return "th";
+  }
+};
+
+// Format the date as "3rd November, 2022"
+const formatDateWithSuffix = (date: string): string => {
+  const parsedDate = new Date(date);
+  const day = parsedDate.getDate();
+  const month = format(parsedDate, "MMMM");
+  const year = parsedDate.getFullYear();
+  return `${day}${getDaySuffix(day)} ${month}, ${year}`;
+};
 
 interface Metadata {
   title: string;
@@ -67,11 +92,14 @@ const AudioUploadWithMetadata = () => {
       return;
     }
 
+    // Format the date before sending
+    const formattedDate = formatDateWithSuffix(date);
+
     const formData = new FormData();
     formData.append("audioFile", file);
     formData.append("title", title);
     formData.append("preacher", preacher);
-    formData.append("date", date);
+    formData.append("date", formattedDate); // Send the formatted date
     formData.append("series", series);
     formData.append("desc", desc);
     formData.append("art", art); // Add art image file to the form data
