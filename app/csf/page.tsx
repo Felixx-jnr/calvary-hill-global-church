@@ -75,7 +75,7 @@ const CSF = () => {
           </div>
         </div>
       </div>
-      <div className="max-w-[1400px]">
+      <div className="max-w-[1400px] mx-auto">
         <GalleryLayout images={csfImages} />
       </div>
     </main>

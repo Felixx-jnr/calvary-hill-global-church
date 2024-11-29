@@ -8,6 +8,7 @@ interface AudioMetadata {
   art?: string;
   artist?: string;
   title?: string;
+  preacher?: string;
 }
 
 interface AudioData {
@@ -89,7 +90,7 @@ const RandomAudioPlayer: React.FC = () => {
             NOW PLAYING
           </p>
           <h4 className="text-xl mt-4 leading-tight text-darkmaroon">
-            {audioData.metadata?.artist || "Unknown Artist"}
+            {audioData.metadata?.preacher || "Pastor Collins Throne"}
           </h4>
           <h3 className="text-[28px] leading-none tracking-wide text-darkmaroon">
             {audioData.metadata?.title || "Untitled Audio"}
