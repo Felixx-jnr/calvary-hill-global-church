@@ -57,17 +57,51 @@ export default async function handler(req, res) {
         return res.status(400).json({ error: "Missing required fields" });
       }
 
-      // Read file from temporary path
+      // Handle 'art' image file, if present
+      let artUrl = "";
+      if (files.art && files.art[0]) {
+        const artFilePath = files.art[0].filepath;
+        const artFileStream = fs.createReadStream(artFilePath);
+
+        // Set S3 upload parameters for the artwork image
+        const artParams = {
+          Bucket: process.env.AWS_BUCKET_NAME,
+          Key: `Messages art/${files.art[0].originalFilename}`,
+          Body: artFileStream,
+          ContentType: files.art[0].mimetype,
+        };
+
+        try {
+          // Upload image to S3
+          const artUploadResponse = await s3.upload(artParams).promise();
+          console.log("Artwork upload successful:", artUploadResponse);
+
+          // Save the URL of the uploaded image
+          artUrl = artUploadResponse.Location; // Get the public URL of the image
+          fs.unlinkSync(artFilePath); // Clean up temporary file
+        } catch (uploadError) {
+          console.error("Error during artwork upload:", uploadError);
+          return res.status(500).json({
+            error: "Artwork upload failed",
+            details: uploadError.message,
+          });
+        }
+      }
+
+      // Read audio file from temporary path
       const filePath = files.audioFile[0].filepath; // Correct file field name here
       const fileStream = fs.createReadStream(filePath);
 
-      // Set S3 upload parameters
+      // Set S3 upload parameters for the audio file
       const params = {
         Bucket: process.env.AWS_BUCKET_NAME,
-        Key: `sermons/${Date.now()}-${files.audioFile[0].originalFilename}`,
+        Key: `sermons/${files.audioFile[0].originalFilename}`,
         Body: fileStream,
         ContentType: files.audioFile[0].mimetype,
-        Metadata: metadata, // Use the string metadata
+        Metadata: {
+          ...metadata, // Use the existing metadata
+          art: artUrl, // Add the URL of the uploaded artwork to the metadata
+        },
       };
 
       // Upload file to S3
