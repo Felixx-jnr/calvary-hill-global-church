@@ -5,6 +5,7 @@ import AudioPlayer from "@/components/AudioPlayer";
 import Image from "next/image";
 import Link from "next/link";
 import Header from "@/components/Header";
+import { IoIosArrowBack } from "react-icons/io";
 
 // Define types for the structure of the audio file data
 interface AudioFileMetadata {
@@ -46,32 +47,33 @@ const Pagination = ({
     <div className="flex justify-center mt-8 space-x-2">
       <button
         className={`px-4 py-2 ${
-          currentPage === 1 ? "bg-gray-300" : "bg-blue-500 text-white"
+          currentPage === 1 ? "bg-gray-300" : "bg-maroon text-white"
         } rounded-md`}
         onClick={() => handlePageChange(currentPage - 1)}
         disabled={currentPage === 1}
       >
-        Previous
+        <IoIosArrowBack />
       </button>
       {Array.from({ length: totalPages }, (_, index) => (
         <button
           key={index}
-          className={`px-4 py-2 ${
-            currentPage === index + 1 ? "bg-blue-500 text-white" : "bg-gray-300"
-          } rounded-md`}
+          className={`px-4 py-2 rounded-full ${
+            currentPage === index + 1 ? " bg-maroon text-white" : "bg-gray-300"
+          }`}
           onClick={() => handlePageChange(index + 1)}
         >
           {index + 1}
         </button>
       ))}
+
       <button
-        className={`px-4 py-2 ${
-          currentPage === totalPages ? "bg-gray-300" : "bg-blue-500 text-white"
+        className={`px-4 py-2 rotate-180  ${
+          currentPage === totalPages ? "bg-gray-300" : "bg-maroon text-white"
         } rounded-md`}
         onClick={() => handlePageChange(currentPage + 1)}
         disabled={currentPage === totalPages}
       >
-        Next
+        <IoIosArrowBack />
       </button>
     </div>
   );
