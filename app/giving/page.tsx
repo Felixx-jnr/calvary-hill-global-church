@@ -25,7 +25,7 @@ const Giving = () => {
 
           <div className="text-center">
             <h2 className=" md:text-5xl text-3xl text-darkmaroon font-sofia-bold tracking-tight mt-5 mb-5 ">
-              GIVING
+              
             </h2>
 
             <div className="bg-white shadow-md inline-block m p-4 lg:w-[50%] md:w-[50%] w-[80%]">
@@ -39,7 +39,8 @@ const Giving = () => {
                 Name: <span>The Gospel Movement</span>
               </span>
 
-              <div className="mt-4 flex flex-col items-center">
+              {/* GIVE WIT CARD */}
+              {/* <div className="mt-4 flex flex-col items-center">
                 <Link href="/donate">
                   <p className=" text-maroon font-semibold hover:text-darkmaroon hover:underline">
                     Give With Card
@@ -52,7 +53,7 @@ const Giving = () => {
                     />
                   </div>
                 </Link>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

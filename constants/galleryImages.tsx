@@ -5,6 +5,5 @@ export const galleryImages = [
   "/about/gratia.avif",
   "about/gift.jpg",
   "/about/fide.avif",
-  "/me.jpg",
   "/about/christus.avif",
 ];

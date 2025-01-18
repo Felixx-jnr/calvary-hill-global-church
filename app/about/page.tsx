@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import Image from "next/image";
 import AboutCarousel from "@/components/About/AboutCarousel";
+import AboutCarouselTwo from "@/components/About/AboutCarouselTwo";
 
 import React from "react";
 
@@ -63,13 +64,13 @@ const About = () => {
             </p>
           </div>
 
-          <AboutCarousel />
+          <AboutCarouselTwo />
         </section>
 
         {/* EASTER BIBLE EXPERIENCE SECTION */}
         <section className=" grid grid-cols-[0.8fr_1fr] max-md:grid-cols-1 gap-16 w-[94%] mx-auto items-center md:mt-10 mt-5 ">
           <Image
-            src="/photo_2024-06-18_10-51-12.jpg"
+            src="/about/2024-03-14-09.25.07.jpg"
             alt=""
             width={2000}
             height={2000}
