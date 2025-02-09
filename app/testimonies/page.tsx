@@ -48,7 +48,7 @@ const TestimoniesList = () => {
             key={testimony.id}
             className=" hover:bg-white p-1"
           >
-            <div className="max-xs:flex justify-center "></div>
+            
 
             <h3 className="sm:text-4xl text-3xl font-sofia-bold my-1 px-1 ">
               {formatTitle(testimony.title)}

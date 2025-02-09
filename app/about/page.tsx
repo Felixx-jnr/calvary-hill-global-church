@@ -12,10 +12,10 @@ const About = () => {
         <Header header="About" />
       </header>
 
-      <section className="block md:grid grid-cols-[1fr_0.7fr] gap-16 w-[90%] mx-auto items-center ">
+      <section className="block md:grid grid-cols-[1fr_0.7fr] gap-8 lg:gap-16 w-[97%] lg:w-[90%] mx-auto items-center ">
         <AboutCarousel />
 
-        <div>
+        <div className=" max-md:mt-3">
           <p className="font-sofia-bold text-darkmaroon tracking-widest text-sm mb-5 max-md:mb-2">
             OUR HISTORY
           </p>
@@ -37,7 +37,7 @@ const About = () => {
         </h1>
 
         {/* DUNAMIS SECTION */}
-        <section className="block md:grid grid-cols-[1fr_0.8fr] gap-16 w-[94%] mx-auto items-center ">
+        <section className="block md:grid grid-cols-[1fr_0.8fr] gap-8 lg:gap-16 w-[94%] mx-auto items-center ">
           <div>
             <h2 className=" text-3xl xs:text-4xl md:text-[47px] font-sofia-bold text-darkmaroon tracking-[-0.7px] mb-12 max-md:mb-2">
               Dunamis CampMeeting
@@ -68,7 +68,7 @@ const About = () => {
         </section>
 
         {/* EASTER BIBLE EXPERIENCE SECTION */}
-        <section className=" grid grid-cols-[0.8fr_1fr] max-md:grid-cols-1 gap-16 w-[94%] mx-auto items-center md:mt-10 mt-5 ">
+        <section className=" grid grid-cols-[0.8fr_1fr] max-md:grid-cols-1 gap-8 lg:gap-16 w-[94%] mx-auto items-center md:mt-10 mt-5 ">
           <Image
             src="/about/2024-03-14-09.25.07.jpg"
             alt=""

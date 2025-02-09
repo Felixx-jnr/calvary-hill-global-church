@@ -30,13 +30,13 @@ export function AboutCarousel() {
         {aboutOneImages.map((item) => (
           <CarouselItem
             key={item}
-            className=" h-full  "
+            className=" h-full w-full  "
           >
-            <div className="  overflow-hidden w-full">
+            <div className="  overflow-hidden">
               <Image
                 src={item}
                 alt=""
-                className=" w-full object-cover"
+                className=" w-full h-[450px] md:h-[500px] object-cover"
                 width={1800}
                 height={1200}
               />

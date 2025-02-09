@@ -28,20 +28,20 @@ export function AboutCarousel() {
     >
       <CarouselContent>
         {aboutTwoImages.map((item) => (
-          <CarouselItem
-            key={item}
-            className=" h-full  "
-          >
-            <div className="  overflow-hidden w-full">
-              <Image
-                src={item}
-                alt=""
-                className=" w-full object-cover"
-                width={1800}
-                height={1200}
-              />
-            </div>
-          </CarouselItem>
+         <CarouselItem
+                     key={item}
+                     className=" h-full w-full  "
+                   >
+                     <div className=" overflow-hidden">
+                       <Image
+                         src={item}
+                         alt=""
+                         className=" w-full h-[500px] object-cover"
+                         width={1800}
+                         height={1200}
+                       />
+                     </div>
+                   </CarouselItem> 
         ))}
       </CarouselContent>
 
