@@ -37,10 +37,7 @@ const TestimonySlider = () => {
         <h2 className="lg:text-5xl text-4xl font-sofia-bold text-darkmaroon">
           Testimonies
         </h2>
-        <p className=" text-lightGrey font-normal text-sm md:text-lg leading-tight">
-          Let the redeemed of the LORD say so, whom he hath redeemed from the
-          hand of the enemy - Psalms 107 v 2
-        </p>
+       
       </div>
 
       <div className="reviews relative flex mt-2 mb-14 ">
