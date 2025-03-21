@@ -27,7 +27,7 @@ const Slider = () => {
 
   return (
     <main className="relative overflow-hidden">
-      <div className=" w-full h-[656px] ">
+      <div className="w-full h-[656px]">
         {homeImages.map((item, idx) => (
           <motion.div
             key={idx}
@@ -48,7 +48,7 @@ const Slider = () => {
               alt=""
               width={400}
               height={400}
-              className="w-full h-full object-cover overflow-hidden"
+              className="brightness-50 w-full h-full object-cover overflow-hidden"
               initial={{ scale: 1 }} // Start at normal scale
               animate={idx === activeImage ? { scale: 1.1 } : {}} // Only scale the active image
               transition={{
@@ -59,7 +59,7 @@ const Slider = () => {
         ))}
       </div>
 
-      <div className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 w-full">
+      <div className="top-1/2 left-1/2 absolute w-full -translate-x-1/2 -translate-y-1/2">
         <Description
           activeImage={activeImage}
           clickNext={clickNext}

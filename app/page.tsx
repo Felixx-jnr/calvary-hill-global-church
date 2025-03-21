@@ -22,30 +22,30 @@ const Home = () => {
       </div>
 
       {/* SECTION TWO */}
-      <section className=" mt-24 max-sm:mt-20">
-        <div className="w-[90%] sm:w-[85%] mx-auto mb-4">
-          <p className=" font-sofia-bold text-darkmaroon text-sm tracking-widest">
+      <section className="mt-24 max-sm:mt-20">
+        <div className="mx-auto mb-4 w-[90%] sm:w-[85%]">
+          <p className="font-sofia-bold text-darkmaroon text-sm tracking-widest">
             CALVARY HILL CHURCH
           </p>
 
-          <h1 className=" font-sofia-bold text-darkmaroon mt-3 mb-3 md:text-5xl lg:text-[57px] sm:text-4xl text-3xl tracking-tighter">
+          <h1 className="mt-3 mb-3 font-sofia-bold text-darkmaroon lg:text-[57px] text-3xl sm:text-4xl md:text-5xl tracking-tighter">
             We Are The Triumphant Church
           </h1>
 
-          <p className="  text-lightGrey">
+          <p className="text-lightGrey">
             Bringing men to the place of triumph through the revelation of
             Christ and positioning them for kingdom advancement.
           </p>
         </div>
 
-        <div className=" w-[95%] mx-auto">
+        <div className="mx-auto w-[95%]">
           <MiniCarousel />
         </div>
       </section>
 
       {/* SECTION THREE - OUR VISION */}
-      <section className=" mt-20 max-sm:mt-16 w-[95%] sm:w-[90%] mx-auto ">
-        <div className=" mb-6 lg:w-[230px] md:w-[200px] w-[150px]">
+      <section className="mx-auto mt-20 max-sm:mt-16 w-[95%] sm:w-[90%]">
+        <div className="mb-6 w-[150px] md:w-[200px] lg:w-[230px]">
           <Image
             src="/cropped-CHC-logo-black-1.png"
             alt=""
@@ -54,18 +54,18 @@ const Home = () => {
             height={500}
           />
         </div>
-        <p className="mb-5 sm:text-sm text-xs font-sofia-bold text-darkmaroon tracking-widest">
+        <p className="mb-5 font-sofia-bold text-darkmaroon text-xs sm:text-sm tracking-widest">
           OUR VISION
         </p>
-        <h1 className=" font-sofia-bold mb-5 text-4xl lg:text-[57px] font-bold tracking-tight text-darkmaroon">
+        <h1 className="mb-5 font-sofia-bold font-bold text-darkmaroon lg:text-[57px] text-4xl tracking-tight">
           Making Christ Known
         </h1>
-        <p className="  text-lightGrey  mb-5">
+        <p className="mb-5 text-lightGrey">
           Our Vision as a Church is to make Christ known through global
           evangelism to build a strong local church bonded by love and
           Supernatural manifestation through discipleship.
         </p>
-        <div className="relative w-full max-h-[800px] overflow-hidden mb-12">
+        <div className="relative mb-12 w-full max-h-[800px] overflow-hidden">
           <Image
             src={"/home/red.jpg"}
             alt={""}
@@ -74,106 +74,106 @@ const Home = () => {
             className="w-full object-cover"
           />
         </div>
-        <button className=" text-smokeWhite bg-maroon hover:bg-darkmaroon lg:px-14 lg:py-5 md:px-10 md:py-4 px-6 py-3 font-sofia-bold tracking-widest font-Sofia text-xs">
+        <button className="bg-maroon hover:bg-darkmaroon px-6 md:px-10 lg:px-14 py-3 md:py-4 lg:py-5 font-Sofia font-sofia-bold text-xs text-smokeWhite tracking-widest">
           <Link href="/about">ABOUT US</Link>
         </button>
       </section>
 
       {/* SECTION FOUR - SERMONS */}
-      <section className=" mt-16 bg-fixed text-white h-[429px] home-sermons ">
-        <div className="flex flex-col items-center justify-center h-full w-[90%] lg:w-[60%] mx-auto ">
-          <h2 className=" text-4xl md:text-5xl font-sofia-bold text-center">
+      <section className="bg-fixed mt-16 h-[429px] text-white home-sermons">
+        <div className="flex flex-col justify-center items-center mx-auto w-[90%] lg:w-[60%] h-full">
+          <h2 className="font-sofia-bold text-4xl md:text-5xl text-center">
             Sermons
           </h2>
 
-          <p className="my-6 text-center font-semibold text-sm md:text-xl leading-tight">
+          <p className="my-6 font-semibold text-sm md:text-xl text-center leading-tight">
             You can listen to and download messages for your joy and progress in
             the faith from our Senior Pastor, Pastor Collins Throne.
           </p>
 
-          <button className="text-smokeWhite bg-maroon hover:bg-darkmaroon lg:px-14 lg:py-5 md:px-10 md:py-4 px-6 py-3 font-sofia-bold tracking-widest font-Sofia text-xs">
+          <button className="bg-maroon hover:bg-darkmaroon px-6 md:px-10 lg:px-14 py-3 md:py-4 lg:py-5 font-Sofia font-sofia-bold text-xs text-smokeWhite tracking-widest">
             <Link href="/sermon">SERMONS</Link>
           </button>
         </div>
       </section>
 
       {/* SECTION FIVE - SERMON OF THE WEEK */}
-      <section className=" py-32 max-sm:py-16  bg-smokeWhite">
-        <div className="relative w-[95%] md:w-[90%] lg:w-[85%] mx-auto">
-          <p className="mb-3 sm:mb-5 sm:text-sm text-xs text-darkmaroon tracking-widest font-sofia-bold">
+      <section className="bg-smokeWhite py-32 max-sm:py-16">
+        <div className="relative mx-auto w-[95%] md:w-[90%] lg:w-[85%]">
+          <p className="mb-3 sm:mb-5 font-sofia-bold text-darkmaroon text-xs sm:text-sm tracking-widest">
             SERMON OF THE WEEK
           </p>
-          <h1 className=" font-sofia-bold mb-5 sm:mb-10 text-4xl lg:text-[57px] tracking-tighter text-darkmaroon">
+          <h1 className="mb-5 sm:mb-10 font-sofia-bold text-darkmaroon lg:text-[57px] text-4xl tracking-tighter">
             Listen On The Go!
           </h1>
 
           <RandomAudioPlayer />
         </div>
 
-        <div className="w-full text-center mt-24">
-          <p className="mb-5 sm:text-sm text-xs font-sofia-bold text-darkmaroon tracking-widest">
+        <div className="mt-24 w-full text-center">
+          <p className="mb-5 font-sofia-bold text-darkmaroon text-xs sm:text-sm tracking-widest">
             ARTICLES
           </p>
-          <h1 className=" font-sofia-bold mb-5 text-xl xs:text-3xl sm:text-5xl text-darkmaroon lg:w-[800px] md:w-[80%] sm:w-[85%] xs:w-[90%] w-[98%] mx-auto tracking-tight">
+          <h1 className="mx-auto mb-5 w-[98%] xs:w-[90%] sm:w-[85%] md:w-[80%] lg:w-[800px] font-sofia-bold text-darkmaroon text-xl xs:text-3xl sm:text-5xl tracking-tight">
             Grow in Grace - Dive Into Our Enriching Materials
           </h1>
 
-          <button className="text-smokeWhite bg-maroon hover:bg-darkmaroon lg:px-14 lg:py-5 px-3 py-3 font-extrabold tracking-widest font-sofia-bold sm:text-xs text-[8px] mt-4">
+          <button className="bg-maroon hover:bg-darkmaroon mt-4 px-3 lg:px-14 py-3 lg:py-5 font-sofia-bold font-extrabold text-[8px] sm:text-xs text-smokeWhite tracking-widest">
             <Link href="/devotional">VIEW ALL RESOURCES</Link>
           </button>
         </div>
       </section>
 
       {/* SECTION SIX - GIVING */}
-      <section className=" bg-fixed text-white h-[624px] home-giving ">
-        <div className="flex flex-col items-left justify-center h-full w-[95%] md:w-[80%] mx-auto ">
+      <section className="bg-fixed h-[624px] text-white home-giving">
+        <div className="flex flex-col justify-center items-left mx-auto w-[95%] md:w-[80%] h-full">
           <p className="mb-6 font-sofia-bold text-sm leading-tight tracking-widest">
             THE GIVING GRACE
           </p>
-          <h1 className=" text-4xl sm:text-5xl md:text-6xl font-sofia-bold tracking-tight mb-5">
+          <h1 className="mb-5 font-sofia-bold text-4xl sm:text-5xl md:text-6xl tracking-tight">
             God Loves A Cheerful Giver
           </h1>
 
-          <p className="mb-7 text-base font-medium font-Sofia text-darkGrey tracking-normal">
+          <p className="mb-7 font-Sofia font-medium text-darkGrey text-base tracking-normal">
             “Each of you should give what you have decided in your heart to
             give, not reluctantly or under compulsion, for God loves a cheerful
             giver”
           </p>
 
-          <p className="mb-5 text-base font-medium font-Sofia tracking-tight text-darkGrey">
+          <p className="mb-5 font-Sofia font-medium text-darkGrey text-base tracking-tight">
             - 2nd Cor 9:7 NIV
           </p>
 
-          <button className=" max-w-[190px] sm:max-w-[250px] text-smokeWhite bg-orange hover:bg-white hover:text-darkmaroon py-4 sm:py-5 sm:tracking-widest tracking-normal text-xs font-sofia-bold">
+          <button className="bg-orange hover:bg-white py-4 sm:py-5 max-w-[190px] sm:max-w-[250px] font-sofia-bold hover:text-darkmaroon text-xs text-smokeWhite tracking-normal sm:tracking-widest">
             <Link href="/giving">GIVING & PARTNERSHIP</Link>
           </button>
         </div>
       </section>
 
       {/* SECTION SEVEN - FORM */}
-      <section className=" block md:flex gap-4 items-center h-full w-[95%] md:w-[90%] mx-auto mt-24 ">
-        <div className=" md:w-[700px] mid:w-[600px] text-2xl md:text-xl mid:text-3xl font-sofia-bold text-darkmaroon">
+      <section className="block md:flex items-center gap-4 mx-auto mt-24 w-[95%] md:w-[90%] h-full">
+        <div className="md:w-[700px] mid:w-[600px] font-sofia-bold text-darkmaroon md:text-xl text-2xl mid:text-3xl">
           Please fill in this form if you would like to receive edifying
           contents.
         </div>
 
         <div className="w-[95%] text-lightGrey">
           <input
-            className="  text-lightGrey border-b border-darkmaroon focus:outline-none bg-transparent w-full font-Sofia font-normal leading-7 py-2 text-xl my-2 placeholder-lightGrey placeholder:font-semibold placeholder:font-Sofia placeholder:text-base "
+            className="bg-transparent my-2 py-2 border-darkmaroon border-b focus:outline-none w-full font-Sofia placeholder:font-Sofia font-normal placeholder:font-semibold text-lightGrey placeholder:text-base text-xl leading-7 placeholder-lightGrey"
             placeholder="Enter Your Email Address"
             type="email"
           />
 
-          <div className=" flex font-Sofia">
+          <div className="flex font-Sofia">
             <input type="checkbox" />
-            <div className="ml-2 text-sm font-medium">
+            <div className="ml-2 font-medium text-sm">
               I agree to the
-              <span className=" underline ml-1">Privacy Policy.</span>
+              <span className="ml-1 underline">Privacy Policy.</span>
             </div>
           </div>
         </div>
 
-        <p className="flex items-center w-[20%] max-md:mt-4 font-sofia-bold text-sm tracking-widest">
+        <p className="flex items-center max-md:mt-4 w-[20%] font-sofia-bold text-sm tracking-widest">
           <span>
             <LiaTelegram className="text-xl" />
           </span>
@@ -186,53 +186,38 @@ const Home = () => {
       </section>
 
       {/* SECTION EIGHT - ACCORDION */}
-      <section className="w-[95%] md:w-[80%] mx-auto mt-10 mb-20">
-        <h1 className="text-center text-3xl sm:text-4xl md:text-5xl font-sofia-bold tracking-tight text-darkmaroon mb-3">
+      <section className="mx-auto mt-10 mb-20 w-[95%] md:w-[80%]">
+        <h1 className="mb-3 font-sofia-bold text-darkmaroon text-3xl sm:text-4xl md:text-5xl text-center tracking-tight">
           FAQ&apos;s
         </h1>
 
-        <Accordion
-          type="multiple"
-          className="w-full"
-        >
-          <AccordionItem
-            className="mb-5"
-            value="item-1"
-          >
-            <AccordionTrigger className="text-left text-lg sm:text-xl md:text-2xl lg:text-3xl text-darkmaroon hover:no-underline font-sofia-bold mb-2 ">
+        <Accordion type="multiple" className="w-full">
+          <AccordionItem className="mb-5" value="item-1">
+            <AccordionTrigger className="mb-2 font-sofia-bold text-darkmaroon text-lg sm:text-xl md:text-2xl lg:text-3xl text-left hover:no-underline">
               What Are the Basic Doctrines of the Church?
             </AccordionTrigger>
-            <AccordionContent className=" text-base text-lightGrey mt-1 md:mt-4 mb-2 ">
+            <AccordionContent className="mt-1 md:mt-4 mb-2 text-lightGrey text-base">
               The Basic Doctrines of Calvary Hill Church are…{" "}
-              <Link
-                className=" font-semibold hover:underline"
-                href="/doctrine"
-              >
+              <Link className="font-semibold hover:underline" href="/doctrine">
                 Read More
               </Link>
             </AccordionContent>
           </AccordionItem>
 
-          <AccordionItem
-            className="mb-5"
-            value="item-2"
-          >
-            <AccordionTrigger className="text-left text-lg sm:text-xl md:text-2xl lg:text-3xl font-sofia-bold text-darkmaroon hover:no-underline mb-2 ">
+          <AccordionItem className="mb-5" value="item-2">
+            <AccordionTrigger className="mb-2 font-sofia-bold text-darkmaroon text-lg sm:text-xl md:text-2xl lg:text-3xl text-left hover:no-underline">
               How to Become a Church Member?
             </AccordionTrigger>
-            <AccordionContent className=" text-base text-lightGrey mt-1 md:mt-4 mb-2 ">
+            <AccordionContent className="mt-1 md:mt-4 mb-2 text-lightGrey text-base">
               Insert Google Form Link
             </AccordionContent>
           </AccordionItem>
 
-          <AccordionItem
-            className="mb-5"
-            value="item-3"
-          >
-            <AccordionTrigger className="text-left text-lg sm:text-xl md:text-2xl lg:text-3xl text-darkmaroon hover:no-underline font-sofia-bold mb-2 ">
+          <AccordionItem className="mb-5" value="item-3">
+            <AccordionTrigger className="mb-2 font-sofia-bold text-darkmaroon text-lg sm:text-xl md:text-2xl lg:text-3xl text-left hover:no-underline">
               Do You Conduct Worship Online?
             </AccordionTrigger>
-            <AccordionContent className=" text-base text-lightGrey mt-1 md:mt-4 mb-2 ">
+            <AccordionContent className="mt-1 md:mt-4 mb-2 text-lightGrey text-base">
               Yes we do, but It&apos;s not the primary way we would love you to
               join our services, but if you can&apos;t join us physically
               because of distance, you can join our services (Wednesday and

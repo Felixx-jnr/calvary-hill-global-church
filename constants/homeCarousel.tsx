@@ -7,13 +7,13 @@ export const homeImages = [
   },
   {
     id: 2,
-    src: "/home/DSC_1017-scaled.jpg",
+    src: "/home/pa.jpg",
     title: "THE TRIUMPHANT CHURCH",
     desc: "We Are Sold Out To Following After Christ",
   },
   {
     id: 3,
-    src: "/home/2024-01-24-01.21.36-1.jpg",
+    src: "/home/p.jpg",
     title: "THE TRIUMPHANT CHURCH",
     desc: "Training Believers For The Work Of Ministry",
   },

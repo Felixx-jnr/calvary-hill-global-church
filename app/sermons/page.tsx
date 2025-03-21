@@ -43,37 +43,61 @@ const Pagination = ({
     }
   };
 
+  // Define the range of pages to display
+  const pagesToShow = [];
+  for (let i = currentPage - 1; i <= currentPage + 1; i++) {
+    if (i >= 1 && i <= totalPages) {
+      pagesToShow.push(i);
+    }
+  }
+
   return (
-    <div className="flex justify-center mt-8 space-x-2">
+    <div className="flex justify-center space-x-2 mt-8">
+      {/* Previous Button */}
       <button
-        className={`px-4 py-2 ${
-          currentPage === 1 ? "bg-gray-300" : "bg-maroon text-white"
-        } rounded-md`}
+        className={` xs:text-sm text-xs px-2 py-1 xs:px-4 xs:py-2 ${currentPage === 1 ? "bg-gray-300" : "bg-maroon text-white"} rounded-md`}
         onClick={() => handlePageChange(currentPage - 1)}
         disabled={currentPage === 1}
       >
-        <IoIosArrowBack />
+        &lt;
       </button>
-      {Array.from({ length: totalPages }, (_, index) => (
-        <button
-          key={index}
-          className={`px-4 py-2 rounded-full ${
-            currentPage === index + 1 ? " bg-maroon text-white" : "bg-gray-300"
-          }`}
-          onClick={() => handlePageChange(index + 1)}
-        >
-          {index + 1}
-        </button>
+
+      {/* Page Numbers */}
+      {pagesToShow.map((page, index) => (
+        <React.Fragment key={page}>
+          <button
+            className={` xs:text-sm text-xs px-2 py-1 xs:px-4 xs:py-2 rounded-full ${
+              currentPage === page ? "bg-maroon text-white" : "bg-gray-300"
+            }`}
+            onClick={() => handlePageChange(page)}
+          >
+            {page}
+          </button>
+        </React.Fragment>
       ))}
 
+      {/* Ellipsis before last page (if needed) */}
+      {pagesToShow[pagesToShow.length - 1] < totalPages - 1 && (
+        <span className="">...</span>
+      )}
+
+      {/* Last Page (if needed) */}
+      {pagesToShow[pagesToShow.length - 1] < totalPages && (
+        <button
+          className="bg-gray-300 px-2 xs:px-4 py-1 xs:py-2 rounded-full text-xs xs:text-sm"
+          onClick={() => handlePageChange(totalPages)}
+        >
+          {totalPages}
+        </button>
+      )}
+
+      {/* Next Button */}
       <button
-        className={`px-4 py-2 rotate-180  ${
-          currentPage === totalPages ? "bg-gray-300" : "bg-maroon text-white"
-        } rounded-md`}
+        className={` xs:text-sm text-xs px-2 py-1 xs:px-4 xs:py-2 ${currentPage === totalPages ? "bg-gray-300" : "bg-maroon text-white"} rounded-md`}
         onClick={() => handlePageChange(currentPage + 1)}
         disabled={currentPage === totalPages}
       >
-        <IoIosArrowBack />
+        &gt;
       </button>
     </div>
   );
@@ -125,10 +149,7 @@ const SermonList: React.FC = () => {
   if (loading) {
     return (
       <div className="bg-smokeWhite">
-        <Header
-          header="Sermons"
-          page="All Sermons"
-        />
+        <Header header="Sermons" page="All Sermons" />
         <p>Loading audio files...</p>
       </div>
     );
@@ -137,10 +158,7 @@ const SermonList: React.FC = () => {
   if (error) {
     return (
       <div className="bg-smokeWhite">
-        <Header
-          header="Sermons"
-          page="All Sermons"
-        />
+        <Header header="Sermons" page="All Sermons" />
         <p>Error loading audio files. Please check your connection.</p>
       </div>
     );
@@ -155,44 +173,41 @@ const SermonList: React.FC = () => {
 
   return (
     <main className="bg-smokeWhite">
-      <Header
-        header="Sermons"
-        page="All Sermons"
-      />
+      <Header header="Sermons" page="All Sermons" />
 
-      <div className="sermon-player pb-10">
+      <div className="pb-10 sermon-player">
         {audioFiles.length === 0 ? (
           <p>No audio files available.</p>
         ) : (
-          <div className="w-[96%] max-w-[1200px] mx-auto">
+          <div className="mx-auto w-[96%] max-w-[1200px]">
             {paginatedFiles.map((file, index) => (
               <Link
                 key={index}
-                className="flex max-sm:flex-col mt-10 bg-white"
+                className="flex max-sm:flex-col bg-white mt-10"
                 href={`/sermons/${encodeURIComponent(file.fileName)}`}
               >
-                <div className="max-sm:h-[300px] max-sm:w-[100%] max-sm:self-center sm:w-[500px] sm:h-[350px]">
+                <div className="max-sm:self-center max-sm:w-[100%] sm:w-[500px] max-sm:h-[300px] sm:h-[350px]">
                   <Image
                     src={file.metadata.art}
                     alt=""
                     width={1000}
                     height={1280}
-                    className="h-full w-full object-cover max-sm:object-contain"
+                    className="w-full h-full object-cover max-sm:object-contain"
                   />
                 </div>
 
-                <div className="relative w-full px-6 self-center py-3">
-                  <p className="text-maroon text-sm font-medium">
+                <div className="relative self-center px-6 py-3 w-full">
+                  <p className="font-medium text-maroon text-sm">
                     {file.metadata.series}
                   </p>
-                  <p className="font-sofia-bold text-3xl md:text-4xl my-3 text-darkmaroon">
+                  <p className="my-3 font-sofia-bold text-darkmaroon text-3xl md:text-4xl">
                     {file.metadata.title}
                   </p>
 
-                  <p className="my-3 text-lightGrey text-sm font-medium">
+                  <p className="my-3 font-medium text-lightGrey text-sm">
                     {file.metadata.date}
                   </p>
-                  <div className="formatted-desc my-1 text-lightGrey text-sm md:text-base font-medium tracking-wide leading-snug font-serif">
+                  <div className="my-1 font-serif font-medium text-lightGrey text-sm md:text-base leading-snug tracking-wide formatted-desc">
                     {file.metadata.desc
                       ? formatDescription(file.metadata.desc)
                       : "No description available."}
@@ -208,7 +223,7 @@ const SermonList: React.FC = () => {
                     <AudioPlayer audioSrc={file.url} />
                   </div>
 
-                  <span className="block border-t text-sm font-medium text-maroon max-sm:pb-3 pt-5">
+                  <span className="block pt-5 max-sm:pb-3 border-t font-medium text-maroon text-sm">
                     <span className="text-lightGrey">Preacher :</span>{" "}
                     {file.metadata.preacher || "Pastor Collins Throne"}
                   </span>
