@@ -5,7 +5,6 @@ import AudioPlayer from "@/components/AudioPlayer";
 import Image from "next/image";
 import Link from "next/link";
 import Header from "@/components/Header";
-import { IoIosArrowBack } from "react-icons/io";
 
 // Define types for the structure of the audio file data
 interface AudioFileMetadata {
@@ -63,11 +62,11 @@ const Pagination = ({
       </button>
 
       {/* Page Numbers */}
-      {pagesToShow.map((page, index) => (
+      {pagesToShow.map((page) => (
         <React.Fragment key={page}>
           <button
             className={` xs:text-sm text-xs px-2 py-1 xs:px-4 xs:py-2 rounded-full ${
-              currentPage === page ? "bg-maroon text-white" : "bg-gray-300"
+              currentPage === page ? " bg-maroon text-white" : "bg-gray-300"
             }`}
             onClick={() => handlePageChange(page)}
           >
