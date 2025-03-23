@@ -31,18 +31,20 @@ const MixlrPlayer = () => {
       <div>
         <iframe
           src="https://calvary-hill-church.mixlr.com/embed"
-          height="200px"
+          height="500px"
           width="100%"
         ></iframe>
       </div>
 
-      <div className=" my-2">
+      <div className="my-2">
         {isLive ? (
           <div>We are live</div>
         ) : (
-          <div className=" text-xs sm:text-sm ">
+          <div className="text-xs sm:text-sm">
             We are not currently live but you can listen to other{" "}
-            <a href="/sermon">sermons</a>
+            <a href="/sermons" className="hover:text-maroon underline">
+              sermons
+            </a>
           </div>
         )}
       </div>

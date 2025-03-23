@@ -92,7 +92,7 @@ const Home = () => {
           </p>
 
           <button className="bg-maroon hover:bg-darkmaroon px-6 md:px-10 lg:px-14 py-3 md:py-4 lg:py-5 font-Sofia font-sofia-bold text-xs text-smokeWhite tracking-widest">
-            <Link href="/sermon">SERMONS</Link>
+            <Link href="/sermons">SERMONS</Link>
           </button>
         </div>
       </section>

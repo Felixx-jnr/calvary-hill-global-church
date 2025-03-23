@@ -8,22 +8,22 @@ import { LiaTelegram } from "react-icons/lia";
 
 const Leadership = () => {
   return (
-    <main className="px-2 bg-smokeWhite">
+    <main className="bg-smokeWhite px-2">
       <header>
         <Header header="Leadership" />
       </header>
 
-      <section className=" grid md:grid-cols-[1.1fr_0.9fr] items-center mx-auto gap-5 max-w-[1100px] w-[98%] ">
-        <div className="relative mx-auto h-[500px] md:h-[654px] ">
+      <section className="items-center gap-5 grid md:grid-cols-[1.1fr_0.9fr] mx-auto w-[98%] max-w-[1100px]">
+        <div className="relative mx-auto h-[500px] md:h-[654px]">
           <Image
             alt="Lead Pastor Calvary Hill Church"
             src="/about/leader.jpg"
             width={12000}
             height={12000}
-            className=" w-full h-full object-cover "
+            className="w-full h-full object-cover"
           />
 
-          <div className="absolute bottom-0 md:-right-2 max-md:left-0 bg-[#130701] md:h-[185px] md:w-[322px] font-sofia-bold text-2xl md:text-3xl lg:text-4xl text-smokeWhite flex flex-col justify-center px-10">
+          <div className="md:-right-2 bottom-0 max-md:left-0 absolute flex flex-col justify-center bg-[#130701] px-10 md:w-[322px] md:h-[185px] font-sofia-bold text-smokeWhite text-2xl md:text-3xl lg:text-4xl">
             <div className="">
               <h3>Father.</h3>
               <h3>Shepherd.</h3>
@@ -33,13 +33,13 @@ const Leadership = () => {
         </div>
 
         <div>
-          <p className="font-sofia-bold text-darkmaroon tracking-widest text-sm mb-5 max-md:mb-2">
+          <p className="mb-5 max-md:mb-2 font-sofia-bold text-darkmaroon text-sm tracking-widest">
             LEAD PASTOR
           </p>
-          <h2 className=" text-3xl xs:text-4xl md:text-5xl  font-sofia-bold text-darkmaroon tracking-wide mb-5 max-md:mb-2">
+          <h2 className="mb-5 max-md:mb-2 font-sofia-bold text-darkmaroon text-3xl xs:text-4xl md:text-5xl tracking-wide">
             Pastor Collins Throne
           </h2>
-          <p className=" text-lightGrey">
+          <p className="text-lightGrey">
             Pastor Collins Throne is the visionary, of Collins Throne
             Ministries. He is a sound teacher of the word of God, passionate
             about discipling men with the gospel of Christ, raising them to be
@@ -55,29 +55,29 @@ const Leadership = () => {
           <div className="flex gap-3 mt-4">
             <Link
               href=""
-              className="border p-2 rounded-full hover:text-pink-500 hover:border-pink-500"
+              className="p-2 border hover:border-pink-500 rounded-full hover:text-pink-500"
             >
               {" "}
-              <FaInstagram className=" text-2xl " />
+              <FaInstagram className="text-2xl" />
             </Link>
 
             <Link
               href=""
-              className=" border p-2 rounded-full  hover:text-blue-500 hover:border-blue-500 "
+              className="p-2 border hover:border-blue-500 rounded-full hover:text-blue-500"
             >
               {" "}
-              <FaFacebookF className=" text-2xl" />{" "}
+              <FaFacebookF className="text-2xl" />{" "}
             </Link>
           </div>
         </div>
       </section>
 
-      <section className=" grid md:grid-cols-[0.9fr_1.1fr] items-center mx-auto gap-10 max-w-[1100px] w-[98%] mt-28">
+      <section className="items-center gap-10 grid md:grid-cols-[0.9fr_1.1fr] mx-auto mt-28 w-[98%] max-w-[1100px]">
         <div className="max-md:order-2">
-          <h2 className=" text-3xl xs:text-4xl md:text-5xl  font-sofia-bold text-darkmaroon tracking-wide mb-5 max-md:mb-2">
+          <h2 className="mb-5 max-md:mb-2 font-sofia-bold text-darkmaroon text-3xl xs:text-4xl md:text-5xl tracking-wide">
             Our Ministry Gift
           </h2>
-          <p className=" text-lightGrey">
+          <p className="text-lightGrey">
             The blueprint of His Ministry as given by the lord is to Teach men
             to fight the good fight, to finish their course(their assignment)
             after helping them discover it and to teach them to keep the faith
@@ -95,74 +95,71 @@ const Leadership = () => {
           </p>
         </div>
 
-        <div className="relative mx-auto w-full max-md:order-1 overflow-hidden ">
+        <div className="relative max-md:order-1 mx-auto w-full overflow-hidden">
           <Image
             alt="Lead Pastor Calvary Hill Church"
             src="/about/gift.jpg"
             width={12000}
             height={12000}
-            className=" w-full"
+            className="w-full"
           />
 
-          <div className="absolute h-[500px] w-[300px] -bottom-10 right-0 max-md:hidden">
+          <div className="max-md:hidden right-0 -bottom-10 absolute w-[300px] h-[500px]">
             <Image
               alt="Lead Pastor Calvary Hill Church"
               src="/about/ministry.jpg"
               width={12000}
               height={12000}
-              className=" w-full h-full object-cover "
+              className="w-full h-full object-cover"
             />
           </div>
         </div>
       </section>
 
       {/* SECTION SEVEN - FORM */}
-      <section className=" mt-16 bg-fixed text-white h-[429px] home-sermons ">
-        <div className="flex flex-col items-center justify-center h-full w-[90%] lg:w-[60%] mx-auto ">
-          <h2 className=" text-4xl md:text-5xl font-sofia-bold text-center">
+      <section className="bg-fixed mt-16 h-[429px] text-white home-sermons">
+        <div className="flex flex-col justify-center items-center mx-auto w-[90%] lg:w-[60%] h-full">
+          <h2 className="font-sofia-bold text-4xl md:text-5xl text-center">
             Sermons
           </h2>
 
-          <p className="my-6 text-center font-semibold text-sm md:text-xl leading-tight">
+          <p className="my-6 font-semibold text-sm md:text-xl text-center leading-tight">
             You can listen to and download messages for your joy and progress in
             the faith from our Senior Pastor, Pastor Collins Throne.
           </p>
 
-          <button className="text-smokeWhite bg-maroon hover:bg-darkmaroon lg:px-14 lg:py-5 md:px-10 md:py-4 px-6 py-3 font-sofia-bold tracking-widest font-Sofia text-xs">
-            <Link href="/sermon">SERMONS arrow</Link>
+          <button className="bg-maroon hover:bg-darkmaroon px-6 md:px-10 lg:px-14 py-3 md:py-4 lg:py-5 font-Sofia font-sofia-bold text-xs text-smokeWhite tracking-widest">
+            <Link href="/sermons">SERMONS</Link>
           </button>
         </div>
       </section>
 
       {/* FORM */}
-      <section className=" block md:flex gap-4 items-center h-full w-[95%] md:w-[85%] mx-auto my-16 ">
-        <div className=" md:w-[700px] mid:w-[600px] text-2xl md:text-xl mid:text-3xl font-sofia-bold text-darkmaroon">
+      <section className="block md:flex items-center gap-4 mx-auto py-16 w-[95%] md:w-[85%] h-full">
+        <div className="md:w-[700px] mid:w-[600px] font-sofia-bold text-darkmaroon md:text-xl text-2xl mid:text-3xl">
           Please fill in this form if you would like to receive edifying
           contents.
         </div>
 
-        <div className="md:w-[1000px] w-[100%] text-lightGrey">
+        <div className="w-[100%] md:w-[1000px] text-lightGrey">
           <input
-            className="  text-lightGrey border-b border-darkmaroon focus:outline-none bg-transparent w-full font-Sofia font-normal leading-7 py-2 text-xl my-2 placeholder-lightGrey placeholder:font-semibold placeholder:font-Sofia placeholder:text-base "
+            className="bg-transparent my-2 py-2 border-darkmaroon border-b focus:outline-none w-full font-Sofia placeholder:font-Sofia font-normal placeholder:font-semibold text-lightGrey placeholder:text-base text-xl leading-7 placeholder-lightGrey"
             placeholder="Enter Your Email Address"
             type="email"
           />
 
-          <div className=" flex font-Sofia">
+          <div className="flex font-Sofia">
             <input type="checkbox" />
-            <div className="ml-2 text-sm font-medium">
+            <div className="ml-2 font-medium text-sm">
               I agree to the
-              <Link
-                className=" underline ml-1"
-                href="/"
-              >
+              <Link className="ml-1 underline" href="/">
                 Privacy Policy.
               </Link>
             </div>
           </div>
         </div>
 
-        <p className="flex items-center w-[20%] max-md:mt-4 font-sofia-bold text-sm tracking-widest ">
+        <p className="flex items-center max-md:mt-4 w-[20%] font-sofia-bold text-sm tracking-widest">
           <span>
             <LiaTelegram className="text-xl" />
           </span>
