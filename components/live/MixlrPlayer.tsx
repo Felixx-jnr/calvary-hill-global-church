@@ -8,7 +8,9 @@ const MixlrPlayer = () => {
   useEffect(() => {
     const checkLiveStatus = async () => {
       try {
-        const response = await fetch(`https://api.mixlr.com/users/`);
+        const response = await fetch(
+          `https://api.mixlr.com/users/calvary-hill-global-church`
+        );
         const data = await response.json();
         setIsLive(data.is_live); // Mixlr API returns an `is_live` boolean field
       } catch (error) {
