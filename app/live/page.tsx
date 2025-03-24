@@ -10,8 +10,8 @@ const Live = () => {
         <Header header="Live" />
       </header>
 
-      <section className=" w-[95%] sm:w-[80%] mx-auto ">
-        <h2 className=" font-sofia-bold text-darkmaroon text-3xl xs:text-4xl md:text-5xl  ">
+      <section className="mx-auto w-[95%] sm:w-[80%]">
+        <h2 className="font-sofia-bold text-darkmaroon text-3xl xs:text-4xl md:text-5xl">
           Mixlr Stream
         </h2>
 
@@ -23,8 +23,8 @@ const Live = () => {
         <MixlrPlayer />
       </section>
 
-      <section className=" w-[95%] sm:w-[80%] mx-auto py-5">
-        <h2 className=" font-sofia-bold text-darkmaroon text-3xl xs:text-4xl md:text-5xl  ">
+      {/* <section className="mx-auto py-5 w-[95%] sm:w-[80%]">
+        <h2 className="font-sofia-bold text-darkmaroon text-3xl xs:text-4xl md:text-5xl">
           YouTube Stream
         </h2>
 
@@ -34,7 +34,7 @@ const Live = () => {
         </p>
 
         <YouTubeLive />
-      </section>
+      </section> */}
     </main>
   );
 };

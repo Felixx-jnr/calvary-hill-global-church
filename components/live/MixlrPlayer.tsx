@@ -30,7 +30,7 @@ const MixlrPlayer = () => {
     <div className="relative">
       <div>
         <iframe
-          src="https://calvary-hill-church.mixlr.com/embed"
+          src="https://calvary-hill-global-church.mixlr.com/embed"
           height="500px"
           width="100%"
         ></iframe>
