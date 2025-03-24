@@ -23,7 +23,7 @@ const Live = () => {
         <MixlrPlayer />
       </section>
 
-      {/* <section className="mx-auto py-5 w-[95%] sm:w-[80%]">
+      <section className="mx-auto py-5 w-[95%] sm:w-[80%]">
         <h2 className="font-sofia-bold text-darkmaroon text-3xl xs:text-4xl md:text-5xl">
           YouTube Stream
         </h2>
@@ -34,7 +34,7 @@ const Live = () => {
         </p>
 
         <YouTubeLive />
-      </section> */}
+      </section>
     </main>
   );
 };
