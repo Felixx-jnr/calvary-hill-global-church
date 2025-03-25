@@ -11,45 +11,43 @@ const Giving = () => {
         <Header header="Giving" />
       </header>
 
-      <section className="md:w-[85%] w-[95%] mx-auto">
+      <section className="mx-auto w-[95%] md:w-[85%]">
         <div>
-          <div className=" h-80 overflow-hidden ">
+          <div className="h-80 overflow-hidden">
             <Image
               src="/giving.jpg"
               alt=""
               width={2000}
               height={2000}
-              className=" w-full h-full object-cover"
+              className="w-full h-full object-cover"
             />
           </div>
 
           <div className="text-center">
-            <h2 className=" md:text-5xl text-3xl text-darkmaroon font-sofia-bold tracking-tight mt-5 mb-5 ">
-              
-            </h2>
+            <h2 className="mt-5 mb-5 font-sofia-bold text-darkmaroon text-3xl md:text-5xl tracking-tight"></h2>
 
-            <div className="bg-white shadow-md inline-block m p-4 lg:w-[50%] md:w-[50%] w-[80%]">
-              <h3 className="sm:text-3xl text-xl text-darkmaroon font-sofia-bold tracking-tight">
-                6060177116
+            <div className="inline-block bg-white shadow-md p-4 w-[80%] md:w-[50%] lg:w-[50%] m">
+              <h3 className="font-sofia-bold text-darkmaroon text-xl sm:text-3xl tracking-tight">
+                1928765624
               </h3>
-              <h3 className="sm:text-3xl text-xl text-darkmaroon font-sofia-bold tracking-tight">
-                Fidelity Bank
+              <h3 className="font-sofia-bold text-darkmaroon text-xl sm:text-3xl tracking-tight">
+                Access Bank
               </h3>
-              <span className=" font-semibold text-lightGrey text-sm sm:text-xl  block mt-3">
-                Name: <span>The Gospel Movement</span>
+              <span className="block mt-3 font-semibold text-lightGrey text-sm sm:text-xl">
+                Name: <span>Calvary Hill Global Church </span>
               </span>
 
               {/* GIVE WIT CARD */}
-              {/* <div className="mt-4 flex flex-col items-center">
+              {/* <div className="flex flex-col items-center mt-4">
                 <Link href="/donate">
-                  <p className=" text-maroon font-semibold hover:text-darkmaroon hover:underline">
+                  <p className="font-semibold text-maroon hover:text-darkmaroon hover:underline">
                     Give With Card
                   </p>
                   <div className="w-28">
                     <img
                       src="/card-removebg-preview.png"
                       alt=""
-                      className="h-full w-full object-cover"
+                      className="w-full h-full object-cover"
                     />
                   </div>
                 </Link>
@@ -60,20 +58,20 @@ const Giving = () => {
       </section>
 
       <section>
-        <div className="md:w-[85%] w-[95%] mx-auto mt-10">
+        <div className="mx-auto mt-10 w-[95%] md:w-[85%]">
           <div className="text-center">
-            <h2 className="md:text-5xl text-2xl text-darkmaroon font-sofia-bold tracking-tight mt-5 mb-5">
+            <h2 className="mt-5 mb-5 font-sofia-bold text-darkmaroon text-2xl md:text-5xl tracking-tight">
               PARTNERSHIP
             </h2>
 
-            <div className=" inline-block mb-8 l">
+            <div className="inline-block mb-8 l">
               <div className=" ">
-                <span className=" font-semibold text-lightGrey text-sm sm:text-lg block">
+                <span className="block font-semibold text-lightGrey text-sm sm:text-lg">
                   TO PARTNER with the ministry of our man of God, kindly send a
                   mail to:
                   <Link
                     href="mailto:collinstministries.partnership@gmail.com?subject=Partnership"
-                    className=" hover:text-darkmaroon text-maroon text-sm sm:text-lg font-sofia-bold break-words "
+                    className="font-sofia-bold text-maroon hover:text-darkmaroon text-sm sm:text-lg break-words"
                   >
                     {" "}
                     collinstministries.partnership@gmail.com
