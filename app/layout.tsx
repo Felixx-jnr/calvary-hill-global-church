@@ -19,6 +19,10 @@ export const metadata: Metadata = {
   title: "Calvary Hill Global Church",
   description:
     " Our Vision as a Church is to make Christ known through global evangelism to build a strong local church bonded by love and Supernatural manifestation. ",
+  icons: {
+    icon: "/icon.png",
+    apple: "/icon.png",
+  },
 };
 
 export default function RootLayout({
