@@ -32,42 +32,41 @@ const TestimonySlider = () => {
   };
 
   return (
-    <div className="mt-20 ">
+    <div className="mt-20">
       <div className="mx-5">
-        <h2 className="lg:text-5xl text-4xl font-sofia-bold text-darkmaroon">
+        {/* <h2 className="font-sofia-bold text-darkmaroon text-4xl lg:text-5xl">
           Testimonies
-        </h2>
-       
+        </h2> */}
       </div>
 
-      <div className="reviews relative flex mt-2 mb-14 ">
-        <div className="reviews-slide flex py-4">
+      <div className="relative flex mt-2 mb-14 reviews">
+        <div className="flex py-4 reviews-slide">
           {testimonies.map((slide, index) => (
             <Link
               href={`testimonies/${index}`}
               key={slide.id}
-              className=" card bg-darkmaroon hover:bg-maroon mx-2 px-2 py-4 w-64 flex flex-col items-center justify-center"
+              className="flex flex-col justify-center items-center bg-darkmaroon hover:bg-maroon mx-2 px-2 py-4 w-64 card"
             >
-              <p className="mb-1 italic text-smokeWhite font-semibold text-xl">
+              <p className="mb-1 font-semibold text-smokeWhite text-xl italic">
                 {formatTitle(slide.title)}
               </p>
-              <p className=" text-smokeWhite font-sofia-normal ">
+              <p className="font-sofia-normal text-smokeWhite">
                 {formatContent(slide.content)}
               </p>
             </Link>
           ))}
         </div>
-        <div className="reviews-slide flex py-4">
+        <div className="flex py-4 reviews-slide">
           {testimonies.map((slide, index) => (
             <Link
               href={`testimonies/${index}`}
               key={slide.id}
-              className=" card bg-darkmaroon hover:bg-maroon mx-2 px-2 py-4 w-64 flex flex-col items-center justify-center"
+              className="flex flex-col justify-center items-center bg-darkmaroon hover:bg-maroon mx-2 px-2 py-4 w-64 card"
             >
-              <p className="mb-1 italic text-smokeWhite font-semibold text-xl">
+              <p className="mb-1 font-semibold text-smokeWhite text-xl italic">
                 {formatTitle(slide.title)}
               </p>
-              <p className=" text-smokeWhite font-sofia-normal ">
+              <p className="font-sofia-normal text-smokeWhite">
                 {formatContent(slide.content)}
               </p>
             </Link>

@@ -151,7 +151,7 @@ const Home = () => {
       </section>
 
       {/* SECTION SEVEN - FORM */}
-      <section className="block md:flex items-center gap-4 mx-auto mt-24 w-[95%] md:w-[90%] h-full">
+      {/* <section className="block md:flex items-center gap-4 mx-auto mt-24 w-[95%] md:w-[90%] h-full">
         <div className="md:w-[700px] mid:w-[600px] font-sofia-bold text-darkmaroon md:text-xl text-2xl mid:text-3xl">
           Please fill in this form if you would like to receive edifying
           contents.
@@ -179,7 +179,7 @@ const Home = () => {
           </span>
           SUBSCRIBE
         </p>
-      </section>
+      </section> */}
 
       <section>
         <TestimonySlider />
@@ -191,20 +191,32 @@ const Home = () => {
           FAQ&apos;s
         </h1>
 
-        <Accordion type="multiple" className="w-full">
-          <AccordionItem className="mb-5" value="item-1">
+        <Accordion
+          type="multiple"
+          className="w-full"
+        >
+          <AccordionItem
+            className="mb-5"
+            value="item-1"
+          >
             <AccordionTrigger className="mb-2 font-sofia-bold text-darkmaroon text-lg sm:text-xl md:text-2xl lg:text-3xl text-left hover:no-underline">
               What Are the Basic Doctrines of the Church?
             </AccordionTrigger>
             <AccordionContent className="mt-1 md:mt-4 mb-2 text-lightGrey text-base">
               The Basic Doctrines of Calvary Hill Church are…{" "}
-              <Link className="font-semibold hover:underline" href="/doctrine">
+              <Link
+                className="font-semibold hover:underline"
+                href="/doctrine"
+              >
                 Read More
               </Link>
             </AccordionContent>
           </AccordionItem>
 
-          <AccordionItem className="mb-5" value="item-2">
+          <AccordionItem
+            className="mb-5"
+            value="item-2"
+          >
             <AccordionTrigger className="mb-2 font-sofia-bold text-darkmaroon text-lg sm:text-xl md:text-2xl lg:text-3xl text-left hover:no-underline">
               How to Become a Church Member?
             </AccordionTrigger>
@@ -213,7 +225,10 @@ const Home = () => {
             </AccordionContent>
           </AccordionItem>
 
-          <AccordionItem className="mb-5" value="item-3">
+          <AccordionItem
+            className="mb-5"
+            value="item-3"
+          >
             <AccordionTrigger className="mb-2 font-sofia-bold text-darkmaroon text-lg sm:text-xl md:text-2xl lg:text-3xl text-left hover:no-underline">
               Do You Conduct Worship Online?
             </AccordionTrigger>
