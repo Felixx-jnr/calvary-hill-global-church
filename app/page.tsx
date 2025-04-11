@@ -3,7 +3,7 @@ import Slider from "../components/Home/Slider";
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { LiaTelegram } from "react-icons/lia";
+// import { LiaTelegram } from "react-icons/lia";
 
 import {
   Accordion,
