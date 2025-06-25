@@ -46,6 +46,35 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({
     }
   }, [audioSrc, playGlobally]);
 
+  // useEffect to update the slider background for the range sliders
+  useEffect(() => {
+    const updateSliderBackground = (slider: HTMLInputElement) => {
+      // Ensure slider.value is treated as a number
+      const value =
+        ((parseFloat(slider.value) - parseFloat(slider.min)) /
+          (parseFloat(slider.max) - parseFloat(slider.min))) *
+        100;
+      slider.style.background = `linear-gradient(to right, #240C00 ${value}%, #ccc ${value}%)`;
+    };
+
+    const rangeSliders = document.querySelectorAll(".range-slider");
+
+    rangeSliders.forEach((slider) => {
+      updateSliderBackground(slider as HTMLInputElement); // Update on initial render
+      slider.addEventListener("input", () =>
+        updateSliderBackground(slider as HTMLInputElement)
+      );
+    });
+
+    return () => {
+      rangeSliders.forEach((slider) =>
+        slider.removeEventListener("input", () =>
+          updateSliderBackground(slider as HTMLInputElement)
+        )
+      );
+    };
+  }, [currentTime, volume]);
+
   const togglePlayPause = () => {
     const audioEl = audioRef.current;
     if (!audioEl) return;
