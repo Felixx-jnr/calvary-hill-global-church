@@ -181,7 +181,7 @@ const SermonList: React.FC = () => {
   }
 
   return (
-    <main className="bg-smokeWhite pb-32 min-h-screen">
+    <main className="bg-smokeWhite min-h-screen">
       <Header
         header="Sermons"
         page="All Sermons"

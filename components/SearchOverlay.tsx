@@ -10,14 +10,14 @@ const SearchOverlay: React.FC<SearchOverlayProps> = ({
   onQueryChange,
 }) => {
   return (
-    <div className="top-0 z-30 sticky bg-white shadow px-4 py-3 w-full">
-      <div className="flex items-center mx-auto max-w-4xl">
+    <div className="top-0 z-30 sticky">
+      <div className="flex items-center mx-auto  w-[90%] md:w-[70%] max-w-[800px]">
         <input
           type="text"
           placeholder="Search sermons..."
           value={query}
           onChange={(e) => onQueryChange(e.target.value)}
-          className="p-2 border border-gray-300 rounded-md outline-none w-full"
+          className="p-2 border-gray-300 border-b-2 outline-none w-full"
         />
       </div>
     </div>
