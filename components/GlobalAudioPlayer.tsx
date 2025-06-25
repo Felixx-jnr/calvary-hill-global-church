@@ -25,8 +25,8 @@ const GlobalAudioPlayer = () => {
   return (
     <div className="right-0 bottom-0 z-50 fixed bg-darkGrey shadow-md px-2 py-2 xs:w-full sm:w-[90%] max-w-[540px]">
       <div className="mx-auto max-w-4xl">
-        <p className="mb-2 font-medium text-sm maroon">
-          Now Playing: {playingFile.metadata.title}
+        <p className="mb-2 font-medium text-sm text-maroon line-clamp-1 ">
+          Now Playing: <span>  { playingFile.metadata.title} </span>
         </p>
         <AudioPlayer
           audioSrc={playingFile.url}

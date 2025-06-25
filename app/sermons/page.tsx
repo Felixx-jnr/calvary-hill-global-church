@@ -6,7 +6,6 @@ import Image from "next/image";
 import Link from "next/link";
 import Header from "@/components/Header";
 import SearchOverlay from "@/components/SearchOverlay";
-import { usePlayer } from "@/context/PlayerContext";
 
 // Types
 interface AudioFileMetadata {
@@ -102,8 +101,6 @@ const SermonList: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const { setPlayingFile, playingFile } = usePlayer();
-
 
   const ITEMS_PER_PAGE = 5;
 
@@ -238,12 +235,22 @@ const SermonList: React.FC = () => {
                     }}
                     className="mt-5 mb-5"
                   >
-                    <button
-                      onClick={() => setPlayingFile(file)}
-                      className="font-medium text-maroon text-sm underline"
-                    >
-                      ▶ Play Sermon
-                    </button>
+                    <AudioPlayer
+                      audioSrc={file.url}
+                      file={{
+                        fileName: "random.mp3", // or however you want to label it
+                        url: file.url,
+                        metadata: {
+                          art: file.metadata?.art || "/default-art.jpg",
+                          title: file.metadata?.title || "Untitled",
+                          date: new Date().toISOString(), // or null if not available
+                          desc: null, // add real desc if you have it
+                          series: null,
+                          preacher:
+                            file.metadata?.preacher || "Unknown Preacher",
+                        },
+                      }}
+                    />
                   </div>
 
                   <span className="block pt-5 max-sm:pb-3 border-t font-medium text-maroon text-sm">
@@ -263,8 +270,6 @@ const SermonList: React.FC = () => {
           </div>
         )}
       </div>
-
-      
     </main>
   );
 };
