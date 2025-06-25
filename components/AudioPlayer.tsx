@@ -169,7 +169,7 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({
         <div className="max-xs:hidden volume-control">
           <button
             onClick={toggleMute}
-            className="p-2 md:p-3 border hover:border-maroon rounded-full text-darkmaroon hover:text-maroon text-lg"
+            className="p-2 md:p-3 border border-darkmaroon hover:border-maroon rounded-full text-darkmaroon hover:text-maroon text-lg"
           >
             {isMuted ? <ImVolumeMute /> : <HiVolumeUp />}
           </button>
