@@ -51,12 +51,12 @@ const RandomAudioPlayer: React.FC = () => {
 
   // Handle loading and error states
   if (loading) {
-    return <p className="text-center mt-4">Loading audio...</p>;
+    return <p className="mt-4 text-center">Loading audio...</p>;
   }
 
   if (error) {
     return (
-      <p className="text-center mt-4 text-red-500">
+      <p className="mt-4 text-red-500 text-center">
         Error: {error}. Please refresh the page.
       </p>
     );
@@ -64,41 +64,55 @@ const RandomAudioPlayer: React.FC = () => {
 
   if (!audioData) {
     return (
-      <p className="text-center mt-4">
+      <p className="mt-4 text-center">
         No audio data available. Please refresh the page.
       </p>
     );
   }
 
   return (
-    <div className="flex max-sm:block bg-white">
+    <div className="max-sm:block flex bg-white">
       {/* Audio Cover Image */}
-      <div className="sm:w-[400px] md:w-[500px] max-sm:h-[200px] max-sm:my-5">
+      <div className="max-sm:my-5 sm:w-[400px] md:w-[500px] max-sm:h-[200px]">
         <Image
           src={audioData.metadata?.art || "/default-art.jpg"} // Default fallback image
           alt="Audio Artwork"
           width={1000}
           height={1280}
-          className="h-full w-full object-cover"
+          className="w-full h-full object-cover"
         />
       </div>
 
       {/* Audio Metadata and Player */}
-      <div className="md:ml-8 lg:ml-10 relative w-full">
-        <div className="sm:absolute sm:top-1/2 sm:-translate-y-1/2 w-full font-sofia-bold p-4">
-          <p className="inline-block p-4 text-xs font-bold py-1 bg-darkmaroon text-white text-center">
+      <div className="relative md:ml-8 lg:ml-10 w-full">
+        <div className="sm:top-1/2 sm:absolute p-4 w-full font-sofia-bold sm:-translate-y-1/2">
+          <p className="inline-block bg-darkmaroon p-4 py-1 font-bold text-white text-xs text-center">
             NOW PLAYING
           </p>
-          <h4 className="text-xl mt-4 leading-tight text-darkmaroon">
+          <h4 className="mt-4 text-darkmaroon text-xl leading-tight">
             {audioData.metadata?.preacher || "Pastor Collins Throne"}
           </h4>
-          <h3 className="text-[28px] leading-none tracking-wide text-darkmaroon">
+          <h3 className="text-[28px] text-darkmaroon leading-none tracking-wide">
             {audioData.metadata?.title || "Untitled Audio"}
           </h3>
 
-          <div className="flex gap-4 mt-6 justify-start">
+          <div className="flex justify-start gap-4 mt-6">
             {/* Audio Player */}
-            <AudioPlayer audioSrc={audioData.url} />
+            <AudioPlayer
+              audioSrc={audioData.url}
+              file={{
+                fileName: "random.mp3", // or however you want to label it
+                url: audioData.url,
+                metadata: {
+                  art: audioData.metadata?.art || "/default-art.jpg",
+                  title: audioData.metadata?.title || "Untitled",
+                  date: new Date().toISOString(), // or null if not available
+                  desc: null, // add real desc if you have it
+                  series: null,
+                  preacher: audioData.metadata?.preacher || "Unknown Preacher",
+                },
+              }}
+            />
           </div>
         </div>
       </div>
