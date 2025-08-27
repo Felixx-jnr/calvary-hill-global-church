@@ -1,4 +1,5 @@
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./styles/globals.scss";
@@ -54,6 +55,7 @@ export default function RootLayout({
         </PlayerProvider>
         <Footer />
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
