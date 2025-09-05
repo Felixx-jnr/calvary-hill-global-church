@@ -80,7 +80,7 @@ const Home = () => {
       </section>
 
       {/* SECTION FOUR - SERMONS */}
-      <section className="bg-fixed mt-16 h-[429px] text-white home-sermons">
+      <section className="bg-cover bg-center md:bg-fixed mt-16 h-[429px] text-white home-sermons">
         <div className="flex flex-col justify-center items-center mx-auto w-[90%] lg:w-[60%] h-full">
           <h2 className="font-sofia-bold text-4xl md:text-5xl text-center">
             Sermons
