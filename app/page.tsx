@@ -45,7 +45,7 @@ const Home = () => {
 
       {/* SECTION THREE - OUR VISION */}
       <section className="mx-auto mt-20 max-sm:mt-16 w-[95%] sm:w-[90%]">
-        <div className="mb-6 w-[150px] md:w-[200px] lg:w-[230px]">
+        {/* <div className="mb-6 w-[150px] md:w-[200px] lg:w-[230px]">
           <Image
             src="/cropped-CHC-logo-black-1.png"
             alt=""
@@ -53,7 +53,7 @@ const Home = () => {
             width={500}
             height={500}
           />
-        </div>
+        </div> */}
         <p className="mb-5 font-sofia-bold text-darkmaroon text-xs sm:text-sm tracking-widest">
           OUR VISION
         </p>
@@ -65,9 +65,9 @@ const Home = () => {
           evangelism to build a strong local church bonded by love and
           Supernatural manifestation through discipleship.
         </p>
-        <div className="relative mb-12 w-full max-h-[800px] overflow-hidden">
+        <div className="relative mb-12 w-full max-h-[550px] overflow-hidden">
           <Image
-            src={"/home/red.jpg"}
+            src={"/home/makingchristknown.jpg"}
             alt={""}
             width={1800}
             height={1240}
@@ -125,7 +125,7 @@ const Home = () => {
       </section>
 
       {/* SECTION SIX - GIVING */}
-      <section className="bg-fixed h-[624px] text-white home-giving">
+      <section className="bg-cover bg-center md:bg-fixed h-[624px] text-white home-giving">
         <div className="flex flex-col justify-center items-left mx-auto w-[95%] md:w-[80%] h-full">
           <p className="mb-6 font-sofia-bold text-sm leading-tight tracking-widest">
             THE GIVING GRACE

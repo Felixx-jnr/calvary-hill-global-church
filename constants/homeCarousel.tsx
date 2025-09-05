@@ -1,19 +1,19 @@
 export const homeImages = [
   {
     id: 1,
-    src: "/home/b.jpg",
+    src: "/home/sliderone.jpg",
     title: "THE CALVARY HILL GLOBAL CHURCH",
     desc: "The Triumphant Church. We Are A Family Of Believers",
   },
   {
     id: 2,
-    src: "/home/pa.jpg",
+    src: "/home/slidertwo.jpg",
     title: "THE TRIUMPHANT CHURCH",
     desc: "We Are Sold Out To Following After Christ",
   },
   {
     id: 3,
-    src: "/home/p.jpg",
+    src: "/home/sliderthree.jpg",
     title: "THE TRIUMPHANT CHURCH",
     desc: "Training Believers For The Work Of Ministry",
   },
@@ -22,18 +22,19 @@ export const homeImages = [
 export const miniCarouselImages = [
   {
     id: 2,
-    src: "/home/2024-01-24-01.22.20.jpg",
+
+    src: "/home/minicarfour.jpg",
   },
   {
     id: 1,
-    src: "/home/2024-01-20-13.59.39-e1706059175861.jpg",
+    src: "/home/minicartwo.jpg",
   },
   {
     id: 3,
-    src: "/home/2024-01-24-01.22.30-e1706056577516.jpg",
+    src: "/home/minicarthree.jpg",
   },
   {
     id: 4,
-    src: "/home/photo_12_2024-05-22_10-04-58.jpg",
+    src: "/home/minicarone.jpg",
   },
 ];
