@@ -1,8 +1,6 @@
 export const galleryImages = [
-  "/galery/1.jpg",
   "/galery/2.jpg",
   "/galery/3.jpg",
-  "/galery/4.jpg",
   "/galery/5.jpg",
   "/galery/6.jpg",
   "/galery/7.jpg",
@@ -22,16 +20,12 @@ export const galleryImages = [
   "/galery/21.jpg",
   "/galery/22.jpg",
   "/galery/23.jpg",
-  "/galery/25.jpg",
   "/galery/26.jpg",
   "/galery/27.jpg",
   "/galery/28.jpg",
   "/galery/29.jpg",
-  "/galery/30.jpg",
   "/galery/31.jpg",
   "/galery/32.jpg",
-  "/galery/33.jpg",
-  "/galery/34.jpg",
   "/galery/35.jpg",
   "/galery/36.jpg",
   "/galery/37.jpeg",
@@ -39,9 +33,9 @@ export const galleryImages = [
   "/galery/39.jpg",
   "/galery/40.jpg",
   "/galery/41.jpg",
-  "/galery/42.jpg",
+
   "/galery/43.jpg",
-  "/galery/44.jpg",
+
   "/galery/45.jpg",
   "/galery/46.jpg",
   "/galery/47.jpg",
@@ -52,5 +46,4 @@ export const galleryImages = [
   "/galery/52.jpg",
   "/galery/53.jpg",
   "/galery/54.jpg",
- 
 ];

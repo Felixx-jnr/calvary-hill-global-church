@@ -63,13 +63,13 @@ const GalleryLayout: React.FC<GalleryLayoutProps> = ({ images = [] }) => {
               images.map((image, index) => (
                 <motion.div
                   key={index}
-                  className=" p-1 cursor-pointer overflow-hidden"
+                  className="p-1 overflow-hidden cursor-pointer"
                   onClick={() => openImage(index)}
                   whileHover={{ scale: 1.05 }}
                 >
                   <img
                     src={image}
-                    alt={`Gallery image ${index + 1}`}
+                    alt={`Gallery image ${image}`}
                     className="w-full h-auto object-cover"
                   />
                 </motion.div>
@@ -85,7 +85,7 @@ const GalleryLayout: React.FC<GalleryLayoutProps> = ({ images = [] }) => {
       <AnimatePresence>
         {selectedImage && (
           <motion.div
-            className="fixed inset-0 z-50 bg-black bg-opacity-90 flex justify-center items-center"
+            className="z-50 fixed inset-0 flex justify-center items-center bg-black bg-opacity-90"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -99,14 +99,14 @@ const GalleryLayout: React.FC<GalleryLayoutProps> = ({ images = [] }) => {
                 className="w-full h-full object-contain"
               />
               <button
-                className="absolute top-1/2 left-0 transform -translate-y-1/2 text-white text-2xl p-4"
+                className="top-1/2 left-0 absolute p-4 text-white text-2xl -translate-y-1/2 transform"
                 onClick={showPrevImage}
                 aria-label="Show previous image"
               >
                 <FaArrowLeft />
               </button>
               <button
-                className="absolute top-1/2 right-0 transform -translate-y-1/2 text-white text-2xl p-4"
+                className="top-1/2 right-0 absolute p-4 text-white text-2xl -translate-y-1/2 transform"
                 onClick={showNextImage}
                 aria-label="Show next image"
               >
@@ -114,7 +114,7 @@ const GalleryLayout: React.FC<GalleryLayoutProps> = ({ images = [] }) => {
               </button>
             </div>
             <button
-              className="absolute top-4 right-4 text-white text-3xl p-4"
+              className="top-4 right-4 absolute p-4 text-white text-3xl"
               onClick={closeImage}
               aria-label="Close image"
             >

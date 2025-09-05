@@ -49,8 +49,9 @@ const Footer = () => {
                 />
               </div>
               <br />
-              <p className="font-extralight tex-t-base">
-                No. 152, Awolowo Way, Allen Junction, Ikeja, Lagos, Nigeria
+              <p className="font-extralight text-sm sm:text-base capitalize">
+                avenue 2 wealth multipurpose event center, saphire hall, <br />
+                no 7 olufunmilola okikiolu street, off toyin street ikeja, lagos
               </p>
 
               <p className="my-2 font-extralight text-base break-words">
