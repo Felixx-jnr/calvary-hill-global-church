@@ -5,6 +5,7 @@ import { IoLogoInstagram } from "react-icons/io";
 import { FaYoutube } from "react-icons/fa6";
 import { FaTelegramPlane } from "react-icons/fa";
 import { FaFacebookSquare } from "react-icons/fa";
+import Overlay from "./Overlay";
 
 const footerLinks = [
   { link: "Home", src: "/" },
@@ -20,6 +21,7 @@ const footerLinks = [
 const Footer = () => {
   return (
     <footer className="relative">
+      <Overlay />
       <div className="pb-2 footer-cover">
         <div className="text-white">
           <div className="mx-auto w-[85%] text-center">
@@ -127,7 +129,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <p className="mx-auto mt-3 pt-2 border-[#4C4C4C] border-t-[1px] w-[98%] font-extralight text-xs text-smokeWhite">
+        <p className="mx-auto mt-3 pt-2 border-[#4C4C4C] border-t-[1px] w-[98%] font-extralight text-smokeWhite text-xs">
           The Calvary Hill Global Church © 2024. All Rights Reserved.
         </p>
       </div>

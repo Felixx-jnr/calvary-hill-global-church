@@ -4,6 +4,7 @@ import AboutCarousel from "@/components/About/AboutCarousel";
 import AboutCarouselTwo from "@/components/About/AboutCarouselTwo";
 
 import React from "react";
+import Link from "next/link";
 
 const About = () => {
   return (
@@ -12,17 +13,17 @@ const About = () => {
         <Header header="About" />
       </header>
 
-      <section className="block md:grid grid-cols-[1fr_0.7fr] gap-8 lg:gap-16 w-[97%] lg:w-[90%] mx-auto items-center ">
+      <section className="block items-center gap-8 lg:gap-16 md:grid grid-cols-[1fr_0.7fr] mx-auto w-[97%] lg:w-[90%]">
         <AboutCarousel />
 
-        <div className=" max-md:mt-3">
-          <p className="font-sofia-bold text-darkmaroon tracking-widest text-sm mb-5 max-md:mb-2">
+        <div className="max-md:mt-3">
+          <p className="mb-5 max-md:mb-2 font-sofia-bold text-darkmaroon text-sm tracking-widest">
             OUR HISTORY
           </p>
-          <h2 className=" text-3xl xs:text-4xl md:text-5xl  font-sofia-bold text-darkmaroon tracking-wide mb-5 max-md:mb-2">
+          <h2 className="mb-5 max-md:mb-2 font-sofia-bold text-darkmaroon text-3xl xs:text-4xl md:text-5xl tracking-wide">
             CHC
           </h2>
-          <p className=" text-lightGrey mb-2">
+          <p className="mb-2 text-lightGrey">
             Calvary Hill Global Church (CHC) a.k.a the triumphant Church, is the
             Church expression of Collins Throne Ministries. It is a global
             ministry with headquarters currently in Lagos, Nigeria. Its senior
@@ -31,18 +32,18 @@ const About = () => {
         </div>
       </section>
 
-      <div className="  py-20 bg-smokeWhite">
-        <h1 className=" text-4xl sm:text-5xl md:text-6xl font-sofia-bold text-darkmaroon tracking-tighter mb-16 text-center">
+      <div className="bg-smokeWhite py-20">
+        <h1 className="mb-16 font-sofia-bold text-darkmaroon text-4xl sm:text-5xl md:text-6xl text-center tracking-tighter">
           Events & Meetings
         </h1>
 
         {/* DUNAMIS SECTION */}
-        <section className="block md:grid grid-cols-[1fr_0.8fr] gap-8 lg:gap-16 w-[94%] mx-auto items-center ">
+        <section className="block items-center gap-8 lg:gap-16 md:grid grid-cols-[1fr_0.8fr] mx-auto w-[94%]">
           <div>
-            <h2 className=" text-3xl xs:text-4xl md:text-[47px] font-sofia-bold text-darkmaroon tracking-[-0.7px] mb-12 max-md:mb-2">
+            <h2 className="mb-12 max-md:mb-2 font-sofia-bold text-darkmaroon md:text-[47px] text-3xl xs:text-4xl tracking-[-0.7px]">
               Dunamis CampMeeting
             </h2>
-            <p className=" text-lightGrey mb-2 ">
+            <p className="mb-7 text-lightGrey">
               Dunamis Camp meeting is our yearly annual Prayer Camp meeting
               organized by Calvary Hill Church held in December.
               <br /> <br />
@@ -57,31 +58,37 @@ const About = () => {
               answers to prayers. Sessions at Dunamis Camp Meeting are
               characterized by a tangible presence of the power of God, mighty
               utterance and angelic ministrations.
-              <br /> <br />
+              <br />
               It is a meeting worth attending, not just once but for a lifetime.
-              <br /> <br />
               We hope to see you in the next Dunamis meeting!
             </p>
+            <Link
+              href="https://forms.gle/3GkLsyDFKjTqjrtd8"
+              target="_blank"
+              className="bg-[#bc0f01] hover:bg-[#800d05] shadow-[0_0_10px_#bc0f01,0_0_20px_#bc0f01,0_0_40px_#bc0f01] hover:shadow-[0_0_15px_#800d05,0_0_30px_#800d05,0_0_60px_#800d05] px-4 py-2 rounded-md text-white transition-all animate-pulse duration-500"
+            >
+              Register
+            </Link>
           </div>
 
           <AboutCarouselTwo />
         </section>
 
         {/* EASTER BIBLE EXPERIENCE SECTION */}
-        <section className=" grid grid-cols-[0.8fr_1fr] max-md:grid-cols-1 gap-8 lg:gap-16 w-[94%] mx-auto items-center md:mt-10 mt-5 ">
+        <section className="items-center gap-8 lg:gap-16 grid grid-cols-[0.8fr_1fr] max-md:grid-cols-1 mx-auto mt-5 md:mt-10 w-[94%]">
           <Image
             src="/about/2024-03-14-09.25.07.jpg"
             alt=""
             width={2000}
             height={2000}
-            className=" max-md:order-2 "
+            className="max-md:order-2"
           />
 
           <div className=" ">
-            <h2 className=" text-3xl xs:text-4xl md:text-[47px] font-sofia-bold text-darkmaroon tracking-[-0.7px] mb-10 max-md:mb-8">
+            <h2 className="mb-10 max-md:mb-8 font-sofia-bold text-darkmaroon md:text-[47px] text-3xl xs:text-4xl tracking-[-0.7px]">
               Easter Bible Experience
             </h2>
-            <p className=" text-lightGrey mb-2">
+            <p className="mb-2 text-lightGrey">
               Easter Bible Experience is a two-day annual bible expository/
               teaching meeting of Calvary Hill Church held during Easter season.
               In this meeting, Amazing gospel truth is taught for elongated
