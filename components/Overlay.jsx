@@ -8,7 +8,6 @@ const sliderImages = ["/dum1.jpg", "/dum2.jpg"];
 const Overlay = () => {
   // Overlay & Tag state
   const [isOverlayOpen, setIsOverlayOpen] = useState(false);
-  const [isTagVisible, setIsTagVisible] = useState(true);
 
   // Slider state
   const [currentSlide, setCurrentSlide] = useState(0);
