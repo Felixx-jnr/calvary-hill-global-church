@@ -77,7 +77,7 @@ const Overlay = () => {
           />
 
           {/* Popup content */}
-          <div className="z-10 relative flex bg-white mx-2 p-2 rounded-md w-full max-w-[745px] h-[409px] overflow-hidden">
+          <div className="z-10 relative sm:flex bg-white mx-2 p-2 rounded-md w-full max-w-[745px] sm:h-[409px] overflow-hidden">
             {/* Overlay X (only closes overlay) */}
             <button
               aria-label="Close discount popup"
@@ -88,7 +88,7 @@ const Overlay = () => {
             </button>
 
             {/* Left: Image Slider */}
-            <div className="max-sm:hidden relative flex flex-col justify-center items-center bg-gray-100 min-w-[290px]">
+            <div className="relative flex flex-col justify-center items-center bg-gray-100 min-w-[290px] max-sm:h-[200px]">
               <div className="relative p-2 rounded-md w-full h-full overflow-hidden">
                 <Image
                   src={sliderImages[currentSlide]}
