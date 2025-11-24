@@ -124,7 +124,7 @@ const Overlay = () => {
                 DUNAMIS CAMP FIRE 2025
               </h2>
               <p className="mb-3 text-xs italic">
-                "THOU SHALT BE TURNED INTO ANOTHER MAN" - 1 SAMUEL 10:6
+                {'"THOU SHALT BE TURNED INTO ANOTHER MAN" - 1 SAMUEL 10:6'}
               </p>
 
               <div className="">
