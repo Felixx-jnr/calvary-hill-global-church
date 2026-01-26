@@ -5,7 +5,6 @@ import { IoLogoInstagram } from "react-icons/io";
 import { FaYoutube } from "react-icons/fa6";
 import { FaTelegramPlane } from "react-icons/fa";
 import { FaFacebookSquare } from "react-icons/fa";
-import Overlay from "./Overlay";
 
 const footerLinks = [
   { link: "Home", src: "/" },
@@ -21,7 +20,6 @@ const footerLinks = [
 const Footer = () => {
   return (
     <footer className="relative">
-      <Overlay />
       <div className="pb-2 footer-cover">
         <div className="text-white">
           <div className="mx-auto w-[85%] text-center">
