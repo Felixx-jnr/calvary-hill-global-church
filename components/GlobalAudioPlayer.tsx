@@ -17,6 +17,7 @@ const GlobalAudioPlayer = () => {
         <AudioPlayer
           audioSrc={playingFile.url}
           playGlobally={true}
+          file={playingFile}
         />
       </div>
     </div>

@@ -36,15 +36,44 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({
   const [volume, setVolume] = useState(1);
   const [isMuted, setIsMuted] = useState(false);
 
-  const { setPlayingFile } = usePlayer();
+  const {
+    setPlayingFile,
+    restoredFileName,
+    restoredPosition,
+    restoredWasPlaying,
+    savePosition,
+    clearSaved,
+  } = usePlayer();
+
+  // True while this global player is showing the sermon carried over from a previous page load.
+  const isRestoredFile =
+    playGlobally && !!file && !!restoredFileName && file.fileName === restoredFileName;
+
+  // Guards so the resume-seek runs once per src and stops once the user takes over.
+  const userInteractedRef = useRef(false);
+  const seekedSrcRef = useRef<string | null>(null);
 
   // Automatically play when used in global context
   useEffect(() => {
-    if (playGlobally && audioRef.current) {
-      audioRef.current.play();
+    const audioEl = audioRef.current;
+    if (!playGlobally || !audioEl) return;
+
+    // Respect the paused state a restored sermon was left in.
+    if (isRestoredFile && !restoredWasPlaying) {
+      setIsPlaying(false);
+      return;
+    }
+
+    const playPromise = audioEl.play();
+    if (playPromise && typeof playPromise.then === "function") {
+      playPromise
+        .then(() => setIsPlaying(true))
+        // Browser blocked autoplay (e.g. right after a refresh) — leave it paused for a tap.
+        .catch(() => setIsPlaying(false));
+    } else {
       setIsPlaying(true);
     }
-  }, [audioSrc, playGlobally]);
+  }, [audioSrc, playGlobally, isRestoredFile, restoredWasPlaying]);
 
   // useEffect to update the slider background for the range sliders
   useEffect(() => {
@@ -84,6 +113,8 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({
       return;
     }
 
+    userInteractedRef.current = true;
+
     if (audioEl.paused) {
       audioEl.play();
       setIsPlaying(true);
@@ -94,16 +125,41 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({
   };
 
   const handleTimeUpdate = () => {
-    if (audioRef.current) setCurrentTime(audioRef.current.currentTime);
+    const audioEl = audioRef.current;
+    if (!audioEl) return;
+    setCurrentTime(audioEl.currentTime);
+    if (playGlobally) savePosition(audioEl.currentTime, !audioEl.paused);
   };
 
   const handleLoadedMetadata = () => {
-    if (audioRef.current) setDuration(audioRef.current.duration);
+    const audioEl = audioRef.current;
+    if (!audioEl) return;
+    setDuration(audioEl.duration);
+
+    // Resume the carried-over sermon where the previous page load left off.
+    if (
+      isRestoredFile &&
+      !userInteractedRef.current &&
+      restoredPosition > 0 &&
+      restoredPosition < audioEl.duration - 1 &&
+      seekedSrcRef.current !== audioSrc
+    ) {
+      audioEl.currentTime = restoredPosition;
+      setCurrentTime(restoredPosition);
+      seekedSrcRef.current = audioSrc;
+    }
   };
 
   const handleSeek = (event: React.ChangeEvent<HTMLInputElement>) => {
     const seekTime = (parseFloat(event.target.value) / 100) * duration;
     if (audioRef.current) audioRef.current.currentTime = seekTime;
+    userInteractedRef.current = true;
+    if (playGlobally) savePosition(seekTime, !audioRef.current?.paused, true);
+  };
+
+  const handleEnded = () => {
+    setIsPlaying(false);
+    if (playGlobally) clearSaved();
   };
 
   const handleVolumeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -140,6 +196,13 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({
         src={audioSrc}
         onTimeUpdate={handleTimeUpdate}
         onLoadedMetadata={handleLoadedMetadata}
+        onPause={() => {
+          setIsPlaying(false);
+          if (playGlobally && audioRef.current)
+            savePosition(audioRef.current.currentTime, false, true);
+        }}
+        onPlay={() => setIsPlaying(true)}
+        onEnded={handleEnded}
       />
       <div className="flex justify-between items-center gap-2 sm:gap-4 cursor-default controls">
         <button
