@@ -1,9 +1,17 @@
-import AWS from "aws-sdk";
+import {
+  S3Client,
+  ListObjectsV2Command,
+  HeadObjectCommand,
+  GetObjectCommand,
+} from "@aws-sdk/client-s3";
+import { getSignedUrl } from "@aws-sdk/s3-request-presigner";
 
-const s3 = new AWS.S3({
-  accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-  secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+const s3 = new S3Client({
   region: process.env.AWS_REGION,
+  credentials: {
+    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+  },
 });
 
 export default async function handler(req, res) {
@@ -14,10 +22,10 @@ export default async function handler(req, res) {
 
   try {
     // Step 1: List all files in the bucket
-    const data = await s3.listObjectsV2(params).promise();
+    const data = await s3.send(new ListObjectsV2Command(params));
 
     // Filter files to exclude directories or empty files
-    const validFiles = data.Contents.filter((file) => file.Size > 0);
+    const validFiles = (data.Contents || []).filter((file) => file.Size > 0);
 
     if (validFiles.length === 0) {
       return res.status(404).json({ error: "No files found in the bucket" });
@@ -28,19 +36,22 @@ export default async function handler(req, res) {
       validFiles[Math.floor(Math.random() * validFiles.length)];
 
     // Step 3: Fetch metadata for the random file
-    const metadata = await s3
-      .headObject({
+    const metadata = await s3.send(
+      new HeadObjectCommand({
         Bucket: process.env.AWS_BUCKET_NAME,
         Key: randomFile.Key,
       })
-      .promise();
+    );
 
     // Step 4: Generate a presigned URL for the random file
-    const url = s3.getSignedUrl("getObject", {
-      Bucket: process.env.AWS_BUCKET_NAME,
-      Key: randomFile.Key,
-      Expires: 60 * 60, // URL expiration time in seconds
-    });
+    const url = await getSignedUrl(
+      s3,
+      new GetObjectCommand({
+        Bucket: process.env.AWS_BUCKET_NAME,
+        Key: randomFile.Key,
+      }),
+      { expiresIn: 60 * 60 } // URL expiration time in seconds
+    );
 
     // Step 5: Return file details, metadata, and the URL
     res.status(200).json({

@@ -1,10 +1,17 @@
 // pages/api/getAudioDataByKey.js
-import AWS from "aws-sdk";
+import {
+  S3Client,
+  HeadObjectCommand,
+  GetObjectCommand,
+} from "@aws-sdk/client-s3";
+import { getSignedUrl } from "@aws-sdk/s3-request-presigner";
 
-const s3 = new AWS.S3({
-  accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-  secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+const s3 = new S3Client({
   region: process.env.AWS_REGION,
+  credentials: {
+    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+  },
 });
 
 export default async function handler(req, res) {
@@ -24,14 +31,17 @@ export default async function handler(req, res) {
   };
 
   try {
-    const metadata = await s3.headObject(params).promise();
+    const metadata = await s3.send(new HeadObjectCommand(params));
 
     // Generate presigned URL with 1-hour expiration
-    const url = s3.getSignedUrl("getObject", {
-      Bucket: process.env.AWS_BUCKET_NAME,
-      Key: key,
-      Expires: 60 * 60,
-    });
+    const url = await getSignedUrl(
+      s3,
+      new GetObjectCommand({
+        Bucket: process.env.AWS_BUCKET_NAME,
+        Key: key,
+      }),
+      { expiresIn: 60 * 60 }
+    );
 
     res.status(200).json({
       url, // Pass presigned URL for direct download

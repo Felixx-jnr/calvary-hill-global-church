@@ -1,9 +1,17 @@
-import AWS from "aws-sdk";
+import {
+  S3Client,
+  ListObjectsV2Command,
+  HeadObjectCommand,
+  GetObjectCommand,
+} from "@aws-sdk/client-s3";
+import { getSignedUrl } from "@aws-sdk/s3-request-presigner";
 
-const s3 = new AWS.S3({
-  accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-  secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+const s3 = new S3Client({
   region: process.env.AWS_REGION,
+  credentials: {
+    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+  },
 });
 
 // Function to parse dates like "23th March, 2023"
@@ -23,26 +31,30 @@ export default async function handler(req, res) {
 
   try {
     // Fetch the list of audio files
-    const data = await s3.listObjectsV2(params).promise();
+    const data = await s3.send(new ListObjectsV2Command(params));
 
     // Fetch metadata for each file
     const audioFiles = await Promise.all(
-      data.Contents.filter((file) => file.Size > 0) // Filter out directories or empty files
+      (data.Contents || [])
+        .filter((file) => file.Size > 0) // Filter out directories or empty files
         .map(async (file) => {
-          const metadata = await s3
-            .headObject({
+          const metadata = await s3.send(
+            new HeadObjectCommand({
               Bucket: process.env.AWS_BUCKET_NAME,
               Key: file.Key,
             })
-            .promise();
+          );
 
           return {
             fileName: file.Key,
-            url: s3.getSignedUrl("getObject", {
-              Bucket: process.env.AWS_BUCKET_NAME,
-              Key: file.Key,
-              Expires: 60 * 60, // URL expiration time in seconds
-            }),
+            url: await getSignedUrl(
+              s3,
+              new GetObjectCommand({
+                Bucket: process.env.AWS_BUCKET_NAME,
+                Key: file.Key,
+              }),
+              { expiresIn: 60 * 60 } // URL expiration time in seconds
+            ),
             metadata: metadata.Metadata,
             fileSize: metadata.ContentLength,
             lastModified: metadata.LastModified,
