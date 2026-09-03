@@ -38,6 +38,8 @@ interface PlayerContextType {
   savePosition: (seconds: number, isPlaying: boolean, immediate?: boolean) => void;
   /** Forget the persisted sermon (e.g. once it finishes). */
   clearSaved: () => void;
+  /** Dismiss the global player entirely — stops playback and clears saved state. */
+  closePlayer: () => void;
 }
 
 const STORAGE_KEY = "chgc-global-player";
@@ -171,6 +173,20 @@ export const PlayerProvider = ({ children }: { children: ReactNode }) => {
     }
   }, []);
 
+  const closePlayer = useCallback(() => {
+    stateRef.current = { position: 0, wasPlaying: false, urlIssuedAt: 0 };
+    playingFileRef.current = null;
+    setPlayingFileState(null);
+    setRestoredFileName(null);
+    if (typeof window !== "undefined") {
+      try {
+        window.localStorage.removeItem(STORAGE_KEY);
+      } catch {
+        /* ignore */
+      }
+    }
+  }, []);
+
   return (
     <PlayerContext.Provider
       value={{
@@ -181,6 +197,7 @@ export const PlayerProvider = ({ children }: { children: ReactNode }) => {
         restoredWasPlaying,
         savePosition,
         clearSaved,
+        closePlayer,
       }}
     >
       {children}
