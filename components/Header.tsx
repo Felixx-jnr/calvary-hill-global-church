@@ -2,11 +2,11 @@ import React from "react";
 
 const Header = ({ header, page }: headerProps) => {
   return (
-    <header className="mt-20 mb-12 w-full text-center">
-      <h1 className=" pt-16 text-4xl sm:text-5xl md:text-6xl font-sofia-bold text-darkmaroon tracking-tight mb-3">
+    <header className="mt-20 w-full text-center">
+      <h1 className="mb-3 pt-16 font-sofia-bold text-darkmaroon text-4xl sm:text-5xl md:text-6xl tracking-tight">
         {header}
       </h1>
-      <h2 className=" text-midGrey font-medium text-sm sm:text-lg tracking-tight">
+      <h2 className="font-medium text-midGrey text-sm sm:text-lg tracking-tight">
         <span>Home</span>
         {page && (
           <>

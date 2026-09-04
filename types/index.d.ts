@@ -10,6 +10,17 @@ type headerProps = {
   className?: string;
 };
 
+type SocialProps = {
+  title: string;
+  icon: IconType;
+  desc: string;
+  link: string;
+  iconColor?: string;
+  cardColor?: string;
+  titleColor?: string;
+  descColor?: string;
+};
+
 type doctrineProps = {
   title: string;
   paragraph: string;

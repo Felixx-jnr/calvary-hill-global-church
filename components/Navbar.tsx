@@ -14,13 +14,16 @@ import {
 } from "@/components/ui/tooltip";
 
 import { FaArrowRight } from "react-icons/fa6";
-import { IoIosSearch } from "react-icons/io";
 import { IoLogoInstagram } from "react-icons/io";
 import { FaTelegramPlane } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
 
 // Links object
 const navigationLinks = [
+  {
+    route: "/devotional",
+    label: "Devotional",
+  },
   {
     route: "/sermons",
     label: "Sermons",
@@ -35,8 +38,8 @@ const navigationLinks = [
     label: "Live",
   },
   {
-    route: "/giving",
-    label: "Giving",
+    route: "/socials",
+    label: "Socials",
   },
   {
     route: "/gallery",
@@ -130,7 +133,7 @@ const Navbar = () => {
 
   const isHome = pathname === "/"; // Check if it's the home route
 
-  const staticPaths = ["/donate"];
+  const staticPaths = ["/donate", "/socials"];
   const noNavigationMenu =
     staticPaths.includes(pathname || "") ||
     /^\/articles\/.*/.test(pathname || "") ||
@@ -149,10 +152,10 @@ const Navbar = () => {
           : " text-darkmaroon bg-white font-sofia-regular absolute w-full top-0 z-10"
       }
     >
-      <div className=" py-4 flex justify-around max-mid:justify-between mx-5 max-mid:mx-5 items-center">
+      <div className="flex justify-around max-mid:justify-between items-center mx-5 max-mid:mx-5 py-4">
         {/* LOGO */}
         <Link
-          className="text-2xl z-10"
+          className="z-10 text-2xl"
           href="/"
           onClick={() => setIsOpen(false)}
         >
@@ -194,7 +197,7 @@ const Navbar = () => {
         </div>
 
         {/* Desktop Links */}
-        <ul className="hidden mid:flex space-x-7 ">
+        <ul className="hidden mid:flex space-x-7">
           <TooltipProvider>
             <Tooltip delayDuration={0}>
               <TooltipTrigger>
@@ -215,7 +218,7 @@ const Navbar = () => {
                 <li>
                   <Link
                     href="/doctrine"
-                    className=" block font-thin py-2 mr-40 tracking-wide hover:border-b-2 pb-2 text-white "
+                    className="block mr-40 py-2 pb-2 hover:border-b-2 font-thin text-white tracking-wide"
                   >
                     Doctrine
                   </Link>
@@ -224,7 +227,7 @@ const Navbar = () => {
                 <li>
                   <Link
                     href="/leadership"
-                    className=" block font-thin mr-40 py-2  tracking-wide hover:border-b-2 pb-2 text-white"
+                    className="block mr-40 py-2 pb-2 hover:border-b-2 font-thin text-white tracking-wide"
                   >
                     Leadership
                   </Link>
@@ -233,7 +236,7 @@ const Navbar = () => {
             </Tooltip>
           </TooltipProvider>
 
-          <TooltipProvider>
+          {/* <TooltipProvider>
             <Tooltip delayDuration={0}>
               <TooltipTrigger>
                 <li>
@@ -252,7 +255,7 @@ const Navbar = () => {
                 <li>
                   <Link
                     href="/articles"
-                    className=" block font-thin py-2 mr-40 tracking-wide hover:border-b-2 pb-2 text-white "
+                    className="block mr-40 py-2 pb-2 hover:border-b-2 font-thin text-white tracking-wide"
                   >
                     Articles
                   </Link>
@@ -261,14 +264,14 @@ const Navbar = () => {
                 <li>
                   <Link
                     href="/devotionals"
-                    className=" block font-thin mr-40 py-2  tracking-wide hover:border-b-2 pb-2 text-white"
+                    className="block mr-40 py-2 pb-2 hover:border-b-2 font-thin text-white tracking-wide"
                   >
                     Devotionals
                   </Link>
                 </li>
               </TooltipContent>
             </Tooltip>
-          </TooltipProvider>
+          </TooltipProvider> */}
 
           {navigationLinks.map((link) => (
             <li key={link.label}>
@@ -287,15 +290,13 @@ const Navbar = () => {
         </ul>
 
         {/* BUTTONS */}
-        <div className=" flex items-center justify-end">
-          <IoIosSearch className="text-3xl mid:mr-2 md:mx-3 mx-2" />
-
+        <div className="flex justify-end items-center">
           <div>
             <Link
               className="max-md:hidden"
               href="/giving"
             >
-              <button className=" text-white bg-maroon hover:bg-darkmaroon rounded-none px-9 py-4 font-bold tracking-widest text-xs">
+              <button className="bg-maroon hover:bg-darkmaroon ml-4 px-9 py-4 rounded-none font-bold text-white text-xs tracking-widest">
                 GIVE NOW
               </button>
             </Link>
@@ -311,22 +312,22 @@ const Navbar = () => {
                 animate="open"
                 exit="closed"
                 variants={childVariants}
-                className="absolute top-0 left-0 w-full bg-darkBrown shadow-md mid:hidden h-screen"
+                className="mid:hidden top-0 left-0 absolute bg-darkBrown shadow-md w-full h-screen"
               >
                 <motion.ul
                   initial="closed"
                   animate="open"
                   exit="closed"
                   variants={staggerVariants}
-                  className="flex flex-col h-screen items-center justify-center pt-4 text-[#CAC2C0] "
+                  className="flex flex-col justify-center items-center pt-4 h-screen text-[#CAC2C0]"
                 >
                   <motion.li
-                    className="flex items-center "
+                    className="flex items-center"
                     variants={childVariants}
                   >
-                    <div className=" font-bold text-2xl my-2">
+                    <div className="my-2 font-bold text-2xl">
                       <Link
-                        className="text-2xl my-3 font-bold hover:text-[#fff] mr-3"
+                        className="my-3 mr-3 font-bold hover:text-[#fff] text-2xl"
                         href="/about"
                         onClick={toggleMenu}
                       >
@@ -344,7 +345,7 @@ const Navbar = () => {
                       <div>
                         <Link
                           href="/doctrine"
-                          className=" block font-thin p-2 tracking-wide text-center hover:text-[#fff] "
+                          className="block p-2 font-thin hover:text-[#fff] text-center tracking-wide"
                           onClick={toggleMenu}
                         >
                           Doctrines
@@ -354,7 +355,7 @@ const Navbar = () => {
                       <div>
                         <Link
                           href="/leadership"
-                          className=" block font-thin p-2 tracking-wide text-center hover:text-[#fff]"
+                          className="block p-2 font-thin hover:text-[#fff] text-center tracking-wide"
                           onClick={toggleMenu}
                         >
                           Leadership
@@ -363,13 +364,13 @@ const Navbar = () => {
                     </li>
                   )}
 
-                  <motion.li
-                    className="flex items-center "
+                  {/* <motion.li
+                    className="flex items-center"
                     variants={childVariants}
                   >
-                    <div className=" font-bold text-2xl my-3">
+                    <div className="my-3 font-bold text-2xl">
                       <Link
-                        className="text-2xl my-2 font-bold hover:text-[#fff] mr-3"
+                        className="my-2 mr-3 font-bold hover:text-[#fff] text-2xl"
                         href="/about"
                         onClick={toggleMenu}
                       >
@@ -383,14 +384,14 @@ const Navbar = () => {
                     >
                       <FaArrowRight />
                     </button>
-                  </motion.li>
+                  </motion.li> */}
 
-                  {showRes && (
+                  {/* {showRes && (
                     <li className="">
                       <div>
                         <Link
                           href="/articles"
-                          className=" block font-thin p-2 tracking-wide text-center hover:text-[#fff]"
+                          className="block p-2 font-thin hover:text-[#fff] text-center tracking-wide"
                           onClick={toggleMenu}
                         >
                           Articles
@@ -400,19 +401,19 @@ const Navbar = () => {
                       <div>
                         <Link
                           href="/devotionals"
-                          className=" block font-thin p-2 tracking-wide text-center hover:text-[#fff]"
+                          className="block p-2 font-thin hover:text-[#fff] text-center tracking-wide"
                           onClick={toggleMenu}
                         >
                           Devotionals
                         </Link>
                       </div>
                     </li>
-                  )}
+                  )} */}
 
                   {navigationLinks.map((link) => (
                     <motion.li
                       key={link.label}
-                      className=" text-2xl my-2 font-bold hover:text-[#fff]"
+                      className="my-2 font-bold hover:text-[#fff] text-2xl"
                       variants={childVariants}
                     >
                       <Link
@@ -423,8 +424,23 @@ const Navbar = () => {
                       </Link>
                     </motion.li>
                   ))}
+
+                  <motion.li
+                    className="flex items-center"
+                    variants={childVariants}
+                  >
+                    <div className="my-2 font-bold text-2xl">
+                      <Link
+                        className="my-3 mr-3 font-bold hover:text-[#fff] text-2xl"
+                        href="/giving"
+                        onClick={toggleMenu}
+                      >
+                        Giving
+                      </Link>
+                    </div>
+                  </motion.li>
                   <motion.div
-                    className=" text-2xl flex gap-4 mt-8 pt-4 border-t-[0.1px] border-lightGrey w-[90%] justify-center"
+                    className="flex justify-center gap-4 mt-8 pt-4 border-lightGrey border-t-[0.1px] w-[90%] text-2xl"
                     variants={staggerVariants}
                   >
                     <Link href={""}>
