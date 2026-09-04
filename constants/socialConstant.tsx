@@ -3,10 +3,11 @@ import { FaTelegram } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
 import { SiAirplayaudio } from "react-icons/si";
-import { SiAudiobookshelf } from "react-icons/si";
+import { IoHeadset } from "react-icons/io5";
 import { BiDonateHeart } from "react-icons/bi";
 import { FaBible } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
+import { FaGlobeAmericas } from "react-icons/fa";
 
 export const social = [
   {
@@ -70,13 +71,13 @@ export const social = [
 
   {
     id: 6,
-    title: "Location",
-    desc: "Find us on Google Maps and get directions to our church.",
-    icon: FaLocationDot,
-    link: "https://maps.app.goo.gl/SjVrvfBNAT46BGYg8?g_st=ics",
-    iconColor: "#4285F4",
-    cardColor: "#E8F0FE",
-    titleColor: "#1A73E8",
+    title: "Sermons",
+    desc: "Listen to our latest sermons and teachings",
+    icon: IoHeadset,
+    link: "/sermons",
+    iconColor: "#F97316",
+    cardColor: "#FFF0E5",
+    titleColor: "#F97316",
     descColor: "#374151",
   },
 
@@ -91,8 +92,32 @@ export const social = [
     titleColor: "#6D28D9",
     descColor: "#374151",
   },
+
   {
     id: 8,
+    title: "Location",
+    desc: "Find us on Google Maps and get directions to our church.",
+    icon: FaLocationDot,
+    link: "https://maps.app.goo.gl/SjVrvfBNAT46BGYg8?g_st=ics",
+    iconColor: "#4285F4",
+    cardColor: "#E8F0FE",
+    titleColor: "#1A73E8",
+    descColor: "#374151",
+  },
+
+  {
+    id: 9,
+    title: "Website",
+    desc: "Visit our website for more information",
+    icon: FaGlobeAmericas,
+    link: "/",
+    iconColor: "#EAB308",
+    cardColor: "#FEF9C3",
+    titleColor: "#A16207",
+    descColor: "#422006",
+  },
+  {
+    id: 10,
     title: "Donate",
     desc: "Partner with what God is doing through us",
     icon: BiDonateHeart,

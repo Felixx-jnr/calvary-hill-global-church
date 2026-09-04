@@ -10,8 +10,7 @@ const footerLinks = [
   { link: "Home", src: "/" },
   { link: "About", src: "/about" },
   { link: "Sermons", src: "/sermons" },
-  { link: "Devotionals", src: "/devotionals" },
-  { link: "Articles", src: "/articles" },
+  { link: "Devotionals", src: "/devotional" },
   { link: "CSF", src: "/csf" },
   { link: "Giving", src: "/giving" },
   { link: "Contact", src: "/contact" },
@@ -83,7 +82,8 @@ const Footer = () => {
               <h4 className="font-sofia-bold text-lg">Socials</h4>
               <div className="max-sm:flex max-sm:flex-wrap max-sm:justify-left max-sm:gap-2">
                 <Link
-                  href={""}
+                  target="_blank"
+                  href="https://www.instagram.com/calvaryhillglobalchurch?utm_source=ig_web_button_share_sheet&igsi=ZDNlZDc0MzIxNw=="
                   className="flex items-center gap-1 hover:bg-darkmaroon p-1 max-sm:p-2 rounded-[50%] xs:rounded-full"
                 >
                   <IoLogoInstagram className="text-xl" />
@@ -93,7 +93,8 @@ const Footer = () => {
                 </Link>
 
                 <Link
-                  href={""}
+                  href="https://www.youtube.com/@calvaryhillchurch3641"
+                  target="_blank"
                   className="flex items-center gap-1 hover:bg-darkmaroon sm:my-2 p-1 max-sm:p-2 rounded-[50%] xs:rounded-full"
                 >
                   <FaYoutube className="text-xl" />
@@ -103,7 +104,8 @@ const Footer = () => {
                 </Link>
 
                 <Link
-                  href={""}
+                  href="https://t.me/CalvaryHillGlobalChurch"
+                  target="_blank"
                   className="flex items-center gap-1 hover:bg-darkmaroon sm:my-2 p-1 max-sm:p-2 rounded-[50%] xs:rounded-full"
                 >
                   <FaTelegramPlane className="text-xl" />
@@ -113,7 +115,8 @@ const Footer = () => {
                 </Link>
 
                 <Link
-                  href={""}
+                  href="https://www.facebook.com/share/1BQsc2diCx/?mibextid=wwXIfr"
+                  target="_blank"
                   className="flex items-center gap-1 hover:bg-darkmaroon sm:my-2 p-1 max-sm:p-2 rounded-[50%] xs:rounded-full"
                 >
                   <FaFacebookSquare className="text-xl" />{" "}

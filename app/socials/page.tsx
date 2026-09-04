@@ -9,9 +9,9 @@ const Socials = () => {
         <section className="flex flex-col justify-center items-center px-4 pt-8 pb-8 text-center">
           <div className="mb-8">
             <h1 className="font-sofia-bold text-smokeWhite text-7xl uppercase">
-              stay <span className="text-[#4ADE80]"> connected</span>
+              stay <span className=""> connected</span>
             </h1>
-            <p className="mt-2 text-[#4ADE80] text-semibold text-lg uppercase">
+            <p className="mt-2 font-semibold text-darkGrey text-semibold text-lg uppercase tracking-tight">
               one church. one family. everywhere you are.
             </p>
 
