@@ -17,26 +17,26 @@ const SocialCard = ({
     <Link
       href={link}
       target="_blank"
-      style={{ backgroundColor: cardColor }}
-      className="flex justify-start items-center gap-4 hover:opacity-80 px-4 py-4 max-md:py-6 rounded-2xl w-[100%] md:w-[100%] lg:w-[450px]"
+      //style={{ backgroundColor: cardColor }}
+      className="flex justify-start items-center gap-4 bg-white/10 hover:opacity-80 backdrop-blur-md px-4 py-4 max-md:py-6 border-2 border-white rounded-2xl w-[100%] md:w-[100%] lg:w-[450px]"
     >
       <div>
         <Icon
-          style={{ color: iconColor }}
-          className=" text-5xl ${iconColor}"
+          //style={{ color: iconColor }}
+          className="text-white text-5xl"
         />
       </div>
 
       <div className="flex flex-col justify-start items-start">
         <h2
-          style={{ color: titleColor }}
-          className="font-bold text-3xl"
+          //style={{ color: titleColor }}
+          className="font-semibold text-white text-3xl"
         >
           {title}
         </h2>
         <p
-          style={{ color: descColor }}
-          className="items-start text-start ${descColor} font-sofia-semibold leading-tight"
+          //style={{ color: descColor }}
+          className="items-start text-white text-start leading-tight"
         >
           {desc}
         </p>
@@ -44,8 +44,8 @@ const SocialCard = ({
       <div className="place-self-end ml-auto">
         {" "}
         <IoArrowForwardCircleOutline
-          style={{ color: titleColor }}
-          className="text-3xl"
+          //style={{ color: titleColor }}
+          className="text-white text-3xl"
         />
       </div>
     </Link>

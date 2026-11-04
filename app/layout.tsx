@@ -3,6 +3,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./styles/globals.scss";
+import Overlay from "../components/Overlay";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import { PlayerProvider } from "@/context/PlayerContext";
@@ -13,7 +14,7 @@ const GlobalAudioPlayer = dynamic(
   () => import("@/components/GlobalAudioPlayer"),
   {
     ssr: false,
-  }
+  },
 );
 
 const geistSans = localFont({
@@ -45,6 +46,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Navbar />
+        <Overlay />
         <PlayerProvider>
           {children}
           <GlobalAudioPlayer />

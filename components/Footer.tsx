@@ -32,7 +32,7 @@ const Footer = () => {
             </h3>
 
             <button className="bg-white hover:bg-lightGrey px-6 sm:px-12 py-4 sm:py-5 rounded-none font-sofia-bold text-black hover:text-white text-xs tracking-[2px]">
-              CONTACT US
+              <Link href="/contact">CONTACT US</Link>
             </button>
           </div>
 

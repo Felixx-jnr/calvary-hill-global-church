@@ -38,6 +38,10 @@ The S3 code uses **AWS SDK for JavaScript v3** (`@aws-sdk/client-s3` + `@aws-sdk
 
 `context/PlayerContext.tsx` (`PlayerProvider` / `usePlayer`) holds the single `playingFile`. `components/GlobalAudioPlayer.tsx` is mounted once in `app/layout.tsx` via `next/dynamic({ ssr: false })` and renders a fixed bottom-right bar whenever a file is playing. Page-level `AudioPlayer` instances call `setPlayingFile` to hand off to it.
 
+### Contact form
+
+`app/contact/page.tsx` posts JSON (`name`, `email`, `subject`, `message`) to `pages/api/contact.js`, which sends the email via **Resend** (`resend` package, `RESEND_API_KEY`) from `CONTACT_FROM_EMAIL` to `CONTACT_TO_EMAIL`, with `replyTo` set to the submitter's address.
+
 ### Other integrations
 
 - **Payments:** `components/Giving/Payment.tsx` uses `react-paystack` (`PaystackButton`, dynamically imported, `ssr: false`). Amount is multiplied by 100 (kobo). Key from `NEXT_PUBLIC_PAYSTACK_PUBLIC_KEY`.
@@ -56,4 +60,4 @@ The S3 code uses **AWS SDK for JavaScript v3** (`@aws-sdk/client-s3` + `@aws-sdk
 
 ## Environment
 
-`.env` is gitignored. Required vars: `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, `AWS_REGION`, `AWS_BUCKET_NAME`, `NEXT_PUBLIC_PAYSTACK_PUBLIC_KEY`, `YOUTUBE_CHANNEL_ID`, `BASE_URL`.
+`.env` is gitignored. Required vars: `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, `AWS_REGION`, `AWS_BUCKET_NAME`, `NEXT_PUBLIC_PAYSTACK_PUBLIC_KEY`, `YOUTUBE_CHANNEL_ID`, `BASE_URL`, `RESEND_API_KEY`, `CONTACT_FROM_EMAIL`, `CONTACT_TO_EMAIL`.

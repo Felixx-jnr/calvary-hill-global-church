@@ -113,9 +113,9 @@ const Navbar = () => {
     setShow(!show);
   };
 
-  const triggerShowRes = () => {
-    setShowRes(!showRes);
-  };
+  // const triggerShowRes = () => {
+  //   setShowRes(!showRes);
+  // };
 
   // Animations for the hamburger menu
   const hamburgerLine1 = {
