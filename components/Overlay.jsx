@@ -139,8 +139,9 @@ const Overlay = () => {
 
                 <div className="">
                   <p className="mb-3 text-sm uppercase leading-none">
-                    Home Owner's Hall RCCG REDEMPTION CAMP (REDEMPTION CITY) Km
-                    46, Lagos-Ibadan Expressway, Mowe, Ogun State, Nigeria
+                    Home Owner&apos;s Hall RCCG REDEMPTION CAMP (REDEMPTION
+                    CITY) Km 46, Lagos-Ibadan Expressway, Mowe, Ogun State,
+                    Nigeria
                   </p>
 
                   <p className="my-3 text-sm uppercase">
