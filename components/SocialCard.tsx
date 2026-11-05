@@ -3,16 +3,7 @@ import Link from "next/link";
 
 import { IoArrowForwardCircleOutline } from "react-icons/io5";
 
-const SocialCard = ({
-  title,
-  desc,
-  link,
-  icon: Icon,
-  iconColor,
-  cardColor,
-  titleColor,
-  descColor,
-}: SocialProps) => {
+const SocialCard = ({ title, desc, link, icon: Icon }: SocialProps) => {
   return (
     <Link
       href={link}

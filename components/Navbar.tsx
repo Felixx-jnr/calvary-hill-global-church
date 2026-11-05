@@ -56,7 +56,7 @@ const Navbar = () => {
 
   const [isOpen, setIsOpen] = useState(false);
   const [show, setShow] = useState(false);
-  const [showRes, setShowRes] = useState(false);
+  //const [showRes, setShowRes] = useState(false);
 
   const staggerVariants = {
     open: {
