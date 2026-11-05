@@ -152,8 +152,19 @@ const Overlay = () => {
                     <p className="text-xs">
                       For enquries:{" "}
                       <span className="">
-                        {" "}
-                        +234 901 162 0048, +234 814 817 1728
+                        <Link
+                          className="font-semibold underline"
+                          href="tel:+2349011620048"
+                        >
+                          +234 901 162 0048
+                        </Link>
+                        ,{" "}
+                        <Link
+                          className="font-semibold underline"
+                          href="tel:+2348148171728"
+                        >
+                          +234 814 817 1728
+                        </Link>
                       </span>
                     </p>
                     <Link
