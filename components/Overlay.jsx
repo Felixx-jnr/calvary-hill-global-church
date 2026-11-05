@@ -20,7 +20,7 @@ const Overlay = () => {
 
   // Auto open overlay after immediately
   useEffect(() => {
-    autoOpenTimerRef.current = setTimeout(() => setIsOverlayOpen(true), 1000);
+    autoOpenTimerRef.current = setTimeout(() => setIsOverlayOpen(true), 0);
 
     return () => {
       if (autoOpenTimerRef.current) clearTimeout(autoOpenTimerRef.current);
