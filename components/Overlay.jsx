@@ -3,20 +3,24 @@ import { useEffect, useState, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-const sliderImages = ["/dum1.jpg", "/dum2.jpg"];
+const sliderImages = ["/dum26.jpeg", "/dum26.jpeg"];
 
 const Overlay = () => {
   // Overlay & Tag state
   const [isOverlayOpen, setIsOverlayOpen] = useState(false);
+
+  const handleOverlayClick = () => {
+    window.open("https://forms.gle/H8EdkRUK2S9AV5wQA", "_blank");
+  };
 
   // Slider state
   const [currentSlide, setCurrentSlide] = useState(0);
   const slideIntervalRef = useRef(null);
   const autoOpenTimerRef = useRef(null);
 
-  // Auto open overlay after 5s
+  // Auto open overlay after immediately
   useEffect(() => {
-    autoOpenTimerRef.current = setTimeout(() => setIsOverlayOpen(true), 0);
+    autoOpenTimerRef.current = setTimeout(() => setIsOverlayOpen(true), 1000);
 
     return () => {
       if (autoOpenTimerRef.current) clearTimeout(autoOpenTimerRef.current);
@@ -66,12 +70,12 @@ const Overlay = () => {
   };
 
   return (
-    <div>
+    <div onClick={handleOverlayClick}>
       {isOverlayOpen && (
         <div className="z-[1000] fixed inset-0 flex justify-center items-center">
           {/* Background overlay */}
           <div
-            className="absolute inset-0 bg-[url('/bg1.jpg')] bg-black opacity-70"
+            className="absolute inset-0 bg-[url('/dum26.jpeg')] bg-black opacity-70"
             onClick={() => setIsOverlayOpen(false)}
           />
 
@@ -80,7 +84,10 @@ const Overlay = () => {
             {/* Overlay X (only closes overlay) */}
             <button
               aria-label="Close discount popup"
-              onClick={() => setIsOverlayOpen(false)}
+              onClick={(e) => {
+                e.stopPropagation();
+                setIsOverlayOpen(false);
+              }}
               className="top-6 right-6 absolute flex justify-center items-center rounded-full w-6 h-6 cursor-pointer"
             >
               ✕
@@ -118,39 +125,27 @@ const Overlay = () => {
               </div>
             </div>
 
-            {/* Right: Discount text */}
+            {/* Description text */}
             <div className="flex flex-col justify-center p-3 w-full text-center">
               <h2 className="mb-3 font-oswald font-bold text-[30px] leading-none">
-                DUNAMIS CAMP FIRE 2025
+                DUNAMIS CAMP FIRE 2026
               </h2>
-              <p className="mb-3 text-xs italic">
-                {'"THOU SHALT BE TURNED INTO ANOTHER MAN" - 1 SAMUEL 10:6'}
-              </p>
+              <p className="mb-3 text-xs italic">{"THE OVERTURN"}</p>
 
               <div className="">
                 <p className="mb-3 font-bold text-sm">
-                  19th - 21st December, 2025
+                  18th - 20th December, 2025
                 </p>
 
                 <div className="">
-                  <p className="mb-3 text-sm capitalize leading-none">
-                    Redeem Camp, Km 46, Lagos-Ibadan Expressway, Mowe, Ogun
-                    State, Nigeria
+                  <p className="mb-3 text-sm uppercase leading-none">
+                    Home Owner's Hall RCCG REDEMPTION CAMP (REDEMPTION CITY) Km
+                    46, Lagos-Ibadan Expressway, Mowe, Ogun State, Nigeria
                   </p>
-                  <ul className="flex flex-wrap justify-center items-center gap-2 mb-3">
-                    <li className="flex items-center gap-1 text-[10px] whitespace-nowrap">
-                      <span className="bg-black rounded-full w-1 h-1"></span>
-                      FREE ACCOMODATION
-                    </li>
-                    <li className="flex items-center gap-1 text-[10px] whitespace-nowrap">
-                      <span className="bg-black rounded-full w-1 h-1"></span>
-                      FREE ACCOMODATION
-                    </li>
-                    <li className="flex items-center gap-1 text-[10px] whitespace-nowrap">
-                      <span className="bg-black rounded-full w-1 h-1"></span>
-                      FREE ACCOMODATION
-                    </li>
-                  </ul>
+
+                  <p className="my-3 text-sm uppercase">
+                    Free Transportation from Lagos and Free Accommodation
+                  </p>
 
                   <div className="mb-7">
                     <p className="text-xs">

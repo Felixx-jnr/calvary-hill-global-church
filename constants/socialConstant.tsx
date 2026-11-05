@@ -15,7 +15,7 @@ export const social = [
     title: "Youtube",
     desc: "Watch our latest sermons and church events.",
     icon: FaYoutube,
-    link: "https://www.youtube.com/@calvaryhillchurch3641",
+    link: "https://www.youtube.com/@calvaryhillchurchGlobal",
     iconColor: " #FF0000",
     cardColor: "#FFE5E5",
     titleColor: "#CC0000",
