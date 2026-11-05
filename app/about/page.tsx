@@ -63,7 +63,7 @@ const About = () => {
               We hope to see you in the next Dunamis meeting!
             </p>
             <Link
-              href="https://forms.gle/3GkLsyDFKjTqjrtd8"
+              href="  https://forms.gle/H8EdkRUK2S9AV5wQA  "
               target="_blank"
               className="bg-[#bc0f01] hover:bg-[#800d05] shadow-[0_0_10px_#bc0f01,0_0_20px_#bc0f01,0_0_40px_#bc0f01] hover:shadow-[0_0_15px_#800d05,0_0_30px_#800d05,0_0_60px_#800d05] px-4 py-2 rounded-md text-white transition-all animate-pulse duration-500"
             >
