@@ -88,7 +88,7 @@ const Overlay = () => {
                 e.stopPropagation();
                 setIsOverlayOpen(false);
               }}
-              className="top-6 right-6 absolute flex justify-center items-center rounded-full w-6 h-6 cursor-pointer"
+              className="top-6 right-6 absolute flex justify-center items-center rounded-full w-6 h-6 font-bold cursor-pointer"
             >
               ✕
             </button>
@@ -103,6 +103,17 @@ const Overlay = () => {
                   className="object-center object-cover"
                 />
               </div>
+
+              <button
+                aria-label="Close discount popup"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setIsOverlayOpen(false);
+                }}
+                className="sm:hidden top-3 right-3 absolute flex justify-center items-center rounded-full w-6 h-6 font-bold cursor-pointer"
+              >
+                ✕
+              </button>
 
               {/* Dots */}
               <div
